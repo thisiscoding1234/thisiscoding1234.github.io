@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @media (prefers-color-scheme: light) {
     :root {
         --text: #2c1302;
@@ -23,10 +24,10 @@
 
 
 body {
-    background-image: var(--background); 
+    background-image: var(--background);
     font-family: 'Outfit', sans-serif;
-    background-image: -moz-linear-gradient(270deg, var(--primary) 0%, var(--background) 100%) ;
-    background-image: -webkit-linear-gradient(180deg, var(--primary) 0%, var(--background) 100%) ;
+    background-image: -moz-linear-gradient(270deg, var(--primary) 0%, var(--background) 100%);
+    background-image: -webkit-linear-gradient(180deg, var(--primary) 0%, var(--background) 100%);
     background-image: linear-gradient(270deg, var(--primary) 0%, var(--background) 100%);
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#ff6a00", endColorstr="#ffffff", GradientType=1);
     background-size: cover;
@@ -47,49 +48,48 @@ h2 {
 }
 
 img {
-    width:25% ;
-} 
-
-.slidey {
-    width:50% ;
-    margin-left:25%;
-    margin-right:25%;
+    width: 25%;
 }
 
-.hidden{
+.slidey {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.hidden {
     display: none;
 }
 
 
 @media (max-width: 160px) {
-    .hidden{
+    .hidden {
         display: block;
     }
 }
 
 @media (max-width: 340px) {
-img{
-    width:75% ;
-}  
+    img {
+        width: 75%;
+    }
 
 
-.slidey {
-    width:90% ;
-    margin-left:5%;
-    margin-right:5%;
+    .slidey {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    body {
+        background-image: var(--background);
+        background-image: -moz-linear-gradient(270deg, var(--primary) 0%, var(--secondary) 100%);
+        background-image: -webkit-linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+        background-image: linear-gradient(270deg, var(--primary) 0%, var(--secondary) 100%);
+        filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#ff6a00", endColorstr="#ffffff", GradientType=1);
+    }
 }
 
-body{
-    background-image: var(--background); 
-    background-image: -moz-linear-gradient(270deg, var(--primary) 0%, var(--secondary) 100%) ;
-    background-image: -webkit-linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%) ;
-    background-image: linear-gradient(270deg, var(--primary) 0%, var(--secondary) 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#ff6a00", endColorstr="#ffffff", GradientType=1);
-}
-}
 
-
-.favi{
+.favi {
     width: 40px;
 }
-
