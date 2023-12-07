@@ -6,6 +6,7 @@
         --primary: #ff8e3d;
         --secondary: #f2d5c0;
         --accent: #0879c9;
+        --clear: rgba(255, 255, 255, 90);
     }
 }
 
@@ -16,8 +17,13 @@
         --primary: #c25100;
         --secondary: #3f220d;
         --accent: #36a6f7;
+        --clear: rgba(0, 0, 0, 90);
     }
 }
+
+
+
+
 
 body {
     background-image: var(--background); 
@@ -31,6 +37,7 @@ body {
     margin: 0;
     padding: 10px;
     color: var(--text);
+    width: 100%;
 }
 
 h1 {
@@ -42,9 +49,15 @@ h2 {
     font-weight: 600;
 }
 
-img{
+img {
     width:25% ;
 } 
+
+.slidey {
+    width:50% ;
+    margin-left:25%;
+    margin-right:25%;
+}
 
 .hidden{
     display: none;
@@ -57,13 +70,17 @@ img{
     }
 }
 
-
-
-
 @media (max-width: 340px) {
 img{
     width:75% ;
 }  
+
+
+.slidey {
+    width:90% ;
+    margin-left:5%;
+    margin-right:5%;
+}
 
 body{
     background-image: var(--background); 
