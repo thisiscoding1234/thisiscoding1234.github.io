@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @media (prefers-color-scheme: light) {
     :root {
@@ -22,13 +22,18 @@
     }
 }
 
-
 body {
     background-image: var(--background);
-    font-family: 'Outfit', sans-serif;
-    background-image: -moz-linear-gradient(270deg, var(--primary) 0%, var(--background) 100%);
-    background-image: -webkit-linear-gradient(180deg, var(--primary) 0%, var(--background) 100%);
-    background-image: linear-gradient(270deg, var(--primary) 0%, var(--background) 100%);
+    font-family: "Outfit", sans-serif;
+    background-image: -moz-linear-gradient(270deg,
+            var(--primary) 0%,
+            var(--background) 100%);
+    background-image: -webkit-linear-gradient(180deg,
+            var(--primary) 0%,
+            var(--background) 100%);
+    background-image: linear-gradient(270deg,
+            var(--primary) 0%,
+            var(--background) 100%);
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#ff6a00", endColorstr="#ffffff", GradientType=1);
     background-size: cover;
     height: 100%;
@@ -39,7 +44,7 @@ body {
 }
 
 h1 {
-    font-family: 'Raleway', sans-serif;
+    font-family: "Raleway", sans-serif;
     font-weight: 900;
 }
 
@@ -61,7 +66,6 @@ img {
     display: none;
 }
 
-
 @media (max-width: 160px) {
     .hidden {
         display: block;
@@ -73,7 +77,6 @@ img {
         width: 75%;
     }
 
-
     .slidey {
         width: 90%;
         margin-left: 5%;
@@ -82,22 +85,27 @@ img {
 
     body {
         background-image: var(--background);
-        background-image: -moz-linear-gradient(270deg, var(--primary) 0%, var(--secondary) 100%);
-        background-image: -webkit-linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
-        background-image: linear-gradient(270deg, var(--primary) 0%, var(--secondary) 100%);
+        background-image: -moz-linear-gradient(270deg,
+                var(--primary) 0%,
+                var(--secondary) 100%);
+        background-image: -webkit-linear-gradient(180deg,
+                var(--primary) 0%,
+                var(--secondary) 100%);
+        background-image: linear-gradient(270deg,
+                var(--primary) 0%,
+                var(--secondary) 100%);
         filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#ff6a00", endColorstr="#ffffff", GradientType=1);
     }
 }
-
 
 .favi {
     transition: 1s;
     width: 40px;
 }
 
-.favi:hover{
+.favi:hover {
     transition: 1s;
     /* filter: invert(43%) sepia(80%) saturate(3306%) hue-rotate(184deg) brightness(102%) contrast(103%); */
     /* filter: invert(36%) sepia(68%) saturate(3049%) hue-rotate(2deg) brightness(104%) contrast(104%); */
-    filter: hue-rotate(180deg) ;
+    filter: hue-rotate(180deg);
 }
