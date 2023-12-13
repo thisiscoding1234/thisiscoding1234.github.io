@@ -38,7 +38,7 @@ body {
     background-size: cover;
     height: 100%;
     margin: 0;
-    padding: 10px;
+    padding: 0px;
     color: var(--text);
     width: 100%;
 }
@@ -69,6 +69,13 @@ img {
 @media (max-width: 160px) {
     .hidden {
         display: block;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar .nav-item {
+        /*top-left | top-right | bottom-right | bottom-left */
+        border-radius: 30px 30px 30px 30px;
     }
 }
 
@@ -108,4 +115,20 @@ img {
     /* filter: invert(43%) sepia(80%) saturate(3306%) hue-rotate(184deg) brightness(102%) contrast(103%); */
     /* filter: invert(36%) sepia(68%) saturate(3049%) hue-rotate(2deg) brightness(104%) contrast(104%); */
     filter: hue-rotate(180deg);
+}
+
+.navbar {
+    margin: 0;
+    padding: 5px;
+    border: 2.5px var(--primary);
+    border-style: outset;
+    /*top-left | top-right | bottom-right | bottom-left */
+    border-radius: 0px 0px 30px 30px;
+}
+
+
+.navbar .nav-item {
+    border: 1px solid var(--accent);
+    /*top-left | top-right | bottom-right | bottom-left */
+    border-radius: 30px 30px 30px 30px;
 }
