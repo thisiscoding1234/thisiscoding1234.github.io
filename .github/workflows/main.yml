@@ -11,7 +11,6 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-              - name: imgcmp
-                uses: 9sako6/imgcmp@v2.0.4
-                  with:
-                      token: ${{ secrets.GHT }}
+      - uses: 9sako6/imgcmp@v2.0.4
+        with:
+            token: ${{ secrets.GHT }}
