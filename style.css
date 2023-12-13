@@ -45,7 +45,6 @@ body {
 
 h1 {
     font-family: "Raleway", sans-serif;
-    font-weight: 900;
 }
 
 h2 {
@@ -131,4 +130,11 @@ img {
     border: 1px solid var(--accent);
     /*top-left | top-right | bottom-right | bottom-left */
     border-radius: 30px 30px 30px 30px;
+}
+
+.slider{
+    height:10px;
+    width:80%;
+    margin-left: 10%;
+    margin-right: 10%;
 }

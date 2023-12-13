@@ -53,7 +53,27 @@
             </div>
         </div>
     </nav>
-    <h1>Welcome</h1>
+    <h1 id="title">Welcome</h1>
+    <script>
+        // Create a range slider
+        const slider = document.createElement('input');
+        slider.type = 'range';
+        slider.min = '100';
+        slider.max = '900';
+        slider.step = '1';
+        slider.value = '400';
+        slider.className = 'form-range slider'
+
+        // Add an event listener to the slider
+        slider.addEventListener('input', () => {
+            const fontWeight = slider.value;
+            const element = document.getElementById('title');
+            element.style.fontWeight = fontWeight;
+        });
+
+        // Add the slider to the DOM
+        document.body.appendChild(slider);
+    </script>
     <h2>To this site</h2>
     <img src="img/IMG_7332.JPG" />
     <p class="hidden">
