@@ -9,7 +9,9 @@ on:
       - '**.png'
       - '**.webp'
   push:
-      paths:
+    branches:
+      - main
+    paths:
       - '**.jpg'
       - '**.jpeg'
       - '**.png'
