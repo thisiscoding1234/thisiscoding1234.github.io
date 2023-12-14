@@ -1,5 +1,5 @@
 # thingy
-## just a simple website that does nothing
+## just a simple website that does nothing and achives nothing
 
 ```
 npm install --global http-server
