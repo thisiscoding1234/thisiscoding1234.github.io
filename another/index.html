@@ -6,26 +6,41 @@
 <html lang="en" data-bs-theme="auto">
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Website</title>
-    <meta name="description" content="just a simple website that does nothing and achives nothing" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="apple-touch-icon" sizes="180x180" href="../img/icons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="../img/icons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="../img/icons/favicon-16x16.png" />
-    <link rel="manifest" href="../img/icons/site.webmanifest" />
-    <link rel="mask-icon" href="../img/icons/safari-pinned-tab.svg" color="#ff6a00" />
-    <link rel="shortcut icon" href="../img/icons/favicon.ico" />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="msapplication-config" content="/img/icons/browserconfig.xml" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="just a simple website that does nothing and achives nothing">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/icons/favicon-16x16.png">
+    <link rel="manifest" href="../img/icons/site.webmanifest">
+    <link rel="mask-icon" href="../img/icons/safari-pinned-tab.svg" color="#ff6a00">
+    <link rel="shortcut icon" href="../img/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/img/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" defer rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-    <link rel="stylesheet" href="../style.css" />
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        document.querySelectorAll('[data-bs-toggle="tooltip"]')
+            .forEach(tooltip => {
+                new bootstrap.Tooltip(tooltip)
+            })
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
     <!--[if lt IE 7]>
     <p class="browsehappy">
         You are using an <strong>outdated</strong> browser. Please
@@ -34,10 +49,11 @@
     <![endif]-->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../"><img class="favi" src="../img/faviconweb.svg" alt="an orange cube" /></a>
+            <a class="navbar-brand" href="../"><img class="favi" src="../img/faviconweb.svg" alt="an orange cube"
+                    data-toggle="tooltip" title="Go Home" data-bs-placement="bottom"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+                aria-label="Toggle navigation" data-toggle="tooltip" title="See pages" data-bs-placement="bottom">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -113,7 +129,6 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"
         defer></script>
     <script src="https://kit.fontawesome.com/049529442a.js" crossorigin="anonymous" defer></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
 </body>
 
 </html>

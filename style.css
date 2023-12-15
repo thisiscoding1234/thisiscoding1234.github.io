@@ -115,8 +115,8 @@ img {
 
 .favi:hover {
     transition: 1s;
-    /* filter: invert(43%) sepia(80%) saturate(3306%) hue-rotate(184deg) brightness(102%) contrast(103%); */
-    /* filter: invert(36%) sepia(68%) saturate(3049%) hue-rotate(2deg) brightness(104%) contrast(104%); */
+    /* filter: invert(43%) sepia(80%) saturate(3306%) hue-rotate(184deg) brightness(102%) contrast(103%); 
+    filter: invert(36%) sepia(68%) saturate(3049%) hue-rotate(2deg) brightness(104%) contrast(104%); */
     filter: hue-rotate(180deg);
     transform: rotate(180deg);
 }
@@ -142,4 +142,9 @@ img {
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
+}
+
+
+.hiver {
+    display: none;
 }
