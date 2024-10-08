@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Under Construction">
+<Layout title="Under Construction, Another Page">
 	<main>
 		    <script>
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
@@ -22,40 +22,15 @@ import Layout from '../layouts/Layout.astro';
     </p>
     <![endif]-->
     <div class="content">
-    <h1 id="title" style="font-weight: 100;">Welcome</h1>
-    <script>
-        // Create a range slider
-        const slider = document.createElement('input');
-        slider.type = 'range';
-        slider.min = '100';
-        slider.max = '900';
-        slider.step = '1';
-        slider.value = '100';
-        slider.className = 'form-range slider'
-        // Add an event listener to the slider
-        slider.addEventListener('input', () => {
-            const fontWeight = slider.value;
-            const element = document.getElementById('title');
-            element.style.fontWeight = fontWeight;
-        });
-        // Add the slider to the DOM
-        document.body.appendChild(slider);
-    </script>
-		<h1>Under Construction</h1>
-    	<h2>To this site</h2>
+    <h1 id="title">Another Page</h1>
+    	<h2>This is a Test for this test. <i class="fa-sharp-duotone fa-solid fa-fireplace fa-bounce"></i></h2>
     	<p class="hidden">
         	If you can see this, then the gradient is probably broken. Sorry about that!
         <i class="fa-sharp fa-thin fa-face-pensive"></i>
     	</p>
         </div>
         <div class="iconic">
-        <h1>Test</h1>
-        </div>
-        <div class="iconic2">
-        <h1>Test</h1>
-        </div>
-        <div class="iconic3">
-        <h1>Test</h1>
+        <h1><i class="fa-sharp-duotone fa-solid fa-fireplace fa-bounce"></i>Test<i class="fa-sharp-duotone fa-solid fa-fireplace fa-bounce"></i></h1>
         </div>
 	</main>
 </Layout>

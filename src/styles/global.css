@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap')
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence:BLED,SCAN,XELA,YELA@0..100,-53..100,-100..100,-100..100&display=swap');
 
 @media (prefers-color-scheme: light) {
     :root {
@@ -166,4 +166,23 @@ button.btn-primary:focus{
     background-color:var(--primary) !important;
     outline: solid 1px var(--accent) !important;
     color:var(--text) !important;
+}
+
+.content{
+    width: 98%;
+    margin: 1%;
+}
+
+.iconic{
+    background-image: conic-gradient(magenta, rgb(0, 221, 255));
+}
+
+.iconic2{
+    background: conic-gradient(from 0.25turn at 50% 30%, #f69d3c, 10deg, #3f87a6);
+    /*350deg, #ebf8e1*/
+}
+
+.iconic3{
+    /* background: conic-gradient(from 3.1416rad at 10% 50%, #e66465, #9198e5); */
+    background: conic-gradient(in hsl longer hue from 3.1416rad at 10% 50%, #FF6A00, #0095FF);
 }
