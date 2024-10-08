@@ -9,6 +9,8 @@
         --secondary: #f2d5c0;
         --accent: #0879c9;
         --clear: rgba(255, 255, 255, 90);
+        /* --fa-primary-color: #38ff00;
+        --fa-secondary-color: #C700FF; */
     }
 }
 
@@ -20,9 +22,14 @@
         --secondary: #3f220d;
         --accent: #36a6f7;
         --clear: rgba(0, 0, 0, 90);
+        /* --fa-primary-color: #38ff00;
+        --fa-secondary-color: #C700FF; */
     }
 }
 
+:root{
+    --timer: 90deg;
+}
 
 html {
     width: 100%;
@@ -185,4 +192,8 @@ button.btn-primary:focus{
 .iconic3{
     /* background: conic-gradient(from 3.1416rad at 10% 50%, #e66465, #9198e5); */
     background: conic-gradient(in hsl longer hue from 3.1416rad at 10% 50%, #FF6A00, #0095FF);
+}
+
+.rebrand-head{
+    background: conic-gradient(from 0.25turn at 50% 50%, #ff8500, var(--timer), #000000);
 }
