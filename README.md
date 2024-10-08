@@ -1,11 +1,9 @@
-# thingy
-## just a simple website that does nothing and achives nothing
-
+# Thisiscoding1234.github.io
+## My Personal Site (Under Construction)
 ```
-npm install --global http-server
+npm install && npm run dev
 ```
 
-npx http-server
 
 https://realfavicongenerator.net/
 
