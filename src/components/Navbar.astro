@@ -16,16 +16,29 @@ const {  } = Astro.props;
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/page/">Page
-                            <i class="fa-sharp fa-thin fa-hexagon-image"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/another/">Another Page <i class="fa-sharp-duotone fa-solid fa-user-tie"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/thisiscoding1234"><i class="fa-brands fa-github fa-xl"></i></a>
-                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Test Pages
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item dropdown-item">
+                                <a class="nav-link" href="/page/"><i class="fa-sharp fa-thin fa-hexagon-image fa-xl"></i>| Page</a>
+                            </li>
+                            <li class="nav-item dropdown-item">
+                                <a class="nav-link" href="/another/"><i class="fa-sharp-duotone fa-solid fa-user-tie fa-xl"></i>| Another Page</a>
+                            </li>
+                        </ul>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          External Links
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item dropdown-item">
+                                <a class="nav-link" href="https://github.com/thisiscoding1234"><i class="fa-brands fa-github fa-xl"></i>| My Github</a>
+                            </li>
+                        </ul>
+                      </li>
                 </ul>
             </div>
         </div>

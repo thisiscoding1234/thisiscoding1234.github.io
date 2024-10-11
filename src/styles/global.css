@@ -92,7 +92,7 @@ img {
 @media (max-width: 992px) {
     .navbar .nav-item {
         /*top-left | top-right | bottom-right | bottom-left */
-        border-radius: 30px 30px 30px 30px;
+        border-radius: 10px 10px 10px 10px;
     }
 }
 
@@ -148,7 +148,7 @@ img {
 .navbar .nav-item {
     border: 1px solid var(--accent);
     /*top-left | top-right | bottom-right | bottom-left */
-    border-radius: 30px 30px 30px 30px;
+    border-radius: 15px 15px 15px 15px;
 }
 
 .slider {
