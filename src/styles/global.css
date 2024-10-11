@@ -197,3 +197,8 @@ button.btn-primary:focus{
 .rebrand-head{
     background: conic-gradient(from 0.25turn at 50% 50%, #ff8500, var(--timer), #000000);
 }
+
+.carousel-item > img{
+    height: 50%;
+    width: auto;
+}
