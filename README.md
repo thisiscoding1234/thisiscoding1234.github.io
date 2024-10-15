@@ -8,3 +8,5 @@ npm install && npm run dev
 https://realfavicongenerator.net/
 
 https://codepen.io/sosuke/pen/Pjoqqp
+
+https://gradient-blob.yuvalkarif.com/
