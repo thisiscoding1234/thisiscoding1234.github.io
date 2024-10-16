@@ -1,4 +1,4 @@
-import { gb, gbc } from '@yuvalkarif/gradient-blob'
+import { gbc } from '@yuvalkarif/gradient-blob'
 
 
 const { gb } = gbc({ cacheChance: 50 })
