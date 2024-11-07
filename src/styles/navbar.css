@@ -1,0 +1,60 @@
+.favi {
+    transition: 1s;
+    transition-timing-function: cubic-bezier(0.18, 0.89, 0.27, 1.55);
+    width: 40px;
+}
+
+.favi:hover {
+    transition: 1s;
+    transition-timing-function: cubic-bezier(0.18, 0.89, 0.27, 1.55);
+    /* filter: invert(43%) sepia(80%) saturate(3306%) hue-rotate(184deg) brightness(102%) contrast(103%); 
+    filter: invert(36%) sepia(68%) saturate(3049%) hue-rotate(2deg) brightness(104%) contrast(104%); */
+    filter: hue-rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.navbar {
+    margin: 0;
+    padding: 5px;
+    border: 2.5px var(--primary);
+    border-style: outset;
+    /*top-left | top-right | bottom-right | bottom-left */
+    border-radius: 0px 0px 30px 30px;
+}
+
+
+.navbar .nav-item {
+    border: 1px solid var(--accent);
+    /*top-left | top-right | bottom-right | bottom-left */
+    border-radius: 15px 15px 15px 15px;
+}
+
+
+nav{
+    transition-timing-function: cubic-bezier(0.18, 0.89, 0.27, 1.55);
+}
+
+.container-fluid{
+    transition-timing-function: cubic-bezier(0.18, 0.89, 0.27, 1.55);
+}
+
+#navbarSupportedContent{
+    transition: 0.75s;
+    transition-timing-function: cubic-bezier(0.18, 0.89, 0.27, 1.55);
+}
+
+button.btn-primary,
+button.btn-primary:active,
+button.btn-primary:visited{
+    background-color:var(--secondary) !important;
+    outline: solid 1px var(--accent) !important;
+    color:var(--text) !important;
+}
+
+
+button.btn-primary:hover,
+button.btn-primary:focus{
+    background-color:var(--primary) !important;
+    outline: solid 1px var(--accent) !important;
+    color:var(--text) !important;
+}
