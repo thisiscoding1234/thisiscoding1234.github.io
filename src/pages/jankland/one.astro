@@ -1,0 +1,81 @@
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wonderfully Janky</title>
+    <style>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #fdf3c1;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    margin-top: 2em;
+    color: #ff6363;
+    transform: rotate(-2deg);
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+section.content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    max-width: 80%;
+    margin: 2em auto;
+    transform: rotate(2deg);
+}
+
+.box {
+    background: #ffe5a9;
+    padding: 1.5em;
+    width: calc(50% - 1em);
+    box-shadow: 4px 4px 0px #ff6363;
+    transform: rotate(-1deg);
+    transition: transform 0.3s ease;
+}
+
+.box:hover {
+    transform: rotate(3deg) scale(1.05);
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.4em;
+}
+</style>
+</head>
+<body>
+    <header>
+        <h1>Wonderfully Janky</h1>
+        <p>A celebration of controlled chaos!</p>
+    </header>
+
+    <section class="content">
+        <div class="box">
+            <h2>Welcome to Jank</h2>
+            <p>Where things are beautifully imperfect, purposefully misaligned, and charmingly quirky.</p>
+        </div>
+        <div class="box">
+            <h2>Embrace the Mess</h2>
+            <p>Why fit in when you can stand out? Wobble, jump, and let things go a bit wild.</p>
+        </div>
+    </section>
+
+
+</body>
+</html>

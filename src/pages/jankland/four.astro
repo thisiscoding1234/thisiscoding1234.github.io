@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wonderfully Janky</title>
+    <style>
+        body {
+            background: linear-gradient(45deg, #f8c291, #6a89cc, #82ccdd);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        h1 {
+            color: #3d3d3d;
+            font-size: 4rem;
+            margin: 10px auto;
+            text-align: center;
+            animation: wobble 2s infinite ease-in-out;
+        }
+        @keyframes wobble {
+            0%, 100% { transform: rotate(-2deg); }
+            50% { transform: rotate(2deg); }
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            padding: 20px;
+        }
+        .box {
+            background: rgba(255, 255, 255, 0.8);
+            border: 3px dashed #000;
+            box-shadow: 5px 5px 0 #000;
+            width: calc(25% + 50px);
+            padding: 15px;
+            margin: 10px;
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+        .box:hover {
+            transform: rotate(-5deg) scale(1.1);
+        }
+        p {
+            font-size: 1.2rem;
+            color: #555;
+            margin: 10px 0;
+        }
+        footer {
+            text-align: center;
+            background-color: #3d3d3d;
+            color: #fff;
+            padding: 10px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Wonderfully Janky</h1>
+    <div class="container">
+        <div class="box">
+            <p>Box 1: The lines don’t line up, but that’s the charm!</p>
+        </div>
+        <div class="box">
+            <p>Box 2: Sometimes it wobbles when you hover.</p>
+        </div>
+        <div class="box">
+            <p>Box 3: Text that’s just a little too big.</p>
+        </div>
+        <div class="box">
+            <p>Box 4: Pure chaos. But isn’t it lovely?</p>
+        </div>
+    </div>
+    <footer>
+        Built with intentional jank. Love it or leave it.
+    </footer>
+</body>
+</html>
