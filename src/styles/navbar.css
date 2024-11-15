@@ -16,15 +16,14 @@
 .navbar {
     margin: 0;
     padding: 5px;
-    border: 2.5px var(--primary);
-    border-style: outset;
-    /*top-left | top-right | bottom-right | bottom-left */
+    border: 1px var(--text) solid;
     border-radius: 0px 0px 30px 30px;
+    background-color: var(--background) !important;
 }
 
 
 .navbar .nav-item {
-    border: 1px solid var(--accent);
+    border: 1px solid var(--secondary);
     /*top-left | top-right | bottom-right | bottom-left */
     border-radius: 15px 15px 15px 15px;
 }

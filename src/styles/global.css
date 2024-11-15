@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence:BLED,SCAN,XELA,YELA@0..100,-53..100,-100..100,-100..100&display=swap');
 
+/* https://www.realtimecolors.com/?colors=000000-fff7f2-ff6a00-00a4f0-ffa890&fonts=Outfit-Raleway */
 @media (prefers-color-scheme: light) {
     :root {
-        --text: #2c1302;
-        --background: #fef4ec;
-        --primary: #ff8e3d;
-        --secondary: #f2d5c0;
-        --accent: #0879c9;
+        --text: #000000;
+        --background: #fff7f2;
+        --primary: #ff6a00;
+        --secondary: #00a4f0;
+        --accent: #ffa890;
         --clear: rgba(255, 255, 255, 90);
         /* --fa-primary-color: #38ff00;
         --fa-secondary-color: #C700FF; */
@@ -16,11 +17,11 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --text: #fde4d3;
-        --background: #130901;
-        --primary: #c25100;
-        --secondary: #3f220d;
-        --accent: #36a6f7;
+        --text: #ffffff;
+         --background: #0f0600;
+         --primary: #ff6a00;
+         --secondary: #0fb3ff;
+         --accent: #701800;
         --clear: rgba(0, 0, 0, 90);
         /* --fa-primary-color: #38ff00;
         --fa-secondary-color: #C700FF; */
@@ -39,16 +40,7 @@ html {
 body {
     background-image: var(--background);
     font-family: "Outfit", sans-serif;
-    background-image: -moz-linear-gradient(315deg,
-            var(--primary) 0%,
-            var(--background) 100%);
-    background-image: -webkit-linear-gradient(135deg,
-            var(--primary) 0%,
-            var(--background) 100%);
-    background-image: linear-gradient(315deg,
-            var(--primary) 0%,
-            var(--background) 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#ff6a00", endColorstr="#ffffff", GradientType=1);
+    background-color: var(--background);
     background-size: cover;
     height: 100%;
     margin: 0;
@@ -61,8 +53,13 @@ h1 {
     font-family: "Raleway", sans-serif;
 }
 
-.title {
+#title {
     font-weight: 100;
+    animation: weight 2s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    background-image: linear-gradient(var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: rgba(0, 0, 0, 0);
 }
 
 h2 {
@@ -77,16 +74,6 @@ img {
     width: 50%;
     margin-left: 25%;
     margin-right: 25%;
-}
-
-.hidden {
-    display: none;
-}
-
-@media (max-width: 160px) {
-    .hidden {
-        display: block;
-    }
 }
 
 @media (max-width: 992px) {
@@ -105,20 +92,6 @@ img {
         width: 90%;
         margin-left: 5%;
         margin-right: 5%;
-    }
-
-    body {
-        background-image: var(--background);
-        background-image: -moz-linear-gradient(270deg,
-                var(--secondary) 0%,
-                var(--background) 100%);
-        background-image: -webkit-linear-gradient(180deg,
-                var(--secondary) 0%,
-                var(--background) 100%);
-        background-image: linear-gradient(270deg,
-                var(--secondary) 0%,
-                var(--background) 100%);
-        filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#ff6a00", endColorstr="#ffffff", GradientType=1);
     }
 }
 
@@ -155,4 +128,18 @@ img {
 .carousel-item > img{
     height: 50%;
     width: auto;
+}
+
+@keyframes weight {
+    0% {
+        font-weight: 100;
+    }
+
+    50% {
+        font-weight: 900;
+    }
+
+    100% {
+        font-weight: 100;
+    }
 }
