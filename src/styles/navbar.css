@@ -19,6 +19,7 @@
     border: 1px var(--text) solid;
     border-radius: 0px 0px 30px 30px;
     background-color: var(--background) !important;
+    width: 100%;
 }
 
 
