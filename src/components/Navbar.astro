@@ -5,6 +5,7 @@ interface Props {
 const {  } = Astro.props;
 import '../styles/navbar.css'
 import '../styles/global.css'
+import ModeButton from './ModeButton.astro';
 ---
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -75,6 +76,9 @@ import '../styles/global.css'
                                 <a class="nav-link" href="/jankland/four/"><i class="fa-sharp-duotone fa-solid fa-microchip-ai fa-xl"></i>| Jank4</a>
                             </li>
                         </ul>
+                    </li>
+                    <li class="nav-item">
+                        <ModeButton>
                     </li>
                 </ul>
             </div>

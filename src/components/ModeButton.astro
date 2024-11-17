@@ -1,0 +1,44 @@
+---
+---
+<button
+    class="btn"
+    id="theme-toggle"
+    title="Toggles light & dark"
+    aria-label="auto"
+    aria-live="polite"
+>
+<i class="fa-duotone fa-solid fa-circle-half-stroke"></i>
+</button>
+
+<script>
+    const theme = (() => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+            return localStorage.getItem('theme');
+        }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark';
+        }
+        return 'light';
+    })();
+
+    if (theme === 'light') {
+        document.documentElement.setAttribute('data-bs-theme', 'light');
+    } else {
+        document.documentElement.setAttribute('data-bs-theme', 'dark');
+    }
+
+    window.localStorage.setItem('theme', theme);
+
+    const handleToggleClick = () => {
+        const element = document.documentElement;
+        const isDark = element.getAttribute('data-bs-theme') === 'dark';
+        const newTheme = isDark ? 'light' : 'dark';
+        
+        element.setAttribute('data-bs-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    };
+
+    document
+        .getElementById('theme-toggle')
+        ?.addEventListener('click', handleToggleClick);
+</script>
