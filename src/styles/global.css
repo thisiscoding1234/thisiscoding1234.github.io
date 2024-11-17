@@ -43,7 +43,7 @@ body {
     padding: 0px;
     color: var(--text);
     width: 100%;
-    animation: enter 2s forwards cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    animation: enter 2s forwards cubic-bezier(0.34, 1.56, 0.9, 1);
 }
 
 h1 {
