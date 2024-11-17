@@ -35,6 +35,7 @@
 html {
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 body {
@@ -47,6 +48,7 @@ body {
     padding: 0px;
     color: var(--text);
     width: 100%;
+    animation: enter 2s forwards ease-in-out;
 }
 
 h1 {
@@ -55,7 +57,7 @@ h1 {
 
 #title {
     font-weight: 100;
-    animation: weight 2s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    animation: weight 2s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55) 2s;
     background-image: linear-gradient(var(--primary), var(--accent));
     -webkit-background-clip: text;
     background-clip: text;
@@ -67,16 +69,16 @@ h1 {
 }
 
 #subtitle{
-    animation: weight2 10s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+    animation: weight2 10s cubic-bezier(0.46, 0.03, 0.52, 0.96) 2s;
 }
 
 h2 {
-    font-weight: 600;
+    font-weight: 700;
     color: var(--secondary);
 }
 
 h3{
-    font-weight: 300;
+    font-weight: 800;
     color: var(--accent);
 }
 
@@ -169,5 +171,17 @@ img {
 
     100% {
         font-weight: 900;
+    }
+}
+
+@keyframes enter {
+    0% {
+        opacity: 0;
+        transform: translateY(50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
