@@ -10,7 +10,8 @@
     padding: 10px;
     transition: 1s cubic-bezier(0.18, 0.89, 0.27, 1.55);
     text-decoration: none;
-    color: var(--text)
+    color: var(--text);
+    background-color: var(--background);
 }
 
 .cardy > img {
@@ -55,4 +56,25 @@
 
 .cardy:hover > p {
     margin: 10px;
+}
+
+.carousel-item.active {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+.carousel-inner{
+    width: 75%;
+    margin-left: 12.5%;
+    height: fit-content;
+    padding-bottom: 5%;
+    padding-top: 5%;
+}
+
+#carouselExample{
+    background-color: var(--backdrop);
 }

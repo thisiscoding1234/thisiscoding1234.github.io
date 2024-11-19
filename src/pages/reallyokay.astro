@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PersonCard from '../components/PersonCard.astro'
 import '../styles/grid.css';
 ---
 
@@ -15,18 +16,83 @@ import '../styles/grid.css';
     <h1 id="title">A celebration of my friends that follow me!</h1>
     <h2>You are so nice! <i class="fa-thin fa-user-tie fa-bounce"></i></h2>
     <h3><i class="fa-thin fa-user-tie fa-spin"></i>Let us Celebrate them! (and this will never be programatic, beacuse of the filtering!)<i class="fa-thin fa-user-tie fa-spin fa-spin-reverse"></i></h3>
-        <div>
-        <main>
-        <figure class=""><img src="/img/yayalso/F1.PNG" class="image"></figure>
-        <figure class=""><img src="/img/yayalso/F2.PNG" class="image"></figure>
-        <figure class=""><img src="/img/yayalso/F3.PNG" class="image"></figure>
-        <figure class=""><img src="/img/yayalso/F4.PNG" class="image"></figure>
-        <figure class=""><img src="/img/yayalso/F5.PNG" class="image"></figure>
-        <figure class=""><img src="/img/yayalso/F6.PNG" class="image"></figure>
-        <figure class=""><img src="/img/yayalso/F7.PNG" class="image"></figure>
-        <figure class=""><img src="/img/yayalso/F8.PNG" class="image"></figure>
-        </main>
+
+<div id="carouselExample" class="carousel slide">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+            <PersonCard
+            username="werdl"
+            description="Rust, C, V, Python, Linux, Arduino, Bash, Debian, electronics, webdev (occasionally)"
+            link="https://github.com/werdl"
+            >
+            </PersonCard>
+
+            <PersonCard
+            username="2010person"
+            description="I am a GCSE Computer Science student."
+            link="https://github.com/2010person"
+            >
+            </PersonCard>
+
+            <PersonCard
+            username="Yeetface513"
+            description="Hi if your reading this feel free to steal my code(only if you make yours open source) i guess i make coding stuff and mess about"
+            link="https://github.com/Yeetface513"
+            >
+            </PersonCard>
+
+            <PersonCard
+            username="freedomOilHunter"
+            description="I am hunting for oil (MURICAAAAAA)"
+            link="https://github.com/freedomOilHunter"
+            >
+            </PersonCard>
+
         </div>
+        <div class="carousel-item">
+            <PersonCard
+            username="rocketman12435"
+            description="Hi, I'm Rocketman12435 and I am a programmer mostly interested in Python!! [From Profile README]"
+            link="https://github.com/rocketman12435"
+            >
+            </PersonCard>
+
+            <PersonCard
+            username="Neodx2"
+            description="Hi, I'm Neo"
+            link="https://github.com/Neodx2"
+            >
+            </PersonCard>
+
+            <PersonCard
+            username="uimaxbai"
+            description="Web developer (HTML, JS, CSS) who likes to do a bit of PHP and Python (and maybe C if I can be bothered)."
+            link="https://github.com/uimaxbai"
+            >
+            </PersonCard>
+
+            <PersonCard
+            username="SadnessMaximus"
+            description="[No Profile README or About Description]"
+            link="https://github.com/SadnessMaximus"
+            >
+            </PersonCard>
+            </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
     </div>
 	</main>
 </Layout>

@@ -9,6 +9,7 @@
         --secondary: #00a4f0;
         --accent: #ffa890;
         --clear: rgba(255, 255, 255, 90);
+        --backdrop: rgba(0, 0, 0, 0.1);
         /* --fa-primary-color: #38ff00;
         --fa-secondary-color: #C700FF; */
 }
@@ -20,6 +21,7 @@
         --secondary: #0fb3ff;
         --accent: #701800;
         --clear: rgba(0, 0, 0, 90);
+        --backdrop: rgba(255, 255, 255, 0.1);
         /* --fa-primary-color: #38ff00;
         --fa-secondary-color: #C700FF; */
 }
