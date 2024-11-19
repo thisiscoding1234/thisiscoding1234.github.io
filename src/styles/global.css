@@ -43,7 +43,7 @@ body {
     padding: 0px;
     color: var(--text);
     width: 100%;
-    animation: enter 2s forwards cubic-bezier(0.34, 1.56, 0.9, 1);
+    animation: enter 1s forwards ease-in-out;
 }
 
 h1 {
@@ -52,7 +52,7 @@ h1 {
 
 #title {
     font-weight: 100;
-    animation: weight 2s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55) 2s;
+    animation: weight 2s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55) 1s;
     background-image: linear-gradient(var(--primary), var(--accent));
     -webkit-background-clip: text;
     background-clip: text;
@@ -64,7 +64,7 @@ h1 {
 }
 
 #subtitle{
-    animation: weight2 10s cubic-bezier(0.46, 0.03, 0.52, 0.96) 2s;
+    animation: weight2 10s cubic-bezier(0.46, 0.03, 0.52, 0.96) 1s;
 }
 
 h2 {

@@ -1,0 +1,58 @@
+.cardy{
+    width: 250px;
+    border: var(--text) 2px solid;
+    margin: auto;
+    border-radius: 50px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    transition: 1s cubic-bezier(0.18, 0.89, 0.27, 1.55);
+    text-decoration: none;
+    color: var(--text)
+}
+
+.cardy > img {
+    height: 100px;
+    width: 100px;
+    border: var(--text) 1px solid;
+    border-radius: 12.5px;
+    margin: 10px;
+}
+
+.cardy > h3 {
+    background-image: linear-gradient(90deg, red, orange, green, blue, purple);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: rgba(0, 0, 0, 0);
+    margin: 10px;
+    background-size: 200%;
+    background-position: 0%;
+    transition: 1s cubic-bezier(0.18, 0.89, 0.27, 1.55);
+    line-break: anywhere;
+}
+
+.cardy > p {
+    margin: 10px;
+    color: var(--accent);
+}
+
+.cardy:hover {
+    transform: translateY(20%) rotate3d(-1, 1, 0, 45deg);
+    transition: 1s cubic-bezier(0.18, 0.89, 0.27, 1.55);
+}
+
+.cardy:hover > img {
+    margin: 10px;
+}
+
+.cardy:hover > h3 {
+    margin: 10px;
+    background-position: 100%;
+    transition: 1s cubic-bezier(0.18, 0.89, 0.27, 1.55);
+}
+
+.cardy:hover > p {
+    margin: 10px;
+}

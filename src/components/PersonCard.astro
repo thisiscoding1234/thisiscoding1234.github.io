@@ -1,0 +1,20 @@
+---
+interface Props {
+  username: string;
+  description: string;
+  link: string;
+}
+
+const { username, description, link,} = Astro.props;
+
+var img = link + ".png"
+
+import '../styles/card.css'
+import '../styles/global.css'
+---
+
+<a href={link} class="cardy">
+    <img src={img} alt={username} />
+    <h3>{username}</h3>
+    <p>{description}</p>
+</a>

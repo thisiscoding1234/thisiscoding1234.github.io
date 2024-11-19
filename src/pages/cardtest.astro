@@ -1,0 +1,23 @@
+---
+import Testout from "../layouts/Testout.astro";
+import PersonCard from "../components/PersonCard.astro"
+---
+
+<Testout title="CardThing">
+<main>
+    <!--[if lt IE 7]>
+    <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+    </p>
+    <![endif]-->
+    <div class="content">
+   <PersonCard
+   username="werdl"
+   description="Rust, C, V, Python, Linux, Arduino, Bash, Debian, electronics, webdev (occasionally)"
+   link="https://github.com/werdl"
+   >
+</PersonCard>
+</div>
+</main>
+</Testout>
