@@ -30,31 +30,31 @@
 }
 
 
-nav{
+nav {
     transition-timing-function: cubic-bezier(0.18, 0.89, 0.27, 1.55);
 }
 
-.container-fluid{
+.container-fluid {
     transition-timing-function: cubic-bezier(0.18, 0.89, 0.27, 1.55);
 }
 
-#navbarSupportedContent{
+#navbarSupportedContent {
     transition: 0.75s;
     transition-timing-function: cubic-bezier(0.18, 0.89, 0.27, 1.55);
 }
 
 button.btn-primary,
 button.btn-primary:active,
-button.btn-primary:visited{
-    background-color:var(--secondary) !important;
+button.btn-primary:visited {
+    background-color: var(--secondary) !important;
     outline: solid 1px var(--accent) !important;
-    color:var(--text) !important;
+    color: var(--text) !important;
 }
 
 
 button.btn-primary:hover,
-button.btn-primary:focus{
-    background-color:var(--primary) !important;
+button.btn-primary:focus {
+    background-color: var(--primary) !important;
     outline: solid 1px var(--accent) !important;
-    color:var(--text) !important;
+    color: var(--text) !important;
 }

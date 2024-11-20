@@ -3,30 +3,30 @@
 
 /* https://www.realtimecolors.com/?colors=000000-fff7f2-ff6a00-00a4f0-ffa890&fonts=Outfit-Raleway */
 :root[data-bs-theme="light"] {
-        --text: #000000;
-        --background: #fff7f2;
-        --primary: #ff6a00;
-        --secondary: #00a4f0;
-        --accent: #ffa890;
-        --clear: rgba(255, 255, 255, 90);
-        --backdrop: rgba(0, 0, 0, 0.1);
-        /* --fa-primary-color: #38ff00;
+    --text: #000000;
+    --background: #fff7f2;
+    --primary: #ff6a00;
+    --secondary: #00a4f0;
+    --accent: #ffa890;
+    --clear: rgba(255, 255, 255, 90);
+    --backdrop: rgba(0, 0, 0, 0.1);
+    /* --fa-primary-color: #38ff00;
         --fa-secondary-color: #C700FF; */
 }
 
 :root[data-bs-theme="dark"] {
-        --text: #ffffff;
-        --background: #0f0600;
-        --primary: #ff6a00;
-        --secondary: #0fb3ff;
-        --accent: #701800;
-        --clear: rgba(0, 0, 0, 90);
-        --backdrop: rgba(255, 255, 255, 0.1);
-        /* --fa-primary-color: #38ff00;
+    --text: #ffffff;
+    --background: #0f0600;
+    --primary: #ff6a00;
+    --secondary: #0fb3ff;
+    --accent: #701800;
+    --clear: rgba(0, 0, 0, 90);
+    --backdrop: rgba(255, 255, 255, 0.1);
+    /* --fa-primary-color: #38ff00;
         --fa-secondary-color: #C700FF; */
 }
 
-:root{
+:root {
     --timer: 90deg;
 }
 
@@ -61,11 +61,11 @@ h1 {
     -webkit-text-fill-color: rgba(0, 0, 0, 0);
 }
 
-#title:hover{
+#title:hover {
     animation-play-state: paused;
 }
 
-#subtitle{
+#subtitle {
     animation: weight2 10s cubic-bezier(0.46, 0.03, 0.52, 0.96) 1s;
 }
 
@@ -74,7 +74,7 @@ h2 {
     color: var(--secondary);
 }
 
-h3{
+h3 {
     font-weight: 800;
     color: var(--accent);
 }
@@ -115,30 +115,30 @@ img {
     margin-right: 10%;
 }
 
-.content{
+.content {
     width: 98%;
     margin: 1%;
 }
 
-.iconic{
+.iconic {
     background-image: conic-gradient(magenta, rgb(0, 221, 255));
 }
 
-.iconic2{
+.iconic2 {
     background: conic-gradient(from 0.25turn at 50% 30%, #f69d3c, 10deg, #3f87a6);
     /*350deg, #ebf8e1*/
 }
 
-.iconic3{
+.iconic3 {
     /* background: conic-gradient(from 3.1416rad at 10% 50%, #e66465, #9198e5); */
     background: conic-gradient(in hsl longer hue from 3.1416rad at 10% 50%, #FF6A00, #0095FF);
 }
 
-.rebrand-head{
+.rebrand-head {
     background: conic-gradient(from 0.25turn at 50% 50%, #ff8500, var(--timer), #000000);
 }
 
-.carousel-item > img{
+.carousel-item>img {
     height: 50%;
     width: auto;
 }

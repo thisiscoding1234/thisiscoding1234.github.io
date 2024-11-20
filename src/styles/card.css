@@ -1,4 +1,4 @@
-.cardy{
+.cardy {
     width: 250px;
     border: var(--text) 2px solid;
     margin: auto;
@@ -14,7 +14,7 @@
     background-color: var(--background);
 }
 
-.cardy > img {
+.cardy>img {
     height: 100px;
     width: 100px;
     border: var(--text) 1px solid;
@@ -22,7 +22,7 @@
     margin: 10px;
 }
 
-.cardy > h3 {
+.cardy>h3 {
     background-image: linear-gradient(90deg, red, orange, green, blue, purple);
     -webkit-background-clip: text;
     background-clip: text;
@@ -34,7 +34,7 @@
     line-break: anywhere;
 }
 
-.cardy > p {
+.cardy>p {
     margin: 10px;
     color: var(--accent);
 }
@@ -44,17 +44,17 @@
     transition: 1s cubic-bezier(0.18, 0.89, 0.27, 1.55);
 }
 
-.cardy:hover > img {
+.cardy:hover>img {
     margin: 10px;
 }
 
-.cardy:hover > h3 {
+.cardy:hover>h3 {
     margin: 10px;
     background-position: 100%;
     transition: 1s cubic-bezier(0.18, 0.89, 0.27, 1.55);
 }
 
-.cardy:hover > p {
+.cardy:hover>p {
     margin: 10px;
 }
 
@@ -67,7 +67,7 @@
     align-items: center;
 }
 
-.carousel-inner{
+.carousel-inner {
     width: 75%;
     margin-left: 12.5%;
     height: fit-content;
@@ -75,6 +75,6 @@
     padding-top: 5%;
 }
 
-#carouselExample{
+#carouselExample {
     background-color: var(--backdrop);
 }
