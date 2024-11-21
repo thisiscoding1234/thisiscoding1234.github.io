@@ -78,3 +78,26 @@
 #carouselExample {
     background-color: var(--backdrop);
 }
+
+@media screen and (max-width: 768px) {
+    .carousel-item.active {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .carousel-inner {
+        width: 75%;
+        margin-left: 12.5%;
+        height: fit-content;
+        padding-bottom: 5%;
+        padding-top: 5%;
+    }
+    
+    #carouselExample {
+        background-color: var(--backdrop);
+    }
+}
