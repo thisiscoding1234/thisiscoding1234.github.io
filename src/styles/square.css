@@ -1,0 +1,25 @@
+.square{
+    background: var(--primary);
+    outline: var(--text) 1px solid;
+    height: 300px;
+    aspect-ratio: 1;
+    position: fixed;
+    z-index: -9999;
+    mix-blend-mode: lighten;
+}
+
+.t1{
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.t2{
+    right: 50%;
+    bottom: 50%;
+    transform: translate(50%, 50%);
+}
+
+.content{
+    overflow: hidden;
+}
