@@ -1,11 +1,12 @@
 .square{
     background: var(--primary);
     outline: var(--text) 1px solid;
-    height: 300px;
+    height: 20%;
     aspect-ratio: 1;
     position: fixed;
     z-index: -9999;
     mix-blend-mode: lighten;
+    border-radius: 25px;
 }
 
 .t1{

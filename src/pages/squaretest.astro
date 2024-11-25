@@ -28,45 +28,49 @@ import Testout from "../layouts/Testout.astro";
 
                 document.body.onpointermove = event => {
                     const { clientX, clientY } = event;
-                    const a1 = clientX * 0.25;
-                    const a2 = clientY * 0.25;
-                    const a3 = clientX * 0.5;
-                    const a4 = clientY * 0.5;
-                    const a5 = clientX * 0.75;
-                    const a6 = clientY * 0.75;
+                    const admod = 25;
+                    const mumod = 0.25;
+                    const num1 = (clientX + admod);
+                    const num2 = (clientY + admod);
+                    const num3 = (clientX + admod) * (mumod);
+                    const num4 = (clientY + admod) * (mumod);
+                    const num5 = (clientX + admod) * (mumod * 2);
+                    const num6 = (clientY + admod) * (mumod * 2);
+                    const num7 = (clientX + admod) * (mumod * 3);
+                    const num8 = (clientY + admod) * (mumod * 3);
 
                     s1.animate({
-                        left: `${clientX}px`,
-                        top: `${clientY}px`
-                    }, {duration: 1000, fill: "forwards", easing: "ease-in-out"})
+                        left: `${num1}px`,
+                        top: `${num2}px`
+                    }, {duration: 1000, fill: "forwards"})
                     s2.animate({
-                        left: `${a1}px`,
-                        top: `${a2}px`
-                    }, {duration: 1000, fill: "forwards", easing: "ease-in-out"})
+                        left: `${num3}px`,
+                        top: `${num4}px`
+                    }, {duration: 1000, fill: "forwards"})
                     s3.animate({
-                        left: `${a3}px`,
-                        top: `${a4}px`
-                    }, {duration: 1000, fill: "forwards", easing: "ease-in-out"})
+                        left: `${num5}px`,
+                        top: `${num6}px`
+                    }, {duration: 1000, fill: "forwards"})
                     s4.animate({
-                        left: `${a5}px`,
-                        top: `${a6}px`
-                    }, {duration: 1000, fill: "forwards", easing: "ease-in-out"})
+                        left: `${num7}px`,
+                        top: `${num8}px`
+                    }, {duration: 1000, fill: "forwards"})
                     s5.animate({
-                        right: `${clientX}px`,
-                        bottom: `${clientY}px`
-                    }, {duration: 1000, fill: "forwards", easing: "ease-in-out"})
+                        right: `${num1}px`,
+                        bottom: `${num2}px`
+                    }, {duration: 1000, fill: "forwards"})
                     s6.animate({
-                        right: `${a1}px`,
-                        bottom: `${a2}px`
-                    }, {duration: 1000, fill: "forwards", easing: "ease-in-out"})
+                        right: `${num3}px`,
+                        bottom: `${num4}px`
+                    }, {duration: 1000, fill: "forwards"})
                     s7.animate({
-                        right: `${a3}px`,
-                        bottom: `${a4}px`
-                    }, {duration: 1000, fill: "forwards", easing: "ease-in-out"})
+                        right: `${num5}px`,
+                        bottom: `${num6}px`
+                    }, {duration: 1000, fill: "forwards"})
                     s8.animate({
-                        right: `${a5}px`,
-                        bottom: `${a6}px`
-                    }, {duration: 1000, fill: "forwards", easing: "ease-in-out"})
+                        right: `${num7}px`,
+                        bottom: `${num8}px`
+                    }, {duration: 1000, fill: "forwards"})
 
                 }
             </script>
