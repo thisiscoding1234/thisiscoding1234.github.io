@@ -25,54 +25,121 @@ import Testout from "../layouts/Testout.astro";
                 const s6 = document.getElementById("s6");
                 const s7 = document.getElementById("s7");
                 const s8 = document.getElementById("s8");
+                let state = 0;
 
-                document.body.onpointermove = event => {
+                document.body.onpointermove = (event) => {
                     const { clientX, clientY } = event;
                     const admod = 25;
                     const mumod = 0.25;
-                    const num1 = (clientX + admod);
-                    const num2 = (clientY + admod);
-                    const num3 = (clientX + admod) * (mumod);
-                    const num4 = (clientY + admod) * (mumod);
+                    const num1 = clientX + admod;
+                    const num2 = clientY + admod;
+                    const num3 = (clientX + admod) * mumod;
+                    const num4 = (clientY + admod) * mumod;
                     const num5 = (clientX + admod) * (mumod * 2);
                     const num6 = (clientY + admod) * (mumod * 2);
                     const num7 = (clientX + admod) * (mumod * 3);
                     const num8 = (clientY + admod) * (mumod * 3);
 
-                    s1.animate({
-                        left: `${num1}px`,
-                        top: `${num2}px`
-                    }, {duration: 1000, fill: "forwards"})
-                    s2.animate({
-                        left: `${num3}px`,
-                        top: `${num4}px`
-                    }, {duration: 1000, fill: "forwards"})
-                    s3.animate({
-                        left: `${num5}px`,
-                        top: `${num6}px`
-                    }, {duration: 1000, fill: "forwards"})
-                    s4.animate({
-                        left: `${num7}px`,
-                        top: `${num8}px`
-                    }, {duration: 1000, fill: "forwards"})
-                    s5.animate({
-                        right: `${num1}px`,
-                        bottom: `${num2}px`
-                    }, {duration: 1000, fill: "forwards"})
-                    s6.animate({
-                        right: `${num3}px`,
-                        bottom: `${num4}px`
-                    }, {duration: 1000, fill: "forwards"})
-                    s7.animate({
-                        right: `${num5}px`,
-                        bottom: `${num6}px`
-                    }, {duration: 1000, fill: "forwards"})
-                    s8.animate({
-                        right: `${num7}px`,
-                        bottom: `${num8}px`
-                    }, {duration: 1000, fill: "forwards"})
-
+                    s1.animate(
+                        {
+                            left: `${num1}px`,
+                            top: `${num2}px`,
+                        },
+                        { duration: 1000, fill: "forwards" },
+                    );
+                    s2.animate(
+                        {
+                            left: `${num3}px`,
+                            top: `${num4}px`,
+                        },
+                        { duration: 1000, fill: "forwards" },
+                    );
+                    s3.animate(
+                        {
+                            left: `${num5}px`,
+                            top: `${num6}px`,
+                        },
+                        { duration: 1000, fill: "forwards" },
+                    );
+                    s4.animate(
+                        {
+                            left: `${num7}px`,
+                            top: `${num8}px`,
+                        },
+                        { duration: 1000, fill: "forwards" },
+                    );
+                    s5.animate(
+                        {
+                            right: `${num1}px`,
+                            bottom: `${num2}px`,
+                        },
+                        { duration: 1000, fill: "forwards" },
+                    );
+                    s6.animate(
+                        {
+                            right: `${num3}px`,
+                            bottom: `${num4}px`,
+                        },
+                        { duration: 1000, fill: "forwards" },
+                    );
+                    s7.animate(
+                        {
+                            right: `${num5}px`,
+                            bottom: `${num6}px`,
+                        },
+                        { duration: 1000, fill: "forwards" },
+                    );
+                    s8.animate(
+                        {
+                            right: `${num7}px`,
+                            bottom: `${num8}px`,
+                        },
+                        { duration: 1000, fill: "forwards" },
+                    );
+                };
+                function clicky() {
+                    if ((state == 0)) {
+                        s1.style.backgroundColor = "var(--secondary)";
+                        s2.style.backgroundColor = "var(--secondary)";
+                        s3.style.backgroundColor = "var(--secondary)";
+                        s4.style.backgroundColor = "var(--secondary)";
+                        s5.style.backgroundColor = "var(--secondary)";
+                        s6.style.backgroundColor = "var(--secondary)";
+                        s7.style.backgroundColor = "var(--secondary)";
+                        s8.style.backgroundColor = "var(--secondary)";
+                        state = 1;
+                    } else if ((state == 1)) {
+                        s1.style.backgroundColor = "var(--accent)";
+                        s2.style.backgroundColor = "var(--accent)";
+                        s3.style.backgroundColor = "var(--accent)";
+                        s4.style.backgroundColor = "var(--accent)";
+                        s5.style.backgroundColor = "var(--accent)";
+                        s6.style.backgroundColor = "var(--accent)";
+                        s7.style.backgroundColor = "var(--accent)";
+                        s8.style.backgroundColor = "var(--accent)";
+                        state = 2;
+                    } else if ((state == 2)) {
+                        s1.style.backgroundColor = "var(--primary)";
+                        s2.style.backgroundColor = "var(--primary)";
+                        s3.style.backgroundColor = "var(--primary)";
+                        s4.style.backgroundColor = "var(--primary)";
+                        s5.style.backgroundColor = "var(--primary)";
+                        s6.style.backgroundColor = "var(--primary)";
+                        s7.style.backgroundColor = "var(--primary)";
+                        s8.style.backgroundColor = "var(--primary)";
+                        state = 0;
+                    } else {
+                        alert(state);
+                    }
                 }
+                s1.addEventListener("click", clicky);
+                s2.addEventListener("click", clicky);
+                s3.addEventListener("click", clicky);
+                s4.addEventListener("click", clicky);
+                s5.addEventListener("click", clicky);
+                s6.addEventListener("click", clicky);
+                s7.addEventListener("click", clicky);
+                s8.addEventListener("click", clicky);
             </script>
         </main>
     </div>
