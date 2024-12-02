@@ -7,6 +7,7 @@
     z-index: -9999;
     mix-blend-mode: lighten;
     border-radius: 25px;
+    transition: 1s ease-in-out;
 }
 
 .t1{

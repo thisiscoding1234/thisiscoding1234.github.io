@@ -10,6 +10,8 @@
     --accent: #2effd5;
     --clear: rgba(255, 255, 255, 90);
     --backdrop: rgba(0, 0, 0, 0.1);
+    --fa-primary-color: var(--primary);
+    --fa-secondary-color: var(--secondary);
 }
 
 :root[data-bs-theme="dark"] {
@@ -20,13 +22,13 @@
     --accent: #00d1a7;
     --clear: rgba(0, 0, 0, 90);
     --backdrop: rgba(255, 255, 255, 0.1);
+        --fa-primary-color: var(--secondary);
+    --fa-secondary-color: var(--primary);
 }
 
 :root {
     --timer: 90deg;
     --fa-secondary-opacity: 1;
-    --fa-primary-color: var(--primary);
-    --fa-secondary-color: var(--secondary);
 }
 
 html {
@@ -45,6 +47,7 @@ body {
     color: var(--text);
     width: 100%;
     animation: enter 1s forwards ease-in-out;
+    transition: 0.5s;
 }
 
 h1 {
