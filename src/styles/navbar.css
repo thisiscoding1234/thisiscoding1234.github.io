@@ -24,7 +24,7 @@
 
 
 .navbar .nav-item {
-    border: 1px solid var(--secondary);
+    border: 1px solid var(--accent);
     /*top-left | top-right | bottom-right | bottom-left */
     border-radius: 15px 15px 15px 15px;
 }

@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence:BLED,SCAN,XELA,YELA@0..100,-53..100,-100..100,-100..100&display=swap');
 
-/* https://www.realtimecolors.com/?colors=000000-fff6f0-ff6a00-2effd5-00a4f0&fonts=Outfit-Raleway */
+/* https://www.realtimecolors.com/?colors=000000-fff6f0-ff6a00-ffa600-66bfff&fonts=Outfit-Raleway */
 :root[data-bs-theme="light"] {
     --text: #000000;
-    --background: #fff7f2;
+    --background: #fff6f0;
     --primary: #ff6a00;
-    --secondary: #00a4f0;
-    --accent: #2effd5;
+    --secondary: #ffa600;
+    --accent: #66bfff;
     --clear: rgba(255, 255, 255, 90);
     --backdrop: rgba(0, 0, 0, 0.1);
     --fa-primary-color: var(--primary);
@@ -18,17 +18,21 @@
     --text: #ffffff;
     --background: #0f0600;
     --primary: #ff6a00;
-    --secondary: #0fb3ff;
-    --accent: #00d1a7;
+    --secondary: #ffa600;
+    --accent: #005999;
     --clear: rgba(0, 0, 0, 90);
     --backdrop: rgba(255, 255, 255, 0.1);
-        --fa-primary-color: var(--secondary);
+    --fa-primary-color: var(--secondary);
     --fa-secondary-color: var(--primary);
 }
 
 :root {
     --timer: 90deg;
     --fa-secondary-opacity: 1;
+}
+
+.icon {
+    color: var(--fa-primary-color);
 }
 
 html {
@@ -57,7 +61,7 @@ h1 {
 #title {
     font-weight: 100;
     animation: weight 2s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55) 1s;
-    background-image: linear-gradient(var(--primary), var(--text) 250%);
+    background-image: linear-gradient(var(--primary), var(--secondary) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: rgba(0, 0, 0, 0);
