@@ -75,6 +75,22 @@ h1 {
     animation: weight2 10s cubic-bezier(0.46, 0.03, 0.52, 0.96) 1s;
 }
 
+#titlecontainer{
+    display: flex;
+    flex-direction: row;
+}
+
+#splash{
+    animation: rotate 2s cubic-bezier(0.46, 0.03, 0.52, 0.96) 1s infinite;
+    background-image: linear-gradient(270deg, var(--primary), var(--secondary) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: rgba(0, 0, 0, 0);
+    border: var(--accent) 2.5px;
+    border-style: dashed double solid;
+    padding: 10px;
+}
+
 h2 {
     font-weight: 700;
     color: var(--secondary);
@@ -186,5 +202,20 @@ img {
     100% {
         opacity: 1;
         transform: scale(1) translateY(0%) translateX(0%);
+    }
+}
+
+@keyframes rotate {
+    0%{
+        transform:translateX(10px);
+    }
+
+    50%{
+        transform:translateX(50px);
+
+    }
+
+    100%{
+        transform:translateX(10px);
     }
 }
