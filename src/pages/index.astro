@@ -20,7 +20,19 @@ import Layout from "../layouts/Layout.astro";
         </div>
         <script>
             const s = document.getElementById("splash");
-            const messages = ["Now on Astro 5!", "It's Boolean!", "I have no idea!", "Just an existential crisis!", "Now with silly messages!", "This is Coding!", "One, Two Three, Four!"]
+            const messages = [
+                "Now on Astro 5!", 
+                "It's Boolean!", 
+                "I have no idea!", 
+                "Just an existential crisis!", 
+                "Now with silly messages!", 
+                "This is Coding!", 
+                "One, Two Three, Four!", 
+                "This is a set of discombobulated ideas!",
+                "Bloop!",
+                "Something else!",
+                "I am just doing ideas!"
+            ]
             const r = Math.floor(Math.random() * messages.length)
             s.innerText = messages[r]
         </script>
