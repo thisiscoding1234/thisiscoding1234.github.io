@@ -1,0 +1,119 @@
+---
+import Jankbar from '../../components/Jankbar.astro';
+---
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" defer rel="stylesheet"
+integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+<script src="https://kit.fontawesome.com/049529442a.js" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"
+defer></script>
+
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wonderfully Janky</title>
+    <style>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F9E79F;
+    color: #2E4053;
+    overflow-x: hidden;
+}
+
+header {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #F7DC6F;
+    font-size: 1.5rem;
+    transform: rotate(-2deg);
+}
+
+header h1 {
+    font-size: 3rem;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.janky-section {
+    padding: 2rem;
+    margin: 2rem;
+    background-color: #D5F5E3;
+    transform: rotate(1deg);
+    border: 2px dashed #2E4053;
+    transition: transform 0.3s ease-in-out;
+}
+
+.janky-section.alt {
+    background-color: #FADBD8;
+    transform: rotate(-1deg);
+}
+
+.janky-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.janky-section:hover {
+    transform: rotate(-3deg) scale(1.05);
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background-color: #A569BD;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background-color: #D2B4DE;
+    transform: rotate(-5deg) scale(1.2);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #F7DC6F;
+    font-size: 1rem;
+    transform: rotate(2deg);
+}
+</style>
+</head>
+<body>
+    <Jankbar/>
+    <header>
+        <h1>Wonderfully Janky</h1>
+        <p>Where chaos meets charm!</p>
+    </header>
+    <main>
+        <section class="janky-section">
+            <h2>About</h2>
+            <p>This website celebrates all things imperfectly perfect. Scroll down and embrace the wonderfully janky world!</p>
+        </section>
+        <section class="janky-section alt">
+            <h2>Features</h2>
+            <ul>
+                <li>Offset headings</li>
+                <li>Hover animations with a twist</li>
+                <li>Bright, retro colors</li>
+            </ul>
+        </section>
+        <section class="janky-section">
+            <h2>Get in Touch</h2>
+            <p>Send us a message if you're a fan of beautiful chaos!</p>
+            <button>Contact Us</button>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Wonderfully Janky</p>
+    </footer>
+
+
+</body></html>

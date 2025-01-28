@@ -5,6 +5,7 @@ interface Props {
 const {  } = Astro.props;
 import '../styles/navbar.css'
 import '../styles/global.css'
+import ModeButton from './ModeButton.astro';
 ---
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -20,43 +21,71 @@ import '../styles/global.css'
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Test Pages
+                        Test Pages
                         </a>
                         <ul class="dropdown-menu">
-                            <li class="nav-item dropdown-item">
-                                <a class="nav-link" href="/page/"><i class="fa-sharp fa-thin fa-hexagon-image fa-xl"></i>| Page</a>
+                            <li class="dropdown-item">
+                                <a class="nav-link" href="/page/"><i class="fa-sharp-duotone fa-regular fa-hexagon-image fa-xl"></i>| Page</a>
                             </li>
-                            <li class="nav-item dropdown-item">
+                            <li class="dropdown-item">
                                 <a class="nav-link" href="/another/"><i class="fa-sharp-duotone fa-solid fa-user-tie fa-xl"></i>| Another Page</a>
                             </li>
                         </ul>
-                      </li>
-                      <li class="nav-item dropdown">
+                    </li>
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          External Links
+                        External Links
                         </a>
                         <ul class="dropdown-menu">
-                            <li class="nav-item dropdown-item">
-                                <a class="nav-link" href="https://github.com/thisiscoding1234"><i class="fa-brands fa-github fa-xl"></i>| My Github</a>
+                            <li class="dropdown-item">
+                                <a class="nav-link" href="https://github.com/thisiscoding1234"><span class="icon"><i class="fa-brands fa-github fa-xl"></i></span>| My Github</a>
                             </li>
-                            <li class="nav-item dropdown-item">
-                                <a class="nav-link" href="https://dribbble.com/thisiscoding1234"><i class="fa-brands fa-square-dribbble"></i>| My Dribbble</a>
+                            <li class="dropdown-item">
+                                <a class="nav-link" href="https://dribbble.com/thisiscoding1234"><span class="icon"><i class="fa-brands fa-square-dribbble fa-xl"></i></span>| My Dribbble</a>
                             </li>
                         </ul>
-                      </li>
-                      <li class="nav-item dropdown">
+                    </li>
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Random things
+                            Random things
                         </a>
                         <ul class="dropdown-menu">
-                            <li class="nav-item dropdown-item">
-                                <a class="nav-link" href="/okay/"><i class="fa-sharp fa-thin fa-user-hair-mullet fa-xl"></i>| YvtdwovbyOs_1</a>
+                            <li class="dropdown-item">
+                                <a class="nav-link" href="/okay/"><i class="fa-sharp-duotone fa-solid fa-user-hair-mullet fa-xl"></i>| YvtdwovbyOs_1</a>
                             </li>
-                            <li class="nav-item dropdown-item">
-                                <a class="nav-link" href="/reallyokay"><i class="fa-thin fa-user-tie fa-xl"></i>| YvtdwovbyOs_2</a>
+                            <li class="dropdown-item">
+                                <a class="nav-link" href="/reallyokay/"><i class="fa-duotone fa-solid fa-user-tie fa-xl"></i>| YvtdwovbyOs_2</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="nav-link" href="/thingy/"><i class="fa-duotone fa-light fa-circle-waveform-lines fa-xl"></i>| A Thing</a>
                             </li>
                         </ul>
-                      </li>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Janky things
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item">
+                                <a class="nav-link" href="/jankland/one/"><i class="fa-sharp-duotone fa-solid fa-microchip fa-xl"></i>| Jank1</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="nav-link" href="/jankland/two/"><i class="fa-sharp-duotone fa-solid fa-microchip-ai fa-xl"></i>| Jank2</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="nav-link" href="/jankland/three/"><i class="fa-sharp-duotone fa-solid fa-microchip fa-xl"></i>| Jank3</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a class="nav-link" href="/jankland/four/"><i class="fa-sharp-duotone fa-solid fa-microchip-ai fa-xl"></i>| Jank4</a>
+                            </li>
+                        </ul>
+                    </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://thisiscoding1234.vivaldi.net"><i class="fa-duotone fa-light fa-block-quote fa-xl"></i>| Bloggy Blog</a>
+                            </li>
+                    <li class="nav-item">
+                        <ModeButton>
+                    </li>
                 </ul>
             </div>
         </div>

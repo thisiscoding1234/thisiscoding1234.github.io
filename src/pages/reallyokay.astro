@@ -1,9 +1,13 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import PersonCard from "../components/PersonCard.astro";
+import "../styles/global.css";
 ---
 
-<Layout title="A celebration of the weird people whom follow me, and I am fine with">
-	<main>
+<Layout
+  title="A celebration of the weird people whom follow me, and I am fine with"
+>
+  <main>
     <!--[if lt IE 7]>
     <p class="browsehappy">
         You are using an <strong>outdated</strong> browser. Please
@@ -11,56 +15,99 @@ import Layout from '../layouts/Layout.astro';
     </p>
     <![endif]-->
     <div class="content">
-    <h1 id="title">A celebration of my friends that follow me!</h1>
-    	<h2>You are so nice! <i class="fa-thin fa-user-tie fa-bounce"></i></h2>
-    	<p class="hidden">
-        	If you can see this, then the gradient is probably broken. Sorry about that!
-        <i class="fa-sharp fa-thin fa-face-pensive"></i>
-    	</p>
-        <h3><i class="fa-thin fa-user-tie fa-spin"></i>Let us Celebrate them!<i class="fa-thin fa-user-tie fa-spin fa-spin-reverse"></i></h3>
+      <h1 id="title">A celebration of my friends that follow me!</h1>
+      <h2>You are so nice! <i class="fa-thin fa-user-tie fa-bounce"></i></h2>
+      <h3>
+        <i class="fa-thin fa-user-tie fa-spin"></i>Let us Celebrate them!<i
+          class="fa-thin fa-user-tie fa-spin fa-spin-reverse"></i>
+      </h3>
 
-        <div id="carouselExampleIndicators" class="carousel slide">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="/img/yayalso/F1.PNG"/>
-              </div>
-              <div class="carousel-item">
-                <img src="/img/yayalso/F2.PNG"/>
-              </div>
-              <div class="carousel-item">
-                <img src="/img/yayalso/F3.PNG"/>
-              </div>
-              <div class="carousel-item">
-                <img src="/img/yayalso/F4.PNG"/>
-              </div>
-              <div class="carousel-item">
-                <img src="/img/yayalso/F5.PNG"/>
-              </div>
-              <div class="carousel-item">
-                <img src="/img/yayalso/F6.PNG"/>
-              </div>
-              <div class="carousel-item">
-                <img src="/img/yayalso/F7.PNG"/>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+      <div id="carouselExample" class="carousel slide">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <PersonCard
+              username="werdl"
+              description="Rust, C, V, Python, Linux, Arduino, Bash, Debian, electronics, webdev (occasionally)"
+              link="https://github.com/werdl"
+            />
+
+            <PersonCard
+              username="2010person"
+              description="I am a GCSE Computer Science student."
+              link="https://github.com/2010person"
+            />
+
+            <PersonCard
+              username="Yeetface513"
+              description="Hi if your reading this feel free to steal my code(only if you make yours open source) i guess i make coding stuff and mess about"
+              link="https://github.com/Yeetface513"
+            />
+
+            <PersonCard
+              username="freedomOilHunter"
+              description="I am hunting for oil (MURICAAAAAA)"
+              link="https://github.com/freedomOilHunter"
+            />
           </div>
+          <div class="carousel-item">
+            <PersonCard
+              username="rocketman12435"
+              description="Hi, I'm Rocketman12435 and I am a programmer mostly interested in Python!! [From Profile README]"
+              link="https://github.com/rocketman12435"
+            />
+
+            <PersonCard
+              username="Neodx2"
+              description="Hi, I'm Neo"
+              link="https://github.com/Neodx2"
+            />
+
+            <PersonCard
+              username="uimaxbai"
+              description="Web developer (HTML, JS, CSS) who likes to do a bit of PHP and Python (and maybe C if I can be bothered)."
+              link="https://github.com/uimaxbai"
+            />
+
+            <PersonCard
+              username="SadnessMaximus"
+              description="I barely know how to code stuff."
+              link="https://github.com/SadnessMaximus"
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </div>
-	</main>
+  </main>
 </Layout>

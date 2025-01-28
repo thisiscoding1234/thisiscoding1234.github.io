@@ -1,51 +1,40 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Under Construction">
-	<main>
-    <!--[if lt IE 7]>
+<Layout title="Home">
+    <main>
+        <!--[if lt IE 7]>
     <p class="browsehappy">
         You are using an <strong>outdated</strong> browser. Please
         <a href="#">upgrade your browser</a> to improve your experience.
     </p>
     <![endif]-->
-    <div class="content">
-    <h1 id="title" style="font-weight: 100;">Welcome</h1>
-
-		<h1>Under Construction</h1>
-    	<h2>To this site</h2>
-    	<p class="hidden">
-        	If you can see this, then the gradient is probably broken. Sorry about that!
-        <i class="fa-sharp fa-thin fa-face-pensive"></i>
-    	</p>
+        <div class="content">
+            <div id="titlecontainer">
+            <h1 id="title">Thisiscoding1234</h1> <h4 id="splash">Oops, an Error!</h4></div>
+            <h2 id="subtitle">Doing Random Thingys!</h2>
+            <h3 id="subtitle">
+                Q = (A ⊻ D) ⊻ ((¬ (B ⊻ C)) ⊼ ((¬ (B ⊻ C)) ∧ (A ⊻ D)))
+            </h3>
         </div>
-        <div class="iconic">
-        <h1>Test</h1>
-        </div>
-        <div class="iconic2">
-        <h1>Test</h1>
-        </div>
-        <div class="iconic3">
-        <h1>Test</h1>
-        </div>
-            <script>
-        // Create a range slider
-        const slider = document.createElement('input');
-        slider.type = 'range';
-        slider.min = '100';
-        slider.max = '900';
-        slider.step = '1';
-        slider.value = '100';
-        slider.className = 'form-range slider'
-        // Add an event listener to the slider
-        slider.addEventListener('input', () => {
-            const fontWeight = slider.value;
-            const element = document.getElementById('title');
-            element.style.fontWeight = fontWeight;
-        });
-        // Add the slider to the DOM
-        document.body.appendChild(slider);
-    </script>
-	</main>
+        <script>
+            const s = document.getElementById("splash");
+            const messages = [
+                "Now on Astro 5!", 
+                "It's Boolean!", 
+                "I have no idea!", 
+                "Just an existential crisis!", 
+                "Now with silly messages!", 
+                "This is Coding!", 
+                "One, Two Three, Four!", 
+                "This is a set of discombobulated ideas!",
+                "Bloop!",
+                "Something else!",
+                "I am just doing ideas!"
+            ]
+            const r = Math.floor(Math.random() * messages.length)
+            s.innerText = messages[r]
+        </script>
+    </main>
 </Layout>

@@ -1,0 +1,61 @@
+.square{
+    background: var(--primary);
+    outline: var(--text) 1px solid;
+    width: calc(100%/7);
+    aspect-ratio: 1;
+    border-radius: 25px;
+    animation: move 10s infinite 2s;
+    display: block;
+    text-align: center;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100%;
+}
+
+#s1{
+    animation-timing-function: linear;
+}
+
+#s2{
+    animation-timing-function: ease-in-out;
+}
+
+#s3{
+    animation-timing-function: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+#s4{
+    animation-timing-function: cubic-bezier(0.46, 0.03, 0.52, 0.96);
+}
+
+#s5{
+    animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+#s6{
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#s7{
+    animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@keyframes move {
+    0%{
+        transform: translateY(0%);
+    }
+
+    50%{
+        transform: translateY(75%);
+    }
+
+    100%{
+        transform: translateY(0%);
+    }
+}
