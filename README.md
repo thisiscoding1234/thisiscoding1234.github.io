@@ -1,8 +1,15 @@
 # Thisiscoding1234.github.io
 ## My Personal Site (Under Construction)
 
-```
-pnpm install && pnpm run dev
+## Prerequisites  
+  
+```bash  
+# Install pnpm if not already installed  
+ npm install -g pnpm  
+```  
+  
+```bash  
+ pnpm install && pnpm run dev  
 ```
 
 ### Sites To Look At
