@@ -52,6 +52,7 @@ body {
     width: 100%;
     animation: enter 1s forwards ease-in-out;
     transition: 0.5s;
+    transition-property: all;
 }
 
 h1 {
