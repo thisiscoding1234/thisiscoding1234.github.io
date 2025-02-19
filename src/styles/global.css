@@ -215,15 +215,15 @@ img {
 
 @keyframes rotate {
     0%{
-        transform:translateX(10px);
+        transform:translateX(10px) rotate3D(1, 1, 1, 0deg);
     }
 
     50%{
-        transform:translateX(50px);
+        transform:translateX(50px) rotate3D(0.1, 0.25, 0.1, -0.1turn);
 
     }
 
     100%{
-        transform:translateX(10px);
+        transform:translateX(10px) rotate3D(1, 1, 1, 0deg);
     }
 }
