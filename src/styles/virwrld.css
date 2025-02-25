@@ -60,12 +60,12 @@ body {
 }
 .hour {
     width: 10px;
-    height: 55%;
+    height: 100px;
     background: #fff;
 }
 .minute {
     width: 5px;
-    height: 55%;
+    height: 200px;
     background: #fff;
 
 }
