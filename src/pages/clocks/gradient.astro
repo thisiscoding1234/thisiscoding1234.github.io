@@ -1,12 +1,12 @@
 ---
 const tickMarks = Array.from({ length: 60 }, (_, i) => i);
-import "../../styles/clocks/virwrld.css";
+import "../../styles/clocks/gradient.css";
 ---
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Cool Clock</title>
+    <title>Gradient Clock</title>
   </head>
   <body>
     <div class="main-clock">
@@ -14,18 +14,17 @@ import "../../styles/clocks/virwrld.css";
         {
           tickMarks.map((i) => (
             <div
-              class={`tick ${i % 5 === 0 ? "hour-tick" : ""} ${i % 10 === 5 ? "test-tick" : ""}`}
-              style={`transform: translate(-50%, -50%) rotate(${i * 6}deg) translateY(-225px)`}
+              class={`tick ${i % 5 === 0 ? "hour-tick" : ""}`}
+              style={`transform: translate(-50%, -50%) rotate(${i * 6}deg) translateY(-210px)`}
             />
           ))
         }
-        <div class="hand hour"></div>
-        <div class="hand minute"></div>
-        <div class="hand second"></div>
-        <div class="center-dot"></div>
+        <div class="clock-f" id="hour"></div>
+        <div class="clock-f" id="minute"></div>
+        <div class="clock-f" id="second"></div>
       </div>
     </div>
-    <div class="main-label"><span id="hrs">00</span><span id="min">00</span><span id="sds">00</span></div>
+    <div class="main-label"><span id="hrs">00</span>:<span id="min">00</span>:<span id="sds">00</span></div>
     <script>
       setInterval( () => {
         const now = new Date();
@@ -35,9 +34,9 @@ import "../../styles/clocks/virwrld.css";
         let strHrs = "0";
         let strMin = "0";
         let strSds = "0";
-        document.querySelector( ".second" ).style.transform = `translate(-50%, 0) rotate(${secondsRatio * 360}deg)`;
-        document.querySelector( ".minute" ).style.transform = `translate(-50%, 0) rotate(${minutesRatio * 360}deg)`;
-        document.querySelector( ".hour" ).style.transform = `translate(-50%, 0) rotate(${hoursRatio * 360}deg)`;
+        document.getElementById( "second" ).style.transform = `rotate(${secondsRatio * 360}deg)`;
+        document.getElementById( "minute" ).style.transform = `rotate(${minutesRatio * 360}deg)`;
+        document.getElementById( "hour" ).style.transform = `rotate(${hoursRatio * 360}deg)`;
         if ( String( now.getHours() ).length === 1 ) {
           strHrs = "0" + String( now.getHours() );
           document.getElementById( "hrs" ).innerHTML = strHrs;
