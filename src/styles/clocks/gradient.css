@@ -20,7 +20,7 @@ body {
 }
 .main-clock {
     position: relative;
-    width: clamp(100px, 45%, 500px);
+    width: 500px;
     aspect-ratio: 1/1;
     border: 2px solid #fff;
     border-radius: 50%;
@@ -52,7 +52,7 @@ body {
     width: 100%;
 	aspect-ratio: 1/1;
 	background-image: conic-gradient(var(--colour), transparent);
-	transition: 1s linear;
+	transition: 0.25s linear;
 }
 #hour {
     --colour: var(--c3);
