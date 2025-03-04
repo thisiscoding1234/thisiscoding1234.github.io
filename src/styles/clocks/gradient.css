@@ -4,10 +4,11 @@
 	--seconds: 1s;
 	--mins: calc(var(--seconds)*60);
 	--hrs: calc(var(--mins)*12);
-	--hue: 25deg;
+	--hue: 25;
+	--mod: 10;
 	--c1: hsl(var(--hue) 100% 50%);
-	--c2: hsl(var(--hue) 100% 75%);
-	--c3: hsl(var(--hue) 100% 50% / 50%);
+	--c2: hsl(calc(var(--hue) + (1 * var(--mod))) 100% 50%);
+	--c3: hsl(calc(var(--hue) + (2 * var(--mod))) 100% 50%);
 }
 
 body {
