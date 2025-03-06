@@ -22,20 +22,23 @@ import "../../styles/clocks/gradient.css";
         <div class="clock-f" id="hour"></div>
         <div class="clock-f" id="minute"></div>
         <div class="clock-f" id="second"></div>
+        <div class="hand" id="millis"></div>
       </div>
     </div>
-    <div class="main-label"><span id="hrs">00</span>:<span id="min">00</span>:<span id="sds">00</span></div>
+    <div class="main-label"><span id="hrs">00</span>:<span id="min">00</span>:<span id="sds">00</span>:<span id="mls">00</span></div>
     <script src="https://cdn.jsdelivr.net/npm/accutime@latest/dist/accutime.min.js"></script>
 <!--- https://www.npmjs.com/package/accutime --->
     <script>
       setInterval( () => {
         const now = new Date();
-        const secondsRatio = now.getSeconds() / 60;
+        const milisRatio = now.getMilliseconds() / 1000;
+        const secondsRatio = ( milisRatio + now.getSeconds()) / 60;
         const minutesRatio = (secondsRatio + now.getMinutes()) / 60;
         const hoursRatio = (minutesRatio + now.getHours()) / 12;
         let strHrs = "0";
         let strMin = "0";
         let strSds = "0";
+        document.getElementById( "millis" ).style.transform = `rotate(${milisRatio * 360}deg) translate(-50%, 0)`;
         document.getElementById( "second" ).style.transform = `rotate(${secondsRatio * 360}deg)`;
         document.getElementById( "minute" ).style.transform = `rotate(${minutesRatio * 360}deg)`;
         document.getElementById( "hour" ).style.transform = `rotate(${hoursRatio * 360}deg)`;
@@ -60,7 +63,21 @@ import "../../styles/clocks/gradient.css";
         else {
           document.getElementById( "sds" ).innerHTML = String( now.getSeconds() );
         }
-      }, 1000 );
+        if ( String( now.getMilliseconds() ).length === 1 ) {
+          strHrs = "00" + String( now.getMilliseconds() );
+          document.getElementById( "mls" ).innerHTML = strHrs;
+        }
+        else {
+          if ( String( now.getMilliseconds() ).length === 2 ) {
+            strHrs = "0" + String( now.getMilliseconds() );
+            document.getElementById( "mls" ).innerHTML = strHrs;
+          }
+        else{
+            document.getElementById( "mls" ).innerHTML = String( now.getMilliseconds() );
+        }
+      }
+        console.log(hoursRatio + ":" + minutesRatio + ":" + secondsRatio + ":" + milisRatio)
+      }, 1 );
     </script>
     </body>
 </html>
