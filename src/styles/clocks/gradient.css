@@ -23,7 +23,7 @@ body {
     position: relative;
     width: 500px;
     aspect-ratio: 1/1;
-    border: 2px solid #fff;
+    border: 2px solid #000000;
     border-radius: 50%;
     overflow: hidden;
     top: -100px
@@ -59,13 +59,15 @@ body {
 }
 #hour {
     --colour: var(--c3);
+    z-index: 1;
 }
 #minute {
 	--colour: var(--c2);
-
+    z-index: 2;
 }
 #second {
 	--colour: var(--c1);
+    z-index: 3;
 }
 .main-label {
     position: absolute;
