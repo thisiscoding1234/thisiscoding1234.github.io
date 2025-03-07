@@ -74,11 +74,12 @@ body {
     left: 50%;
     transform-origin: bottom;
     transform: translate(-50%, 0) rotate(0deg);
-    width: 2px;
-    height: 45%;
+    width: 5px;
+    height: 50%;
     background: black;
     z-index: 5;
-    display: none;
+    opacity: 0.25;
+    border-radius: 10px;
 }
 .main-label {
     position: absolute;
@@ -91,6 +92,7 @@ body {
     letter-spacing: -11px;
     display: block;
 }
+
 html,
 body {
     margin: 0;
