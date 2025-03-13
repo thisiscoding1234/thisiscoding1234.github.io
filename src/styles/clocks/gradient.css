@@ -89,8 +89,7 @@ body {
     font-family: "Chivo Mono", monospace;
     color: black;
     font-size: 150px;
-    letter-spacing: -11px;
-    display: block;
+    display: flex;
 }
 
 html,
@@ -123,4 +122,32 @@ body {
     100%{
         --mod: 360;
     }
+}
+
+#c1{font-weight: 100;}
+
+#c2{font-weight: 175;}
+
+#c3{font-weight: 225;}
+
+#c4{font-weight: 300;}
+
+#c5{font-weight: 375;}
+
+#c6{font-weight: 450;}
+
+#c7{font-weight: 525;}
+
+#c8{font-weight: 600;}
+
+#c9{font-weight: 675;}
+
+#c10{font-weight: 750;}
+
+#c11{font-weight: 825;}
+
+#c12{font-weight: 900;}
+
+.lable-text{
+    margin-right: -14px;
 }

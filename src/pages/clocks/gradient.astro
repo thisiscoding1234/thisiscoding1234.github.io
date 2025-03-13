@@ -25,7 +25,20 @@ import "../../styles/clocks/gradient.css";
         <div class="hand" id="millis"></div>
       </div>
     </div>
-    <div class="main-label"><span id="hrs"><00</span>:<span id="min">00</span>:<span id="sds">00</span>:<span id="mls">00</span></div>
+    <div class="main-label">
+        <span class="lable-text" id="c1">0</span>
+        <span class="lable-text" id="c2">0</span>
+        <span class="lable-text" id="c3">:</span>
+        <span class="lable-text" id="c4">0</span>
+        <span class="lable-text" id="c5">0</span>
+        <span class="lable-text" id="c6">:</span>
+        <span class="lable-text" id="c7">0</span>
+        <span class="lable-text" id="c8">0</span>
+        <span class="lable-text" id="c9">:</span>
+        <span class="lable-text" id="c10">0</span>
+        <span class="lable-text" id="c11">0</span>
+        <span class="lable-text" id="c12">0</span>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/accutime@latest/dist/accutime.min.js"></script>
 <!--- https://www.npmjs.com/package/accutime --->
     <script>
@@ -35,45 +48,49 @@ import "../../styles/clocks/gradient.css";
         const secondsRatio = ( milisRatio + now.getSeconds()) / 60;
         const minutesRatio = (secondsRatio + now.getMinutes()) / 60;
         const hoursRatio = (minutesRatio + now.getHours()) / 12;
-        let strHrs = "0";
-        let strMin = "0";
-        let strSds = "0";
         document.getElementById( "millis" ).style.transform = `rotate(${milisRatio * 360}deg) translate(-50%, 0)`;
         document.getElementById( "second" ).style.transform = `rotate(${secondsRatio * 360}deg)`;
         document.getElementById( "minute" ).style.transform = `rotate(${minutesRatio * 360}deg)`;
         document.getElementById( "hour" ).style.transform = `rotate(${hoursRatio * 360}deg)`;
-        if ( String( now.getHours() ).length === 1 ) {
-          strHrs = "0" + String( now.getHours() );
-          document.getElementById( "hrs" ).innerHTML = strHrs;
+        if ( String(now.getHours()).length === 1 ) {
+          document.getElementById( "c1" ).innerHTML = "0";
+          document.getElementById( "c2" ).innerHTML = String(now.getHours());
         }
         else {
-          document.getElementById( "hrs" ).innerHTML = String( now.getHours() );
+          document.getElementById( "c1" ).innerHTML = String(now.getHours()).charAt(0);
+          document.getElementById( "c2" ).innerHTML = String(now.getHours()).charAt(1);
         }
         if ( String( now.getMinutes() ).length === 1 ) {
-          strMin = "0" + String( now.getMinutes() );
-          document.getElementById( "min" ).innerHTML = strMin;
+          document.getElementById( "c4" ).innerHTML = "0";
+          document.getElementById( "c5" ).innerHTML = String(now.getMinutes());
         }
         else {
-          document.getElementById( "min" ).innerHTML = String( now.getMinutes() );
+          document.getElementById( "c4" ).innerHTML = String(now.getMinutes()).charAt(0);
+          document.getElementById( "c5" ).innerHTML = String(now.getMinutes()).charAt(1);
         }
         if ( String( now.getSeconds() ).length === 1 ) {
-          strSds = "0" + String( now.getSeconds() );
-          document.getElementById( "sds" ).innerHTML = strSds;
+          document.getElementById( "c7" ).innerHTML = "0";
+          document.getElementById( "c8" ).innerHTML = String(now.getSeconds());
         }
         else {
-          document.getElementById( "sds" ).innerHTML = String( now.getSeconds() );
+          document.getElementById( "c7" ).innerHTML = String(now.getSeconds()).charAt(0);
+          document.getElementById( "c8" ).innerHTML = String(now.getSeconds()).charAt(1);
         }
         if ( String( now.getMilliseconds() ).length === 1 ) {
-          strHrs = "00" + String( now.getMilliseconds() );
-          document.getElementById( "mls" ).innerHTML = strHrs;
+          document.getElementById( "c10" ).innerHTML = "0";
+          document.getElementById( "c11" ).innerHTML = "0";
+          document.getElementById( "c12" ).innerHTML = String(now.getMilliseconds()).charAt(0);
         }
         else {
           if ( String( now.getMilliseconds() ).length === 2 ) {
-            strHrs = "0" + String( now.getMilliseconds() );
-            document.getElementById( "mls" ).innerHTML = strHrs;
+            document.getElementById( "c10" ).innerHTML = "0";
+            document.getElementById( "c11" ).innerHTML = String(now.getMilliseconds()).charAt(0);
+            document.getElementById( "c12" ).innerHTML = String(now.getMilliseconds()).charAt(1);
           }
         else{
-            document.getElementById( "mls" ).innerHTML = String( now.getMilliseconds() );
+            document.getElementById( "c10" ).innerHTML = String(now.getMilliseconds()).charAt(0);
+            document.getElementById( "c11" ).innerHTML = String(now.getMilliseconds()).charAt(1);
+            document.getElementById( "c12" ).innerHTML = String(now.getMilliseconds()).charAt(2);
         }
       }
         console.log(hoursRatio + ":" + minutesRatio + ":" + secondsRatio + ":" + milisRatio)
