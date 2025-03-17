@@ -124,30 +124,61 @@ body {
     }
 }
 
-#c1{font-weight: 100;}
+#c12{--weight: var(--w1);}
+#c11{--weight: var(--w2);}
+#c10{--weight: var(--w3);}
+#c9{--weight: var(--w4);}
+#c8{--weight: var(--w5);}
+#c7{--weight: var(--w6);}
+#c6{--weight: var(--w7);}
+#c5{--weight: var(--w8);}
+#c4{--weight: var(--w9);}
+#c3{--weight: var(--w10);}
+#c2{--weight: var(--w11);}
+#c1{--weight: var(--w12);}
 
-#c2{font-weight: 175;}
-
-#c3{font-weight: 225;}
-
-#c4{font-weight: 300;}
-
-#c5{font-weight: 375;}
-
-#c6{font-weight: 450;}
-
-#c7{font-weight: 525;}
-
-#c8{font-weight: 600;}
-
-#c9{font-weight: 675;}
-
-#c10{font-weight: 750;}
-
-#c11{font-weight: 825;}
-
-#c12{font-weight: 900;}
+#c1:hover{--weight: var(--w1);}
+#c2:hover{--weight: var(--w2);}
+#c3:hover{--weight: var(--w3);}
+#c4:hover{--weight: var(--w4);}
+#c5:hover{--weight: var(--w5);}
+#c6:hover{--weight: var(--w6);}
+#c7:hover{--weight: var(--w7);}
+#c8:hover{--weight: var(--w8);}
+#c9:hover{--weight: var(--w9);}
+#c10:hover{--weight: var(--w10);}
+#c11:hover{--weight: var(--w11);}
+#c12:hover{--weight: var(--w12);}
 
 .lable-text{
+    font-weight: var(--weight);
     margin-right: -10px;
+    transition: all 1s ease-in-out;
+    --w1: 100;
+    --w2: 166.67;
+    --w3: 300;
+    --w4: 366.67;
+    --w5: 433.33;
+    --w6: 500;
+    --w7: 566.67;
+    --w8: 633.33;
+    --w9: 700;
+    --w10: 766.67;
+    --w11: 833.33;
+    --w12: 900;
+}
+
+.lable-text :hover{
+    --w12: 100;
+    --w11: 166.67;
+    --w10: 300;
+    --w4: 366.67;
+    --w5: 433.33;
+    --w6: 500;
+    --w7: 566.67;
+    --w8: 633.33;
+    --w9: 700;
+    --w10: 766.67;
+    --w11: 833.33;
+    --w12: 900;
 }
