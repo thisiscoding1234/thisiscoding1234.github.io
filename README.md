@@ -19,6 +19,6 @@
 - [View Transitions in Astro](https://docs.astro.build/en/guides/view-transitions/)
 
 ### Sites to Build With
-- [Open Branch in StBz](https://stackblitz.com/~/github.com/thisiscoding1234/thisiscoding1234.github.io/tree/reboot)
+- [Open Branch in StBz](https://stackblitz.com/~/github.com/thisiscoding1234/thisiscoding1234.github.io/)
 - [Stable Enviroment](https://thisiscoding1234.github.io)
 - [Staging Enviroment](https://thisiscoding1234.pages.dev)
