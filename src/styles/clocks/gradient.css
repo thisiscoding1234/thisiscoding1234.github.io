@@ -5,6 +5,7 @@
 	--seconds: 1s;
 	--mins: calc(var(--seconds)*60);
 	--hrs: calc(var(--mins)*12);
+    --trans: 100%;
 	--hue: 25;
 	--mod: 10;
 	--c1: hsl(var(--hue) 100% 50%);
@@ -73,7 +74,7 @@ body {
     position: absolute;
     width: 100%;
 	aspect-ratio: 1/1;
-	background-image: conic-gradient(var(--colour), transparent);
+	background-image: conic-gradient(var(--colour), transparent var(--trans));
 }
 #hour {
     --colour: var(--c3);
