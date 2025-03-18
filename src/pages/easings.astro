@@ -1,19 +1,18 @@
 ---
-import "../styles/easings.css";
 import Navbar from "../components/Navbar.astro";
 import Testout from "../layouts/Testout.astro";
 ---
 
 <Testout title="Squares on Mouse">
     <main>
-        <div class="content">
-            <div class="square" id="s1">Linear</div>
-            <div class="square" id="s2">Ease In Out</div>
-            <div class="square" id="s3">In Out Sine</div>
-            <div class="square" id="s4">In Out Quadratic</div>
-            <div class="square" id="s5">In Out Cubic</div>
-            <div class="square" id="s6">Fast Out Slow In</div>
-            <div class="square" id="s7">Ease In Out Back</div>
+        <div class="flex flex-row flex-nowrap items-center justify-between min-h-full">
+            <div class="bg-primary outline-text outline-1 w-1/7 aspect-square rounded-2xl animate-move text-center" id="s1">Linear</div>
+            <div class="bg-primary outline-text outline-1 w-1/7 aspect-square rounded-2xl animate-move text-center" id="s2">Ease In Out</div>
+            <div class="bg-primary outline-text outline-1 w-1/7 aspect-square rounded-2xl animate-move text-center" id="s3">In Out Sine</div>
+            <div class="bg-primary outline-text outline-1 w-1/7 aspect-square rounded-2xl animate-move text-center" id="s4">In Out Quadratic</div>
+            <div class="bg-primary outline-text outline-1 w-1/7 aspect-square rounded-2xl animate-move text-center" id="s5">In Out Cubic</div>
+            <div class="bg-primary outline-text outline-1 w-1/7 aspect-square rounded-2xl animate-move text-center" id="s6">Fast Out Slow In</div>
+            <div class="bg-primary outline-text outline-1 w-1/7 aspect-square rounded-2xl animate-move text-center" id="s7">Ease In Out Back</div>
         </div>
     </main>
 </Testout>
