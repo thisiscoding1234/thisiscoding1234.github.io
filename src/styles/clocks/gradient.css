@@ -137,23 +137,14 @@ body {
 #c2{--weight: var(--w11);}
 #c1{--weight: var(--w12);}
 
-#c1:hover{--weight: var(--w1);}
-#c2:hover{--weight: var(--w2);}
-#c3:hover{--weight: var(--w3);}
-#c4:hover{--weight: var(--w4);}
-#c5:hover{--weight: var(--w5);}
-#c6:hover{--weight: var(--w6);}
-#c7:hover{--weight: var(--w7);}
-#c8:hover{--weight: var(--w8);}
-#c9:hover{--weight: var(--w9);}
-#c10:hover{--weight: var(--w10);}
-#c11:hover{--weight: var(--w11);}
-#c12:hover{--weight: var(--w12);}
 
 .lable-text{
     font-weight: var(--weight);
     margin-right: -10px;
     transition: all 1s ease-in-out;
+}
+.main-label {
+    transition: all 1s cubic-bezier(1, 0, 0, 1);
     --w1: 100;
     --w2: 166.67;
     --w3: 300;
@@ -168,17 +159,18 @@ body {
     --w12: 900;
 }
 
-.lable-text :hover{
+.main-label:hover{
+    transition: all 1s cubic-bezier(1, 0, 0, 1);
     --w12: 100;
     --w11: 166.67;
     --w10: 300;
-    --w4: 366.67;
-    --w5: 433.33;
-    --w6: 500;
-    --w7: 566.67;
-    --w8: 633.33;
-    --w9: 700;
-    --w10: 766.67;
-    --w11: 833.33;
-    --w12: 900;
+    --w9: 366.67;
+    --w8: 433.33;
+    --w7: 500;
+    --w6: 566.67;
+    --w5: 633.33;
+    --w4: 700;
+    --w3: 766.67;
+    --w2: 833.33;
+    --w1: 900;
 }
