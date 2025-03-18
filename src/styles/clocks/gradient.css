@@ -76,10 +76,10 @@ body {
     transform: translate(-50%, 0) rotate(0deg);
     width: 5px;
     height: 50%;
-    background: black;
+    background: rgb(255, 255, 255);
     z-index: 5;
-    opacity: 0.25;
     border-radius: 10px;
+    mix-blend-mode: exclusion;
 }
 .main-label {
     position: absolute;
