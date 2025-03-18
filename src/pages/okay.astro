@@ -1,7 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import "../styles/global.css";
-import "../styles/grid.css";
 ---
 
 <Layout title="A celebration of the weird people whom follow me">
@@ -12,31 +10,28 @@ import "../styles/grid.css";
         <a href="#">upgrade your browser</a> to improve your experience.
     </p>
     <![endif]-->
-    <div class="content">
-      <h1 id="title">A celebration of the weird people who follow me!</h1>
-      <h2>
-        Why did you decide to do this?<i
-          class="fa-sharp fa-thin fa-user-hair-mullet fa-bounce"></i>
+    <div class="w-full p-4">
+      <h1 class="text-4xl font-bold text-center mb-4">A celebration of the weird people who follow me!</h1>
+      <h2 class="text-2xl font-semibold text-center mb-2">
+        Why did you decide to do this?<i class="fa-sharp fa-thin fa-user-hair-mullet fa-bounce"></i>
       </h2>
-      <h3>
+      <h3 class="text-xl font-medium text-center mb-2">
         <i class="fa-sharp fa-thin fa-user-hair-mullet fa-spin"></i>Let us
         Celebrate those who think I am good (or just use a Github Follow bot)!<i
           class="fa-sharp fa-thin fa-user-hair-mullet fa-spin fa-spin-reverse"
         ></i>
       </h3>
-      <div>
-        <main>
-          <figure class=""><img src="/img/yay/1.PNG" class="image" alt="A person Who is Following Me. Why?" /></figure>
-          <figure class=""><img src="/img/yay/2.PNG" class="image" alt="A person Who is Following Me. Why?" /></figure>
-          <figure class=""><img src="/img/yay/3.PNG" class="image" alt="A person Who is Following Me. Why?" /></figure>
-          <figure class=""><img src="/img/yay/4.PNG" class="image" alt="A person Who is Following Me. Why?" /></figure>
-          <figure class=""><img src="/img/yay/5.PNG" class="image" alt="A person Who is Following Me. Why?" /></figure>
-          <figure class=""><img src="/img/yay/6.PNG" class="image" alt="A person Who is Following Me. Why?" /></figure>
-          <figure class=""><img src="/img/yay/7.PNG" class="image" alt="A person Who is Following Me. Why?" /></figure>
-          <figure class=""><img src="/img/yay/8.PNG" class="image" alt="A person Who is Following Me. Why?" /></figure>
-          <figure class=""><img src="/img/yay/9.PNG" class="image" alt="A person Who is Following Me. Why?" /></figure>
-          <figure class=""><img src="/img/yay/10.PNG" class="image" alt="A person Who is Following Me. Why?" /></figure>
-        </main>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <figure class="overflow-hidden rounded-lg"><img src="/img/yay/1.PNG" class="w-full h-auto object-cover" alt="A person Who is Following Me. Why?" /></figure>
+        <figure class="overflow-hidden rounded-lg"><img src="/img/yay/2.PNG" class="w-full h-auto object-cover" alt="A person Who is Following Me. Why?" /></figure>
+        <figure class="overflow-hidden rounded-lg"><img src="/img/yay/3.PNG" class="w-full h-auto object-cover" alt="A person Who is Following Me. Why?" /></figure>
+        <figure class="overflow-hidden rounded-lg"><img src="/img/yay/4.PNG" class="w-full h-auto object-cover" alt="A person Who is Following Me. Why?" /></figure>
+        <figure class="overflow-hidden rounded-lg"><img src="/img/yay/5.PNG" class="w-full h-auto object-cover" alt="A person Who is Following Me. Why?" /></figure>
+        <figure class="overflow-hidden rounded-lg"><img src="/img/yay/6.PNG" class="w-full h-auto object-cover" alt="A person Who is Following Me. Why?" /></figure>
+        <figure class="overflow-hidden rounded-lg"><img src="/img/yay/7.PNG" class="w-full h-auto object-cover" alt="A person Who is Following Me. Why?" /></figure>
+        <figure class="overflow-hidden rounded-lg"><img src="/img/yay/8.PNG" class="w-full h-auto object-cover" alt="A person Who is Following Me. Why?" /></figure>
+        <figure class="overflow-hidden rounded-lg"><img src="/img/yay/9.PNG" class="w-full h-auto object-cover" alt="A person Who is Following Me. Why?" /></figure>
+        <figure class="overflow-hidden rounded-lg"><img src="/img/yay/10.PNG" class="w-full h-auto object-cover" alt="A person Who is Following Me. Why?" /></figure>
       </div>
     </div>
   </main>

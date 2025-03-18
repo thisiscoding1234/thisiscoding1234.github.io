@@ -12,6 +12,9 @@
   },
   "dependencies": {
     "@yuvalkarif/gradient-blob": "^1.0.0",
-    "astro": "^5.3.0"
+    "astro": "^5.3.0",
+    "tailwindcss": "^3.0.0",
+    "postcss": "^8.0.0",
+    "autoprefixer": "^10.0.0"
   }
 }

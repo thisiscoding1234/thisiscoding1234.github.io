@@ -1,34 +1,39 @@
 ---
-import '../styles/global.css'
-import '../styles/navbar.css'
 ---
 
-
-
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="../../"><img class="favi" src="../../img/faviconweb.svg" alt="an orange cube"
-                    data-toggle="tooltip" title="Go Home" data-bs-placement="bottom"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation" data-toggle="tooltip" title="See pages" data-bs-placement="bottom">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/jankland/one/"><i class="fa-sharp-duotone fa-solid fa-microchip fa-xl"></i>| Jank1</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/jankland/two/"><i class="fa-sharp-duotone fa-solid fa-microchip-ai fa-xl"></i>| Jank2</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/jankland/three/"><i class="fa-sharp-duotone fa-solid fa-microchip fa-xl"></i>| Jank3</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/jankland/four/"><i class="fa-sharp-duotone fa-solid fa-microchip-ai fa-xl"></i>| Jank4</a>
-                        </li>
-                </ul>
-            </div>
+<nav class="bg-gray-200 p-4 rounded-lg">
+    <div class="container mx-auto flex justify-between items-center">
+        <a class="text-orange-500 hover:text-orange-700" href="../../">
+            <img class="w-10 h-10 transition-transform duration-1000 ease-in-out transform hover:rotate-180" src="../../img/faviconweb.svg" alt="an orange cube" title="Go Home">
+        </a>
+        <button class="text-gray-700 hover:text-gray-900 focus:outline-none" type="button" aria-label="Toggle navigation" title="See pages">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+        <div class="hidden md:flex md:items-center md:space-x-4">
+            <ul class="flex space-x-4">
+                <li>
+                    <a class="text-gray-700 hover:text-gray-900" href="/jankland/one/">
+                        <i class="fa-sharp-duotone fa-solid fa-microchip fa-xl"></i>| Jank1
+                    </a>
+                </li>
+                <li>
+                    <a class="text-gray-700 hover:text-gray-900" href="/jankland/two/">
+                        <i class="fa-sharp-duotone fa-solid fa-microchip-ai fa-xl"></i>| Jank2
+                    </a>
+                </li>
+                <li>
+                    <a class="text-gray-700 hover:text-gray-900" href="/jankland/three/">
+                        <i class="fa-sharp-duotone fa-solid fa-microchip fa-xl"></i>| Jank3
+                    </a>
+                </li>
+                <li>
+                    <a class="text-gray-700 hover:text-gray-900" href="/jankland/four/">
+                        <i class="fa-sharp-duotone fa-solid fa-microchip-ai fa-xl"></i>| Jank4
+                    </a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>

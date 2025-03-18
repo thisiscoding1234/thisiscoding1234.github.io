@@ -9,12 +9,10 @@ const { username, description, link,} = Astro.props;
 
 var img = link + ".png"
 
-import '../styles/card.css'
-import '../styles/global.css'
 ---
 
-<a href={link} class="cardy">
-    <img src={img} alt={username} />
-    <h3>{username}</h3>
-    <p>{description}</p>
+<a href={link} class="w-64 border-2 border-gray-800 mx-auto rounded-3xl overflow-hidden flex flex-col items-center p-2 transition-transform duration-1000 ease-in-out text-gray-800 bg-gray-100 hover:translate-y-1/5 hover:rotate-45">
+    <img src={img} alt={username} class="h-24 w-24 border border-gray-800 rounded-lg m-2" />
+    <h3 class="bg-gradient-to-r from-red-500 via-orange-500 to-purple-500 bg-clip-text text-transparent m-2 bg-[200%] bg-left transition-all duration-1000 ease-in-out break-words">{username}</h3>
+    <p class="m-2 text-blue-500">{description}</p>
 </a>

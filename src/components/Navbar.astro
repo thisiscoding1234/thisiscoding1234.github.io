@@ -3,112 +3,110 @@ interface Props {
 }
 
 const {  } = Astro.props;
-import '../styles/navbar.css'
-import '../styles/global.css'
 import ModeButton from './ModeButton.astro';
 ---
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="../"><img class="favi" src="../img/faviconweb.svg" alt="an orange cube"
-                    data-toggle="tooltip" title="Go Home" data-bs-placement="bottom"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation" data-toggle="tooltip" title="See pages" data-bs-placement="bottom">
-                <span class="navbar-toggler-icon"></span>
+    <nav class="bg-body-tertiary p-4 rounded-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <a class="text-orange-500 hover:text-orange-700" href="../">
+                <img class="w-10 h-10 transition-transform duration-1000 ease-in-out transform hover:rotate-180" src="../img/faviconweb.svg" alt="an orange cube" title="Go Home">
+            </a>
+            <button class="text-gray-700 hover:text-gray-900 focus:outline-none" type="button" aria-label="Toggle navigation" title="See pages">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Test Pages
+            <div class="hidden md:flex md:items-center md:space-x-4">
+                <ul class="flex space-x-4">
+                    <li class="relative group">
+                        <a class="text-gray-700 hover:text-gray-900" href="#">
+                            Test Pages
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <li class="dropdown-item">
-                                <a class="nav-link" href="/page/"><i class="fa-sharp-duotone fa-regular fa-hexagon-image fa-xl"></i>| Page</a>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="/page/"><i class="fa-sharp-duotone fa-regular fa-hexagon-image fa-xl"></i>| Page</a>
                             </li>
                             <li class="dropdown-item">
-                                <a class="nav-link" href="/another/"><i class="fa-sharp-duotone fa-solid fa-user-tie fa-xl"></i>| Another Page</a>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="/another/"><i class="fa-sharp-duotone fa-solid fa-user-tie fa-xl"></i>| Another Page</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        External Links
+                    <li class="relative group">
+                        <a class="text-gray-700 hover:text-gray-900" href="#">
+                            External Links
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <li class="dropdown-item">
-                                <a class="nav-link" href="https://github.com/thisiscoding1234"><span class="icon"><i class="fa-brands fa-github fa-xl"></i></span>| My Github</a>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="https://github.com/thisiscoding1234"><span class="icon"><i class="fa-brands fa-github fa-xl"></i></span>| My Github</a>
                             </li>
                             <li class="dropdown-item">
-                                <a class="nav-link" href="https://dribbble.com/thisiscoding1234"><span class="icon"><i class="fa-brands fa-square-dribbble fa-xl"></i></span>| My Dribbble</a>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="https://dribbble.com/thisiscoding1234"><span class="icon"><i class="fa-brands fa-square-dribbble fa-xl"></i></span>| My Dribbble</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <li class="relative group">
+                        <a class="text-gray-700 hover:text-gray-900" href="#">
                             Random things
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <li class="dropdown-item">
-                                <a class="nav-link" href="/okay/"><i class="fa-sharp-duotone fa-solid fa-user-hair-mullet fa-xl"></i>| YvtdwovbyOs_1</a>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="/okay/"><i class="fa-sharp-duotone fa-solid fa-user-hair-mullet fa-xl"></i>| YvtdwovbyOs_1</a>
                             </li>
                             <li class="dropdown-item">
-                                <a class="nav-link" href="/reallyokay/"><i class="fa-duotone fa-solid fa-user-tie fa-xl"></i>| YvtdwovbyOs_2</a>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="/reallyokay/"><i class="fa-duotone fa-solid fa-user-tie fa-xl"></i>| YvtdwovbyOs_2</a>
                             </li>
                             <li class="dropdown-item">
-                                <a class="nav-link" href="/thingy/"><i class="fa-duotone fa-light fa-circle-waveform-lines fa-xl"></i>| A Thing</a>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="/thingy/"><i class="fa-duotone fa-light fa-circle-waveform-lines fa-xl"></i>| A Thing</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <li class="relative group">
+                        <a class="text-gray-700 hover:text-gray-900" href="#">
                             Janky things
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <li class="dropdown-item">
-                                <a class="nav-link" href="/jankland/one/"><i class="fa-sharp-duotone fa-solid fa-microchip fa-xl"></i>| Jank1</a>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="/jankland/one/"><i class="fa-sharp-duotone fa-solid fa-microchip fa-xl"></i>| Jank1</a>
                             </li>
                             <li class="dropdown-item">
-                                <a class="nav-link" href="/jankland/two/"><i class="fa-sharp-duotone fa-solid fa-microchip-ai fa-xl"></i>| Jank2</a>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="/jankland/two/"><i class="fa-sharp-duotone fa-solid fa-microchip-ai fa-xl"></i>| Jank2</a>
                             </li>
                             <li class="dropdown-item">
-                                <a class="nav-link" href="/jankland/three/"><i class="fa-sharp-duotone fa-solid fa-microchip fa-xl"></i>| Jank3</a>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="/jankland/three/"><i class="fa-sharp-duotone fa-solid fa-microchip fa-xl"></i>| Jank3</a>
                             </li>
                             <li class="dropdown-item">
-                                <a class="nav-link" href="/jankland/four/"><i class="fa-sharp-duotone fa-solid fa-microchip-ai fa-xl"></i>| Jank4</a>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="/jankland/four/"><i class="fa-sharp-duotone fa-solid fa-microchip-ai fa-xl"></i>| Jank4</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <li class="relative group">
+                        <a class="text-gray-700 hover:text-gray-900" href="#">
                             Fun things
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <li class="dropdown-item">
-                                <a class="nav-link" href="/blob/"><i class="fa-duotone fa-solid fa-splotch fa-xl"></i>| Thing 1</a>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="/blob/"><i class="fa-duotone fa-solid fa-splotch fa-xl"></i>| Thing 1</a>
                             </li>
                             <li class="dropdown-item">
-                                <a class="nav-link" href="/cardtest/"><i class="fa-duotone fa-solid fa-cards-blank fa-xl"></i>| Thing 2</a>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="/cardtest/"><i class="fa-duotone fa-solid fa-cards-blank fa-xl"></i>| Thing 2</a>
                             </li>
                             <li class="dropdown-item">
-                                <a class="nav-link" href="/easings"><i class="fa-sharp-duotone fa-solid fa-chart-sine fa-xl"></i>| Thing 3</a>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="/easings"><i class="fa-sharp-duotone fa-solid fa-chart-sine fa-xl"></i>| Thing 3</a>
                             </li>
                             <li class="dropdown-item">
-                                <a class="nav-link" href="/gridtest"><i class="fa-duotone fa-solid fa-diagram-lean-canvas fa-xl"></i>| Thing 4</a>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="/gridtest"><i class="fa-duotone fa-solid fa-diagram-lean-canvas fa-xl"></i>| Thing 4</a>
                             </li>
                             <li class="dropdown-item">
-                                <a class="nav-link" href="/squaretest"><i class="fa-sharp-duotone fa-solid fa-draw-square fa-xl"></i>| Thing 5</a>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="/squaretest"><i class="fa-sharp-duotone fa-solid fa-draw-square fa-xl"></i>| Thing 5</a>
                             </li>
                             <li class="dropdown-item">
-                                <a class="nav-link" href="/clocks/"><i class="fa-sharp-duotone fa-solid fa-clock fa-xl"></i>| Clocks!</a>
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="/clocks/"><i class="fa-sharp-duotone fa-solid fa-clock fa-xl"></i>| Clocks!</a>
                             </li>
                         </ul>
                     </li>
-                    <li 
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://thisiscoding1234.vivaldi.net"><i class="fa-duotone fa-light fa-block-quote fa-xl"></i>| Bloggy Blog</a>
-                            </li>
+                    <li class="nav-item">
+                        <a class="text-gray-700 hover:text-gray-900" href="https://thisiscoding1234.vivaldi.net"><i class="fa-duotone fa-light fa-block-quote fa-xl"></i>| Bloggy Blog</a>
+                    </li>
                     <li class="nav-item">
                         <ModeButton>
                     </li>
