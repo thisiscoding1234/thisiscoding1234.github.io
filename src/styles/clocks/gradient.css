@@ -100,7 +100,7 @@ body {
     position: absolute;
     bottom: 50%;
     left: 50%;
-    transform-origin: bottom;
+    transform-origin: 0% 100%;
     transform: translate(-50%, 0) rotate(0deg);
     width: 5px;
     height: 50%;
@@ -111,7 +111,7 @@ body {
 }
 .main-label {
     position: absolute;
-    bottom: calc(var(--clock-offset) * 0.35);
+    bottom: calc(var(--clock-offset) * 0.1);
     left: 50%;
     transform: translateX(-50%);
     font-family: "Chivo Mono", monospace;
@@ -152,51 +152,56 @@ body {
     }
 }
 
-#c12{--weight: var(--w1);}
-#c11{--weight: var(--w2);}
-#c10{--weight: var(--w3);}
-#c9{--weight: var(--w4);}
-#c8{--weight: var(--w5);}
-#c7{--weight: var(--w6);}
-#c6{--weight: var(--w7);}
-#c5{--weight: var(--w8);}
-#c4{--weight: var(--w9);}
-#c3{--weight: var(--w10);}
-#c2{--weight: var(--w11);}
-#c1{--weight: var(--w12);}
-
-
 .lable-text{
     font-weight: var(--weight);
     margin-right: -10px;
     transition: all 1s var(--bounce);
 }
 .main-label {
-    --w1: 100;
-    --w2: 166.67;
-    --w3: 300;
-    --w4: 366.67;
-    --w5: 433.33;
-    --w6: 500;
-    --w7: 566.67;
-    --w8: 633.33;
-    --w9: 700;
-    --w10: 766.67;
-    --w11: 833.33;
-    --w12: 900;
+    --w1: 900;
+    --w2: 100;
+    --w3: 700;
+    --w4: 100;
+    --w5: 400;
+    --w6: 100;
+    --w7: 100;
 }
 
 .main-label:hover{
-    --w12: 100;
-    --w11: 166.67;
-    --w10: 300;
-    --w9: 366.67;
-    --w8: 433.33;
-    --w7: 500;
-    --w6: 566.67;
-    --w5: 633.33;
-    --w4: 700;
-    --w3: 766.67;
-    --w2: 833.33;
-    --w1: 900;
+    --w1: 100;
+    --w2: 900;
+    --w3: 500;
+    --w4: 900;
+    --w5: 500;
+    --w6: 900;
+    --w7: 900;
+}
+
+.hrs1{
+    color: var(--c1);
+    display: flex;
+    flex-direction: row;
+    --weight: var(--w1);
+}
+#c3{--weight: var(--w2)}
+.min1{
+    color: var(--c2);
+    display: flex;
+    flex-direction: row;
+    --weight: var(--w3);
+
+}
+#c6{--weight: var(--w4)}
+.secs{
+    color: var(--c3);
+    display: flex;
+    flex-direction: row;
+    --weight: var(--w5);
+}
+#c9{--weight: var(--w6)}
+.mill1{
+    color: blue;
+    display: flex;
+    flex-direction: row;
+    --weight: var(--w7);
 }
