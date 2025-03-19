@@ -15,7 +15,7 @@ import "../../styles/clocks/gradient.css";
           tickMarks.map((i) => (
             <div
               class={`tick ${i % 5 === 0 ? "hour-tick" : ""}`}
-              style={`transform: translate(-50%, -50%) rotate(${i * 6}deg) translateY(-210px)`}
+              style={`transform: translate(-50%, -50%) rotate(${i * 6}deg) translateY(calc(var(--clock-size) * 0.45))`}
             />
           ))
         }
