@@ -78,7 +78,7 @@ body {
     position: absolute;
     width: 100%;
 	aspect-ratio: 1/1;
-	background-image: conic-gradient(var(--colour), transparent var(--trans));
+	background-image: conic-gradient(var(--colour), color-mix(in srgb, var(--colour) 0%, transparent) var(--trans));
     border-radius: 50%;
 }
 #hour {
@@ -178,7 +178,7 @@ body {
 }
 
 .hrs1{
-    color: var(--c1);
+    color: var(--c3);
     display: flex;
     flex-direction: row;
     --weight: var(--w1);
@@ -193,7 +193,7 @@ body {
 }
 #c6{--weight: var(--w4)}
 .secs{
-    color: var(--c3);
+    color: var(--c1);
     display: flex;
     flex-direction: row;
     --weight: var(--w5);
