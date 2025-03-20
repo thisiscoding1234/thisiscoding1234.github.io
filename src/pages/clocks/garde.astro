@@ -1,0 +1,148 @@
+---
+import "../../styles/clocks/garde.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Now, What is this?</title>
+  </head>
+  <body>
+    <div class="main-clock">
+        <div class="clock-f" id="hour" style="z-index: 1;"></div>
+        <div class="clock-f" id="minute" style="z-index: 2;"></div>
+        <div class="clock-f" id="second" style="z-index: 3;"></div>
+    </div>
+    <div class="main-label">
+      <span class="hrs1">
+        <span class="lable-text" id="c1">0</span>
+        <span class="lable-text" id="c2">0</span>
+      </span><span class="lable-text" id="c3">:</span><span class="min1">
+        <span class="lable-text" id="c4">0</span>
+        <span class="lable-text" id="c5">0</span>
+      </span><span class="lable-text" id="c6">:</span><span class="secs">
+        <span class="lable-text" id="c7">0</span>
+        <span class="lable-text" id="c8">0</span></span
+      ><span class="lable-text" id="c9">:</span><span class="mill1">
+        <span class="lable-text" id="c10">0</span>
+        <span class="lable-text" id="c11">0</span>
+        <span class="lable-text" id="c12">0</span>
+      </span>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/accutime@latest/dist/accutime.min.js"
+    ></script>
+    <!--- https://www.npmjs.com/package/accutime --->
+    <script>
+      setInterval(() => {
+        const now = new Date();
+        const milisRatio = now.getMilliseconds() / 1000;
+        const secondsRatio = (milisRatio + now.getSeconds()) / 60;
+        const minutesRatio = (secondsRatio + now.getMinutes()) / 60;
+        const hoursRatio = (minutesRatio + now.getHours()) / 12;
+        const second = document.getElementById("second");
+        const minuite = document.getElementById("minute");
+        const hour = document.getElementById("hour");
+        second.style.setProperty('--a', `${secondsRatio * 100}%`);
+        minuite.style.setProperty('--a', `${minutesRatio * 100}%`);
+        hour.style.setProperty('--a', `${hoursRatio * 100}%`);
+        if (secondsRatio > minutesRatio){
+            let a = second.style.zIndex;
+            second.style.zIndex = minuite.style.zIndex;
+            minuite.style.zIndex = a;
+        } else if(secondsRatio < minutesRatio){
+            let a = minuite.style.zIndex;
+            minuite.style.zIndex = second.style.zIndex;
+            second.style.zIndex = a; 
+        };
+        if (hoursRatio > minutesRatio){
+            let a = minuite.style.zIndex;
+            minuite.style.zIndex = hour.style.zIndex;
+            hour.style.zIndex = a;
+        } else if(hoursRatio < minutesRatio){
+            let a = hour.style.zIndex;
+            hour.style.zIndex = minuite.style.zIndex;
+            minuite.style.zIndex = a;
+        };
+        if (secondsRatio > hoursRatio){
+            let a = hour.style.zIndex;
+            hour.style.zIndex = second.style.zIndex;
+            second.style.zIndex = a;
+        } else if(secondsRatio < hoursRatio){
+            let a = second.style.zIndex;
+            second.style.zIndex = hour.style.zIndex;
+            hour.style.zIndex = a;
+        };
+        if (String(now.getHours()).length === 1) {
+          document.getElementById("c1").innerHTML = "0";
+          document.getElementById("c2").innerHTML = String(now.getHours());
+        } else {
+          document.getElementById("c1").innerHTML = String(
+            now.getHours(),
+          ).charAt(0);
+          document.getElementById("c2").innerHTML = String(
+            now.getHours(),
+          ).charAt(1);
+        }
+        if (String(now.getMinutes()).length === 1) {
+          document.getElementById("c4").innerHTML = "0";
+          document.getElementById("c5").innerHTML = String(now.getMinutes());
+        } else {
+          document.getElementById("c4").innerHTML = String(
+            now.getMinutes(),
+          ).charAt(0);
+          document.getElementById("c5").innerHTML = String(
+            now.getMinutes(),
+          ).charAt(1);
+        }
+        if (String(now.getSeconds()).length === 1) {
+          document.getElementById("c7").innerHTML = "0";
+          document.getElementById("c8").innerHTML = String(now.getSeconds());
+        } else {
+          document.getElementById("c7").innerHTML = String(
+            now.getSeconds(),
+          ).charAt(0);
+          document.getElementById("c8").innerHTML = String(
+            now.getSeconds(),
+          ).charAt(1);
+        }
+        if (String(now.getMilliseconds()).length === 1) {
+          document.getElementById("c10").innerHTML = "0";
+          document.getElementById("c11").innerHTML = "0";
+          document.getElementById("c12").innerHTML = String(
+            now.getMilliseconds(),
+          ).charAt(0);
+        } else {
+          if (String(now.getMilliseconds()).length === 2) {
+            document.getElementById("c10").innerHTML = "0";
+            document.getElementById("c11").innerHTML = String(
+              now.getMilliseconds(),
+            ).charAt(0);
+            document.getElementById("c12").innerHTML = String(
+              now.getMilliseconds(),
+            ).charAt(1);
+          } else {
+            document.getElementById("c10").innerHTML = String(
+              now.getMilliseconds(),
+            ).charAt(0);
+            document.getElementById("c11").innerHTML = String(
+              now.getMilliseconds(),
+            ).charAt(1);
+            document.getElementById("c12").innerHTML = String(
+              now.getMilliseconds(),
+            ).charAt(2);
+          }
+        }
+        console.log(
+          hoursRatio +
+            ":" +
+            minutesRatio +
+            ":" +
+            secondsRatio +
+            ":" +
+            milisRatio,
+        );
+      }, 1);
+    </script>
+  </body>
+</html>
