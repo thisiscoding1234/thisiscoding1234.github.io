@@ -56,22 +56,22 @@ import "../../styles/clocks/garde.css";
             second.style.zIndex = a; 
         };
         if (hoursRatio > minutesRatio){
+            let a = hour.style.zIndex;
+            hour.style.zIndex = minuite.style.zIndex;
+            minuite.style.zIndex = a; 
+        } else if(hoursRatio < minutesRatio){
             let a = minuite.style.zIndex;
             minuite.style.zIndex = hour.style.zIndex;
             hour.style.zIndex = a;
-        } else if(hoursRatio < minutesRatio){
-            let a = hour.style.zIndex;
-            hour.style.zIndex = minuite.style.zIndex;
-            minuite.style.zIndex = a;
         };
         if (secondsRatio > hoursRatio){
-            let a = hour.style.zIndex;
-            hour.style.zIndex = second.style.zIndex;
-            second.style.zIndex = a;
-        } else if(secondsRatio < hoursRatio){
             let a = second.style.zIndex;
             second.style.zIndex = hour.style.zIndex;
             hour.style.zIndex = a;
+        } else if(secondsRatio < hoursRatio){
+            let a = hour.style.zIndex;
+            hour.style.zIndex = second.style.zIndex;
+            second.style.zIndex = a;
         };
         if (String(now.getHours()).length === 1) {
           document.getElementById("c1").innerHTML = "0";
