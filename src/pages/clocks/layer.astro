@@ -1,29 +1,33 @@
 ---
-import "../../styles/clocks/garde.css";
+import "../../styles/clocks/layer.css";
 ---
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Now, What is this?</title>
+    <title>Layered Clock</title>
   </head>
   <body>
+    <div class="main-clock">
         <div class="clock-f" id="hour"></div>
         <div class="clock-f" id="minute"></div>
         <div class="clock-f" id="second"></div>
-        <span id="hrs1" style="z-index: inherit;">
+    </div>
+    <div class="main-label">
+      <span class="hrs1">
         <span class="lable-text" id="c1">0</span>
         <span class="lable-text" id="c2">0</span>
-        </span><span id="min1" style="z-index: inherit;">
+      </span><span class="lable-text" id="c3">:</span><span class="min1">
         <span class="lable-text" id="c4">0</span>
         <span class="lable-text" id="c5">0</span>
-        </span><span id="secs" style="z-index: inherit;">
+      </span><span class="lable-text" id="c6">:</span><span class="secs">
         <span class="lable-text" id="c7">0</span>
-        <span class="lable-text" id="c8">0</span>
-        </span><span class="mill1" style="z-index: inherit;">
+        <span class="lable-text" id="c8">0</span></span
+      ><span class="lable-text" id="c9">:</span><span class="mill1">
         <span class="lable-text" id="c10">0</span>
         <span class="lable-text" id="c11">0</span>
         <span class="lable-text" id="c12">0</span>
+      </span>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/accutime@latest/dist/accutime.min.js"
@@ -41,27 +45,21 @@ import "../../styles/clocks/garde.css";
         const s = "second";
         const m = "minute";
         const h = "hour";
-        const st = "secs";
-        const mt = "min1";
-        const ht = "hrs1";
-        let pt = -1;
-        let pm = -2;
-        let pb = -3;
-        let ptt = 0;
-        let ptm = -1;
-        let ptb = -2;
+        let pt = 3;
+        let pm = 2;
+        let pb = 1;
         let sR = Number(secondsRatio);
         let mR = Number(minutesRatio);
         let hR = Number(hoursRatio);
         document.getElementById(s).style.setProperty('--a', `${secondsRatio * 100}%`);
         document.getElementById(m).style.setProperty('--a', `${minutesRatio * 100}%`);
         document.getElementById(h).style.setProperty('--a', `${hoursRatio * 100}%`);
-        if (sR > mR && mR > hR) {zi(s, pb); zi(m, pm); zi(h, pt); zi(st, ptb); zi(mt, ptm); zi(ht, ptt);};
-        if (sR > hR && hR > mR) {zi(s, pb); zi(h, pm); zi(m, pt); zi(st, ptb); zi(ht, ptm); zi(mt, ptt);};
-        if (mR > sR && sR > hR) {zi(m, pb); zi(s, pm); zi(h, pt); zi(mt, ptb); zi(st, ptm); zi(ht, ptt);};
-        if (mR > hR && hR > sR) {zi(m, pb); zi(h, pm); zi(s, pt); zi(mt, ptb); zi(ht, ptm); zi(st, ptt);};
-        if (hR > sR && sR > mR) {zi(h, pb); zi(s, pm); zi(m, pt); zi(ht, ptb); zi(st, ptm); zi(mt, ptt);};
-        if (hR > mR && mR > sR) {zi(h, pb); zi(m, pm); zi(s, pt); zi(ht, ptb); zi(mt, ptm); zi(st, ptt);};
+        if (sR > mR && mR > hR) {zi(s, pb); zi(m, pm); zi(h, pt);};
+        if (sR > hR && hR > mR) {zi(s, pb); zi(h, pm); zi(m, pt);};
+        if (mR > sR && sR > hR) {zi(m, pb); zi(s, pm); zi(h, pt);};
+        if (mR > hR && hR > sR) {zi(m, pb); zi(h, pm); zi(s, pt);};
+        if (hR > sR && sR > mR) {zi(h, pb); zi(s, pm); zi(m, pt);};
+        if (hR > mR && mR > sR) {zi(h, pb); zi(m, pm); zi(s, pt);};
 
         if (String(now.getHours()).length === 1) {
           document.getElementById("c1").innerHTML = "0";
@@ -124,6 +122,7 @@ import "../../styles/clocks/garde.css";
           }
         }
       }, 1);
+      zi(m, pb); zi(h, pm); zi(s, pt)
     </script>
   </body>
 </html>
