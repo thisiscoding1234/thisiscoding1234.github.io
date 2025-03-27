@@ -7,7 +7,7 @@
     --hrs: calc(var(--mins)*12);
     --trans: 100%;
     --hue: 25;
-    --mod: 10;
+    --mod: 15;
     --c1: hsl(var(--hue) 100% 50%);
     --c2: hsl(calc(var(--hue) + (1 * var(--mod))) 100% 50%);
     --c3: hsl(calc(var(--hue) + (2 * var(--mod))) 100% 50%);

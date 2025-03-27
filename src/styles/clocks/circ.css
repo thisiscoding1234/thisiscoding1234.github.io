@@ -55,37 +55,24 @@ body {
     position: absolute;
     width: 100%;
 	aspect-ratio: 1/1;
-	background-image: linear-gradient(var(--colour), color-mix(in srgb, var(--colour) 0%, transparent) var(--trans));
+	background-image: radial-gradient(color-mix(in srgb,var(--colour) 100%, transparent), color-mix(in srgb,var(--colour) 90%, transparent) calc(var(--a)/1.425), color-mix(in srgb, var(--colour) 0%, transparent) calc(var(--a)/1.425));
     border-radius: 50%;
     transition: translate 1s var(--bounce);
 }
 #hour {
     --colour: var(--c3);
-    z-index: 1;
     transition: translate 1s var(--bounce);
+    --a: 10%;
 }
 #minute {
 	--colour: var(--c2);
-    z-index: 2;
     transition: translate 1s var(--bounce);
+    --a: 10%;
 }
 #second {
 	--colour: var(--c1);
-    z-index: 3;
     transition: translate 1s var(--bounce);
-}
-#millis {
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    transform-origin: 0% 100%;
-    transform: translate(-50%, 0) rotate(0deg);
-    width: 5px;
-    height: 50%;
-    background: rgb(0, 0, 0);
-    z-index: 5;
-    border-radius: 10px;
-    mix-blend-mode: exclusion;
+    --a: 10%;
 }
 .main-label {
     position: absolute;
