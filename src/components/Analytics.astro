@@ -1,0 +1,14 @@
+---
+const isDev = import.meta.env.DEV;
+---
+{isDev && (
+  <link rel="stylesheet" href="../src/styles/dev.css" />
+)}
+
+{!isDev && (
+  <script 
+    defer 
+    src="https://cloud.umami.is/script.js" 
+    data-website-id="881ff059-cddf-4926-afd3-95574cc71dff"
+  ></script>
+)}
