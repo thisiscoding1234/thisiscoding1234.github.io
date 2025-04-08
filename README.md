@@ -1,5 +1,6 @@
 # Thisiscoding1234.github.io
 ## My Personal Site (Under Construction)
+## You can add features and pages via a PR! (Please do!)
 
 ## Prerequisites  
   
