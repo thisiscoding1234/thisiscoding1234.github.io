@@ -173,6 +173,15 @@ img {
     justify-content: space-between;
 }
 
+#warn{
+    background-color: yellow;
+    font-size: 1rem;
+    border-style: double;
+    border-radius: 16px;
+    border-color: #000000;
+    padding: 8px;
+}
+
 @keyframes weight {
     0% {
         font-weight: 100;
