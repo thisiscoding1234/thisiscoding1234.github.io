@@ -1,0 +1,95 @@
+---
+import "../flexo/style.css";
+import "../flexo/script.js";
+---
+
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Roboto Flex</h1>
+        <h2>Varible font demo</h2>
+        <h3>https://fonts.google.com/specimen/Roboto+Flex</h3>
+        <h4>Move the sliders to change the properties of the typeface! <button id="resetAll" class="rs" onClick="resetAllSliders()">Reset All</button></h4>
+        <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis nisl id arcu consequat, rutrum mattis lorem aliquam. Vestibulum ante.        </h5>
+        <h6>Typeography is so much fun!</h6>
+        <p>abcdefghjklmnopqrstuvwxyz</p>
+        <p>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+        <p>1234567890`-=!"£$%^&*()-=`</p>
+        <p>[]{};'#:@~<>?,./|\</p>
+        <div class="sliders">
+            <span class="slider-label">
+                <span class="label">slant</span>
+                <input type="range" min="-10" max="0" value="0" class="slider" id="slant">
+                <button class="rs" onclick="resetSlider('slant', 0)">Reset</button>
+            </span>
+            
+            <span class="slider-label">
+                <span class="label">width</span>
+                <input type="range" min="25" max="151" value="100" class="slider" id="width">
+                <button class="rs" onclick="resetSlider('width', 100)">Reset</button>
+            </span>
+            
+            <span class="slider-label">
+                <span class="label">grade</span>
+                <input type="range" min="-200" max="150" value="0" class="slider" id="grade">
+                <button class="rs" onclick="resetSlider('grade', 0)">Reset</button>
+            </span>
+            
+            <span class="slider-label">
+                <span class="label">thick_s</span>
+                <input type="range" min="27" max="175" value="96" class="slider" id="thick_s">
+                <button class="rs" onclick="resetSlider('thick_s', 96)">Reset</button>
+            </span>
+            
+            <span class="slider-label">
+                <span class="label">thin_s</span>
+                <input type="range" min="25" max="135" value="79" class="slider" id="thin_s">
+                <button class="rs" onclick="resetSlider('thin_s', 79)">Reset</button>
+            </span>
+            
+            <span class="slider-label">
+                <span class="label">counter_w</span>
+                <input type="range" min="323" max="603" value="468" class="slider" id="counter_w">
+                <button class="rs" onclick="resetSlider('counter_w', 468)">Reset</button>
+            </span>
+            
+            <span class="slider-label">
+                <span class="label">asce_h</span>
+                <input type="range" min="649" max="854" value="750" class="slider" id="asce_h">
+                <button class="rs" onclick="resetSlider('asce_h', 750)">Reset</button>
+            </span>
+            
+            <span class="slider-label">
+                <span class="label">desc_d</span>
+                <input type="range" min="-305" max="-98" value="-203" class="slider" id="desc_d">
+                <button class="rs" onclick="resetSlider('desc_d', -203)">Reset</button>
+            </span>
+            
+            <span class="slider-label">
+                <span class="label">figure_h</span>
+                <input type="range" min="560" max="788" value="738" class="slider" id="figure_h">
+                <button class="rs" onclick="resetSlider('figure_h', 738)">Reset</button>
+            </span>
+            
+            <span class="slider-label">
+                <span class="label">lower_h</span>
+                <input type="range" min="416" max="570" value="514" class="slider" id="lower_h">
+                <button class="rs" onclick="resetSlider('lower_h', 514)">Reset</button>
+            </span>
+            
+            <span class="slider-label">
+                <span class="label">upper_h</span>
+                <input type="range" min="528" max="760" value="712" class="slider" id="upper_h">
+                <button class="rs" onclick="resetSlider('upper_h', 712)">Reset</button>
+            </span>
+            
+            <span class="slider-label">
+                <span class="label">weight</span>
+                <input type="range" min="100" max="1000" value="400" class="slider" id="weight">
+                <button class="rs" onclick="resetSlider('weight', 400)">Reset</button>
+            </span>
+                       
+        </div> 
+    </body>
+</html>

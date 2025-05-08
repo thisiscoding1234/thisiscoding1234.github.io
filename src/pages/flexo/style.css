@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,slnt,wdth,wght,GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC@8..144,-10..0,25..151,100..1000,-200..150,27..175,323..603,25..135,649..854,-305..-98,560..788,416..570,528..760&display=swap');
+
+:root{
+    --weight: 400;
+    --slant: 0;
+    --width: 100;
+    --grade: 0;
+    --thick_s: 96;
+    --thin_s: 79;
+    --counter_w: 468;
+    --asce_h: 750;
+    --desc_d: -203;
+    --figure_h: 738;
+    --lower_h: 514;
+    --upper_h: 712;
+}
+
+body, h1, h2, h3, h4, h5, h6, p {
+  font-family: "Roboto Flex", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: var(--weight); /* Use a value from 100 to 1000 */
+  font-style: normal;
+  font-variation-settings:
+    "slnt" var(--slant), /* Use a value from -10 to 0 */
+    "wdth" var(--width), /* Use a value from 25 to 151 */
+    "GRAD" var(--grade), /* Use a value from -200 to 150 */
+    "XOPQ" var(--thick_s), /* Use a value from 27 to 175 */
+    "YOPQ" var(--thin_s), /* Use a value from 25 to 135 */
+    "XTRA" var(--counter_w), /* Use a value from 323 to 603 */
+    "YTAS" var(--asce_h), /* Use a value from 649 to 854 */
+    "YTDE" var(--desc_d), /* Use a value from -305 to -98 */
+    "YTFI" var(--figure_h), /* Use a value from 560 to 788 */
+    "YTLC" var(--lower_h), /* Use a value from 416 to 570 */
+    "YTUC" var(--upper_h); /* Use a value from 528 to 760 */
+}
+
+.sliders {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between each slider row */
+  width: 100%;
+}
+
+.slider-label {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.label {
+  width: 125px; /* Fixed width for labels so all sliders start aligned */
+  text-align: left;
+  vertical-align: middle;
+  margin-right: 0px;
+  height: 32px;
+  line-height: 32px;
+  border: black solid 1px;
+  border-radius: 16px 8px 8px 16px;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.slider {
+  -webkit-appearance: none;
+  -webkit-transition: .2s;
+  flex: 1; /* Slider stretches to fill available space */
+  height: 32px;
+  background: #ffffff;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(to right, black, black) border-box;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  margin: 0 4px;
+}
+
+.rs {
+  -webkit-appearance: none;
+  width: 60px; /* Fixed width for reset buttons */
+  height: 32px;
+  border: black solid 1px;
+  border-radius: 8px 16px 16px 8px;
+  padding: 0 5px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+.slider:hover {
+  background: linear-gradient(0deg, rgb(170, 170, 170), rgb(170, 170, 170)) padding-box,
+              linear-gradient(0deg, rgb(170, 170, 170), rgb(170, 170, 170));
+  border: 1px solid transparent;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 32px;
+  height: 32px;
+  background: #ff6A00;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.5s;
+}
+
+.slider::-moz-range-thumb {
+  width: 32px;
+  height: 32px;
+  background: #ff6A00;
+  border-radius: 8px;
+  transition: transform 0.5s;
+}
+
+/* Add a pulse effect when slider resets */
+@keyframes pulseAnimation {
+  0% { box-shadow: 0 0 0px rgba(255, 255, 255, 0); }
+  50% { box-shadow: 0 0 8px rgba(255, 108, 0, 1); }
+  100% { box-shadow: 0 0 0px rgba(255, 255, 255, 0); }
+}
+
+.slider.pulse {
+  animation: pulseAnimation 1s;
+}
