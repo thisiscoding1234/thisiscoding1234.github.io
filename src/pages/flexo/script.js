@@ -1,3 +1,5 @@
+client:only="vue"
+
 // Select root
 const root = document.querySelector(':root');
 
