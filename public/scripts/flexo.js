@@ -15,7 +15,7 @@ var u_h = document.getElementById("upper_h")
 var wh = document.getElementById("weight")
 
 s.oninput = function () { root.style.setProperty('--slant', s.value) }
-w.oninput = function () { root.style.setProperty('--width', warn.value) }
+w.oninput = function () { root.style.setProperty('--width', w.value) }
 g.oninput = function () { root.style.setProperty('--grade', g.value) }
 th_s.oninput = function () { root.style.setProperty('--thick_s', th_s.value) }
 t_s.oninput = function () { root.style.setProperty('--thin_s', t_s.value) }
@@ -47,7 +47,7 @@ sliderIds.forEach(id => {
 document.getElementById(`resetAll`).addEventListener('click', () => {resetAllSliders()})
 
 // Preload the gentle click sound
-const clickSound = new Audio('click.mp3');
+const clickSound = new Audio('public/click.mp3');
 
 // Animate slider value
 function animateSliderToValue(slider, targetValue, duration = 400, onComplete = null) {

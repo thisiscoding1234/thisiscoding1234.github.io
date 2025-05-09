@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    /* animation: hueShiftA 1s linear infinite; */
+    --seconds: 1s;
+    --mins: calc(var(--seconds)*60);
+    --hrs: calc(var(--mins)*12);
+    --trans: 100%;
+    --hue: 25;
+    --mod: 15;
+    --c1: hsl(var(--hue) 15% 25%);
+    --c2: hsl(calc(var(--hue) + (1 * var(--mod))) 15% 50%);
+    --c3: hsl(calc(var(--hue) + (2 * var(--mod))) 15% 75%);
+    --c4: hsl(calc(var(--hue) + 180) 15% 50%);
+    --bounce: linear(0 0%, 0 2.27%, 0.02 4.53%, 0.04 6.8%, 0.06 9.07%, 0.1 11.33%, 0.14 13.6%, 0.25 18.15%, 0.39 22.7%, 0.56 27.25%, 0.77 31.8%, 1 36.35%, 0.89 40.9%, 0.85 43.18%, 0.81 45.45%, 0.79 47.72%, 0.77 50%, 0.75 52.27%, 0.75 54.55%, 0.75 56.82%, 0.77 59.1%, 0.79 61.38%, 0.81 63.65%, 0.85 65.93%, 0.89 68.2%, 1 72.7%, 0.97 74.98%, 0.95 77.25%, 0.94 79.53%, 0.94 81.8%, 0.94 84.08%, 0.95 86.35%, 0.97 88.63%, 1 90.9%, 0.99 93.18%, 0.98 95.45%, 0.99 97.73%, 1 100%);
+    
+    /* Responsive base sizes */
+    --clock-size: min(70vw, 70vh, 500px);
+    --clock-offset: calc(var(--clock-size) * -0.2);
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-clock {
+    --b: 0%;
+    --colour: white;
+    position: relative;
+    width: var(--clock-size);
+    aspect-ratio: 1/1;
+    border: 10px solid transparent;
+    background: 
+        linear-gradient(to right, white, white), 
+        conic-gradient(color-mix(in srgb, var(--colour) 100%, transparent), color-mix(in srgb, var(--colour) 75%, transparent) var(--b), color-mix(in srgb, var(--colour) 0%, transparent) var(--b)); 
+        background-clip: padding-box, border-box;
+        background-origin: padding-box, border-box;
+    border-radius: 50%;
+    overflow: hidden;
+    top: calc(var(--clock-offset) * 0.65);
+    transition: translate overflow border 1s var(--bounce);
+}
+.main-clock:hover{
+    overflow: visible;
+    display: flex;
+    flex-direction: row;
+    transition: translate overflow border 1s var(--bounce);
+    #hour{
+        translate: -75%;
+    }
+    #minuite{
+        translate: 50%;
+    }
+    #second{
+        translate: 75%;
+    }
+}
+.clock-f {
+    position: absolute;
+    width: 100%;
+	aspect-ratio: 1/1;
+	background-image: conic-gradient(color-mix(in srgb,var(--colour) 100%, transparent), color-mix(in srgb,var(--colour) 75%, transparent) var(--a), color-mix(in srgb, var(--colour) 0%, transparent) var(--a));
+    border-radius: 50%;
+    transition: translate 1s var(--bounce);
+}
+#hour {
+    --colour: var(--c3);
+    transition: translate 1s var(--bounce);
+    --a: 10%;
+}
+#minute {
+	--colour: var(--c2);
+    transition: translate 1s var(--bounce);
+    --a: 10%;
+}
+#second {
+	--colour: var(--c1);
+    transition: translate 1s var(--bounce);
+    --a: 10%;
+}
+.main-label {
+    position: absolute;
+    bottom: calc(var(--clock-offset) * 0.1);
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Chivo Mono", monospace;
+    color: black;
+    font-size: 10rem;
+    display: flex;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #ffffff;
+    overflow: hidden;
+	user-select: none;
+}
+@keyframes hueShiftA {
+    0%{
+        --hue: 0;
+    }
+    50%{
+        --hue: 180;
+    }
+    100%{
+        --hue: 360;
+    }
+}
+@keyframes hueShiftB {
+    0%{
+        --mod: 0;
+    }
+    50%{
+        --mod: 180;
+    }
+    100%{
+        --mod: 360;
+    }
+}
+
+.lable-text{
+    font-weight: var(--weight);
+    margin-right: -10px;
+    transition: all 1s var(--bounce);
+}
+.main-label {
+    --w1: 900;
+    --w2: 100;
+    --w3: 700;
+    --w4: 100;
+    --w5: 400;
+    --w6: 100;
+    --w7: 100;
+}
+
+.main-label:hover{
+    --w1: 100;
+    --w2: 900;
+    --w3: 500;
+    --w4: 900;
+    --w5: 500;
+    --w6: 900;
+    --w7: 900;
+}
+
+.hrs1{
+    color: var(--c3);
+    display: flex;
+    flex-direction: row;
+    --weight: var(--w1);
+}
+#c3{--weight: var(--w2)}
+.min1{
+    color: var(--c2);
+    display: flex;
+    flex-direction: row;
+    --weight: var(--w3);
+
+}
+#c6{--weight: var(--w4)}
+.secs{
+    color: var(--c1);
+    display: flex;
+    flex-direction: row;
+    --weight: var(--w5);
+}
+#c9{--weight: var(--w6)}
+.mill1{
+    color: var(--c4);
+    display: flex;
+    flex-direction: row;
+    --weight: var(--w7);
+}
+#c14{
+    font-size: 1rem;
+}
