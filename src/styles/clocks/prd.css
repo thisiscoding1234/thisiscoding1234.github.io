@@ -27,12 +27,13 @@ body {
     justify-content: center;
 }
 .main-clock {
+    --border-width: 10px;
     --b: 0%;
     --colour: white;
     position: relative;
-    width: var(--clock-size);
+    width: calc(var(--clock-size) - (var(--border-width) * 2));
     aspect-ratio: 1/1;
-    border: 10px solid transparent;
+    border: var(--border-width) solid transparent;
     background: 
         linear-gradient(to right, white, white), 
         conic-gradient(color-mix(in srgb, var(--colour) 100%, transparent), color-mix(in srgb, var(--colour) 75%, transparent) var(--b), color-mix(in srgb, var(--colour) 0%, transparent) var(--b)); 
@@ -178,5 +179,6 @@ body {
     --weight: var(--w7);
 }
 #c14{
-    font-size: 1rem;
+    font-size: 2rem;
+    --weight: 900;
 }
