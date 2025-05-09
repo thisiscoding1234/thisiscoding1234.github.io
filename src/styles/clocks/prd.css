@@ -44,7 +44,7 @@ body {
     top: calc(var(--clock-offset) * 0.65);
     transition: translate overflow border 1s var(--bounce);
 }
-.main-clock:hover{
+/* (A bit laggy) .main-clock:hover{
     overflow: visible;
     display: flex;
     flex-direction: row;
@@ -58,7 +58,7 @@ body {
     #second{
         translate: 75%;
     }
-}
+} */
 .clock-f {
     position: absolute;
     width: 100%;
