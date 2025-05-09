@@ -1,4 +1,5 @@
 ---
+const tickMarks = Array.from({ length: 60 }, (_, i) => i);
 import "../../styles/clocks/prd.css";
 import Analytics from "../../components/Analytics.astro";
 ---
@@ -11,6 +12,14 @@ import Analytics from "../../components/Analytics.astro";
   </head>
   <body>
     <div class="main-clock" id="clk">
+      {
+          tickMarks.map((i) => (
+            <div
+              class={`tick ${i % 5 === 0 ? "hour-tick" : ""}`}
+              style={`transform: translate(-50%, -50%) rotate(${i * 6}deg) translateY(calc(var(--clock-size) * 0.44))`}
+            />
+          ))
+        }
         <div class="clock-f" id="hour"></div>
         <div class="clock-f" id="minute"></div>
         <div class="clock-f" id="second"></div>
