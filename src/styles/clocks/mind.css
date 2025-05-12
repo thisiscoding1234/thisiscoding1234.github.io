@@ -1,0 +1,67 @@
+@import url(./base.css);
+
+:root{
+    --hue: 25;
+    --mod: 15;
+    --c1: hsl(var(--hue) 100% 50%);
+    --c2: hsl(calc(var(--hue) + (1 * var(--mod))) 100% 50%);
+    --c3: hsl(calc(var(--hue) + (2 * var(--mod))) 100% 50%);
+    --c4: hsl(calc(var(--hue) + 180) 100% 50%);
+}
+
+.main-clock {
+    --f: var(--c1);
+    --n: var(--c4);
+    width: var(--clock-size);
+    border: var(--border-width) solid transparent;
+    background: white;
+    animation: breathe 10s infinite;
+    box-shadow: -2px -2px 0px black, 2px -2px 0px black, -2px 2px 0px black, 2px 2px 0px black;
+}
+.clock-f {
+	background-image: conic-gradient(color-mix(in srgb,var(--colour) 100%, transparent), color-mix(in srgb,var(--colour) 75%, transparent) var(--a), color-mix(in srgb, var(--colour) 0%, transparent) var(--a));
+    border-radius: 50%;
+}
+
+.tick {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 4px;
+    height: 12px;
+    background: white;
+    transform-origin: center;
+	z-index: 5;
+    border-radius: 10px;
+    mix-blend-mode: difference;
+}
+.hour-tick {
+    width: 8px;
+    height: 30px;
+    display: block;
+    border-radius: 10px;
+}
+
+@keyframes breathe {
+    0%{
+        box-shadow: -4px -4px 0px var(--n), 4px -4px 0px var(--n), -4px 4px 0px var(--n), 4px 4px 0px var(--n);
+    }
+    25%{
+        box-shadow: -10px -10px 0px black, 10px -10px 0px black, -10px 10px 0px black, 10px 10px 0px black;
+    }
+    49%{
+        box-shadow: -10px -10px 0px var(--f), 10px -10px 0px var(--f), -10px 10px 0px var(--f), 10px 10px 0px var(--f);
+    }
+    50%{
+        box-shadow: -10px -10px 0px var(--f), 10px -10px 0px var(--f), -10px 10px 0px var(--f), 10px 10px 0px var(--f);
+    }
+    75%{
+        box-shadow: -4px -4px 0px black, 4px -4px 0px black, -4px 4px 0px black, 4px 4px 0px black;
+    }
+    99%{
+        box-shadow: -4px -4px 0px var(--n), 4px -4px 0px var(--n), -4px 4px 0px var(--n), 4px 4px 0px var(--n);
+    }
+    100%{
+        box-shadow: -4px -4px 0px var(--n), 4px -4px 0px var(--n), -4px 4px 0px var(--n), 4px 4px 0px var(--n);
+    }
+}
