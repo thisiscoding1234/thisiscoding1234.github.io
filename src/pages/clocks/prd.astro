@@ -134,15 +134,17 @@ import Analytics from "../../components/Analytics.astro";
         }
       }, 1);
       setInterval(() => {
-        const tims = [[0, 0, "SOD", "white"], [9, 10, "P1", "red"], [9, 55, "P2", "orange"], [10, 40, "P3", "yellow"], [11, 25, "break", "black"], [11, 45, "P4", "green"], [12, 30, "P5", "blue"], [13, 15, "lunch", "black"], [14, 15, "P6", "purple"], [15, 0, "P7", "violet"], [15, 45, "EOD", "white"]];
+        const tims = [[0, 0, "SOD", "white"], [8, 50, "REG", "black"], [9, 10, "P1", "red"], [9, 55, "P2", "orange"], [10, 40, "P3", "yellow"], [11, 25, "break", "black"], [11, 45, "P4", "green"], [12, 30, "P5", "blue"], [13, 15, "lunch", "black"], [14, 15, "P6", "purple"], [15, 0, "P7", "violet"], [15, 45, "EOD", "white"]];
         const now = new Date();
         for (let i = 0; i < tims.length; i++) {
           let nowMin = now.getMinutes() + now.getHours() * 60;
           let timMin = Number(tims[i][0]) * 60 + Number(tims[i][1]);
           let timMinN = (i < tims.length - 1) ? Number(tims[(i+1)][0]) * 60 + Number(tims[(i+1)][1]) : 24 * 60;
+          let nowSecs = now.getSeconds();
           let timRatio = (nowMin - timMin) / (timMinN - timMin);
+          let timRatioSecs = (((nowMin * 60) + nowSecs) - (timMin * 60)) / (timMinN * 60 - timMin * 60);
           let x = document.getElementById("clk");
-          x.style.setProperty('--b', `${Math.abs(timRatio) * 100}%`);
+          x.style.setProperty('--b', `${Math.abs(timRatioSecs) * 100}%`);
           x.style.setProperty('--colour', `${tims[i][3]}`);
           if (nowMin >= timMin && nowMin < timMinN) {
             document.getElementById("c14").innerHTML = String(tims[i][2]);
