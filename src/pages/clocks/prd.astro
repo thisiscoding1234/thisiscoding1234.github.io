@@ -133,7 +133,7 @@ import Analytics from "../../components/Analytics.astro";
           }
         }
       }, 1);
-      setInterval(() => {
+      const updatePeriod = () => {
         const tims = [[0, 0, "SOD", "white"], [8, 50, "REG", "black"], [9, 10, "P1", "red"], [9, 55, "P2", "orange"], [10, 40, "P3", "yellow"], [11, 25, "break", "black"], [11, 45, "P4", "green"], [12, 30, "P5", "blue"], [13, 15, "lunch", "black"], [14, 15, "P6", "purple"], [15, 0, "P7", "violet"], [15, 45, "EOD", "white"]];
         const now = new Date();
         for (let i = 0; i < tims.length; i++) {
@@ -152,7 +152,9 @@ import Analytics from "../../components/Analytics.astro";
             break;
           }
         }
-      }, 1000);
+      };
+      updatePeriod();
+      setInterval(updatePeriod, 1000);
       
       zi(m, pb); zi(h, pm); zi(s, pt);
     </script>
