@@ -9,8 +9,8 @@ dependencies:
     specifier: ^1.0.0
     version: 1.0.0
   astro:
-    specifier: ^5.3.0
-    version: 5.7.12(typescript@5.8.3)
+    specifier: ^5.7.13
+    version: 5.7.13(typescript@5.8.3)
 
 packages:
 
@@ -62,7 +62,7 @@ packages:
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0}
     dependencies:
       ci-info: 4.2.0
-      debug: 4.4.0
+      debug: 4.4.1
       dlv: 1.1.3
       dset: 3.1.4
       is-docker: 3.0.0
@@ -860,8 +860,8 @@ packages:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
     dev: false
 
-  /astro@5.7.12(typescript@5.8.3):
-    resolution: {integrity: sha512-UQOItiZz2hcv9PlHTQ6dNqFDIVNPnmwk6eyAjJqPE9O8EDHZK2JKtTRD0CBFN2Uqr0RE0TWP2gqDpLfsa5dJEA==}
+  /astro@5.7.13(typescript@5.8.3):
+    resolution: {integrity: sha512-cRGq2llKOhV3XMcYwQpfBIUcssN6HEK5CRbcMxAfd9OcFhvWE7KUy50zLioAZVVl3AqgUTJoNTlmZfD2eG0G1w==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
     dependencies:
@@ -881,7 +881,7 @@ packages:
       common-ancestor-path: 1.0.1
       cookie: 1.0.2
       cssesc: 3.0.0
-      debug: 4.4.0
+      debug: 4.4.1
       deterministic-object-hash: 2.0.2
       devalue: 5.1.1
       diff: 5.2.0
@@ -894,7 +894,7 @@ packages:
       fontace: 0.3.0
       github-slugger: 2.0.0
       html-escaper: 3.0.3
-      http-cache-semantics: 4.1.1
+      http-cache-semantics: 4.2.0
       js-yaml: 4.1.0
       kleur: 4.1.5
       magic-string: 0.30.17
@@ -907,7 +907,7 @@ packages:
       picomatch: 4.0.2
       prompts: 2.4.2
       rehype: 13.0.2
-      semver: 7.7.1
+      semver: 7.7.2
       shiki: 3.4.0
       tinyexec: 0.3.2
       tinyglobby: 0.2.13
@@ -1136,8 +1136,8 @@ packages:
     hasBin: true
     dev: false
 
-  /debug@4.4.0:
-    resolution: {integrity: sha512-6WTZ/IxCY/T6BALoZHaE4ctp9xm+Z5kY/pzYaCHRFeyVhojxlrm+46y68HA6hr0TcwEssoxNiDEUJQjfPZ/RYA==}
+  /debug@4.4.1:
+    resolution: {integrity: sha512-KcKCqiftBJcZr++7ykoDIEwSa3XWowTfNPo92BYxjXiyYEVrUQh2aLyhxBCwww+heortUFxEJYcRzosstTEBYQ==}
     engines: {node: '>=6.0'}
     peerDependencies:
       supports-color: '*'
@@ -1230,6 +1230,7 @@ packages:
     resolution: {integrity: sha512-8pgjLUcUjcgDg+2Q4NYXnPbo/vncAY4UmyaCm0jZevERqCHZIaWwdJHkf8XQtu4AxSKCdvrUbT0XUr1IdZzI8Q==}
     engines: {node: '>=18'}
     hasBin: true
+    requiresBuild: true
     optionalDependencies:
       '@esbuild/aix-ppc64': 0.25.4
       '@esbuild/android-arm': 0.25.4
@@ -1468,8 +1469,8 @@ packages:
     resolution: {integrity: sha512-bEqo66MRXsUGxWHV5IP0PUiAWwoEjba4VCzg0LjFJBpchPaTfyfCKTG6bc5F8ucKec3q5y6qOdGyYTSBEvhCrg==}
     dev: false
 
-  /http-cache-semantics@4.1.1:
-    resolution: {integrity: sha512-er295DKPVsV82j5kw1Gjt+ADA/XYHsajl82cGNQG2eyoPkvgUhX+nDIyelzhIWbbsXP39EHcI6l5tYs2FYqYXQ==}
+  /http-cache-semantics@4.2.0:
+    resolution: {integrity: sha512-dTxcvPXqPvXBQpq5dUr6mEMJX4oIEFv6bwom3FDwKRDsuIjjJGANqhBuoAn9c1RQJIdAKav33ED65E2ys+87QQ==}
     dev: false
 
   /import-meta-resolve@4.1.0:
@@ -1937,7 +1938,7 @@ packages:
     resolution: {integrity: sha512-zpe98Q6kvavpCr1NPVSCMebCKfD7CA2NqZ+rykeNhONIJBpc1tFKt9hucLGwha3jNTNI8lHpctWJWoimVF4PfA==}
     dependencies:
       '@types/debug': 4.1.12
-      debug: 4.4.0
+      debug: 4.4.1
       decode-named-character-reference: 1.1.0
       devlop: 1.1.0
       micromark-core-commonmark: 2.0.3
@@ -2298,8 +2299,8 @@ packages:
       fsevents: 2.3.3
     dev: false
 
-  /semver@7.7.1:
-    resolution: {integrity: sha512-hlq8tAfn0m/61p4BVRcPzIGr6LKiMwo4VM6dGi6pt4qcRkmNzTcWq6eCEjEh+qXjkMDvPlOFFSGwQjoEa6gyMA==}
+  /semver@7.7.2:
+    resolution: {integrity: sha512-RF0Fw+rO5AMf9MAyaRXI4AV0Ulj5lMHqVxxdSgiVbixSCXoEmmX/jk0CuJw4+3SqroYO9VoUh+HcuJivvtJemA==}
     engines: {node: '>=10'}
     hasBin: true
     dev: false
@@ -2311,7 +2312,7 @@ packages:
     dependencies:
       color: 4.2.3
       detect-libc: 2.0.4
-      semver: 7.7.1
+      semver: 7.7.2
     optionalDependencies:
       '@img/sharp-darwin-arm64': 0.33.5
       '@img/sharp-darwin-x64': 0.33.5
