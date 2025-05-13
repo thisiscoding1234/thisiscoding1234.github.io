@@ -48,6 +48,7 @@ import Analytics from "../../components/Analytics.astro";
     ></script>
     <!--- https://www.npmjs.com/package/accutime --->
     <script>
+          function zi(e, index) {document.getElementById(e).style.zIndex = index};
       setInterval(() => {
         const now = new Date();
         const milisRatio = now.getMilliseconds() / 1000;
@@ -62,6 +63,21 @@ import Analytics from "../../components/Analytics.astro";
           `rotate(${minutesRatio * 360}deg)`;
         document.getElementById("hour").style.transform =
           `rotate(${hoursRatio * 360}deg)`;
+          const s = "second";
+        const m = "minute";
+        const h = "hour";
+        let pt = 1;
+        let pm = 2;
+        let pb = 3;
+        let sR = Number(secondsRatio);
+        let mR = Number(minutesRatio);
+        let hR = Number(hoursRatio);
+          if (sR > mR && mR > hR) {zi(s, pb); zi(m, pm); zi(h, pt);};
+        if (sR > hR && hR > mR) {zi(s, pb); zi(h, pm); zi(m, pt);};
+        if (mR > sR && sR > hR) {zi(m, pb); zi(s, pm); zi(h, pt);};
+        if (mR > hR && hR > sR) {zi(m, pb); zi(h, pm); zi(s, pt);};
+        if (hR > sR && sR > mR) {zi(h, pb); zi(s, pm); zi(m, pt);};
+        if (hR > mR && mR > sR) {zi(h, pb); zi(m, pm); zi(s, pt);};
         if (String(now.getHours()).length === 1) {
           document.getElementById("c1").innerHTML = "0";
           document.getElementById("c2").innerHTML = String(now.getHours());
