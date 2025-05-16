@@ -236,3 +236,23 @@ img {
         transform:translateX(10px) rotate3D(1, 1, 1, 0deg);
     }
 }
+
+.bttn{
+    position: absolute;
+    top: 100px;
+    left: 95%;
+    transform: translateX(-95%);
+    border-radius: 10px;
+    padding: 5px;
+    color: var(--text);
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid var(--primary);
+    background-color: var(--backdrop);
+    font-size: 1.5rem;
+}
+.bttn:hover::after{
+    content: 'Shuffle';
+}

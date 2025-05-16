@@ -1,0 +1,92 @@
+---
+import Analytics from "../../components/Analytics.astro";
+import Clockhelp from "../../components/Clockhelp.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Clock Shuffle</title>
+    <Analytics />
+    <style>
+        iframe{
+        position: fixed;
+        top: 0px;
+        bottom: 0px;
+        right: 0px;
+        width: 100%;
+        border: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        z-index: 1;
+        height: 100%;}
+    </style>
+  </head>
+  <body>
+    <iframe src="" width="100%" height="100%"></iframe>
+    <Clockhelp></Clockhelp>
+    <script>
+        let clocks = ["circ", "garde", "gradient", "layer", "mind", "mixed", "prd"];
+        // set the iframe src to a random clock
+        let randomClock = clocks[Math.floor(Math.random() * clocks.length)];
+        let iframe = document.querySelector("iframe");
+        iframe.src = `/clocks/${randomClock}`;
+        // when the user presses the left arrow key, go to the previous clock
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "ArrowLeft") {
+                let index = clocks.indexOf(randomClock);
+                if (index === 0) {
+                    index = clocks.length - 1;
+                } else {
+                    index--;
+                }
+                randomClock = clocks[index];
+                iframe.src = `/clocks/${randomClock}`;
+            }
+        });
+        // when the user presses the right arrow key, go to the next clock
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "ArrowRight") {
+                let index = clocks.indexOf(randomClock);
+                if (index === clocks.length - 1) {
+                    index = 0;
+                } else {
+                    index++;
+                }
+                randomClock = clocks[index];
+                iframe.src = `/clocks/${randomClock}`;
+            }
+        });
+        // when the user presses the space key, go to a random clock
+        document.addEventListener("keydown", (event) => {
+            if (event.key === " ") {
+                randomClock = clocks[Math.floor(Math.random() * clocks.length)];
+                while (iframe.src === `/clocks/${randomClock}`) {
+                    randomClock = clocks[Math.floor(Math.random() * clocks.length)];
+                }
+                iframe.src = `/clocks/${randomClock}`;
+            }
+        });
+        // when the user presses the t key, toggle randomising the clock every 1 minute
+        let randomise = false;
+        let interval = 60000;
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "t") {
+                randomise = !randomise;
+                if (randomise) {
+                    interval = setInterval(() => {
+                        randomClock = clocks[Math.floor(Math.random() * clocks.length)];
+                        while (iframe.src === `/clocks/${randomClock}`) {
+                            randomClock = clocks[Math.floor(Math.random() * clocks.length)];
+                        }
+                        iframe.src = `/clocks/${randomClock}`;
+                    }, interval);
+                } else {
+                    clearInterval(interval);
+                }
+            }
+        });
+    </script>
+  </body>
+</html>
