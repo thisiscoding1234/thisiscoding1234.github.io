@@ -1,58 +1,62 @@
 <style>
-    /* Help panel styling */
-    #helpPanel {
-      position: fixed;
-      top: 20%;
-      right: 20px;
-      width: 250px;
-      padding: 1rem;
-      background: rgba(255,255,255,255.8);
-      color: black;
-      font-family: sans-serif;
-      font-size: 0.9rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-      display: none;
-      z-index: 1000;
-    }
-    #helpPanel button.close {
-      position: absolute;
-      top: 4px;
-      right: 6px;
-      background: none;
-      border: none;
-      color: #black;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-    /* Floating help icon */
-    #helpIcon {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      color: black;
-      border: 2px black solid;
-      border-radius: 50%;
-      width: 48px;
-      height: 48px;
-      font-size: 1.5rem;
-      cursor: pointer;
-      z-index: 100;
-      background: transparent;
-    }
-  </style>
-</head>
-<body>
+  /* Help panel styling */
+  #helpPanel {
+    position: fixed;
+    top: 20%;
+    right: 20px;
+    width: 250px;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 255.8);
+    color: black;
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    display: none;
+    z-index: 1000;
+  }
+  #helpPanel button.close {
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    background: none;
+    border: none;
+    color: #black;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  /* Floating help icon */
+  #helpIcon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: black;
+    border: 2px black solid;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 100;
+    background: transparent;
+  }
+</style>
 
+<body>
   <!-- Your app content here -->
 
   <!-- Help panel -->
-  <div id="helpPanel" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+  <div
+    id="helpPanel"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="helpTitle"
+  >
     <button class="close" title="Close">&times;</button>
     <h2 id="helpTitle">Quick Tips</h2>
     <ul>
       <li>◀️ / ▶️ : Navigate clocks</li>
-      <li>Space  : Random clock</li>
+      <li>Space : Random clock</li>
       <li>Press “i” or click the question mark to revisit this panel</li>
       <li>Press "t" to randomize the clock every minute</li>
       <li>The clocks are: circ, garde, gradient, layer, mind, mixed, prd</li>
@@ -63,33 +67,34 @@
   <button id="helpIcon" aria-label="Help">?</button>
 
   <script>
-    (function() {
-      const helpPanel = document.getElementById('helpPanel');
-      const helpIcon  = document.getElementById('helpIcon');
-      const closeBtn  = helpPanel.querySelector('button.close');
-      const HELP_KEY  = 'clockAppHelpShown';
+    (function () {
+      const helpPanel = document.getElementById("helpPanel");
+      const helpIcon = document.getElementById("helpIcon");
+      const closeBtn = helpPanel.querySelector("button.close");
+      const HELP_KEY = "clockAppHelpShown";
 
       // Show panel only once on first visit
       if (!localStorage.getItem(HELP_KEY)) {
         toggleHelp(true);
-        localStorage.setItem(HELP_KEY, 'true');
+        localStorage.setItem(HELP_KEY, "true");
       }
 
-      // Toggle visibility
       function toggleHelp(show = null) {
-        const isVisible = show !== null ? show : helpPanel.style.display === 'none';
-        helpPanel.style.display = isVisible ? 'block' : 'none';
+        const isVisible =
+          show !== null ? show : helpPanel.style.display === "none";
+        helpPanel.style.display = isVisible ? "block" : "none";
       }
 
       // Event listeners
-      helpIcon.addEventListener('click', () => toggleHelp(true));
-      closeBtn.addEventListener('click', () => toggleHelp(false));
-      
+      helpIcon.addEventListener("click", () => toggleHelp(true)); // Let it toggle itself
+      closeBtn.addEventListener("click", () => toggleHelp(false)); // Force hide
+
       // Listen for 'i' key to open the help panel
-      document.addEventListener('keydown', (e) => {
-        if (e.key.toLowerCase() === 'i') {
-          toggleHelp(true); // Always open when 'i' is pressed
+      document.addEventListener("keydown", (e) => {
+        if (e.key.toLowerCase() === "i") {
+          toggleHelp();
         }
       });
     })();
   </script>
+</body>
