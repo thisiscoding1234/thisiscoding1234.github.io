@@ -112,10 +112,14 @@ body, h1, h2, h3, h4, h5, h6, p {
 /* Add a pulse effect when slider resets */
 @keyframes pulseAnimation {
   0% { box-shadow: 0 0 0px rgba(255, 255, 255, 0); }
-  50% { box-shadow: 0 0 8px rgba(255, 108, 0, 1); }
+  50% { box-shadow: 0 0 10px rgba(255, 108, 0, 1); }
   100% { box-shadow: 0 0 0px rgba(255, 255, 255, 0); }
 }
 
 .slider.pulse {
   animation: pulseAnimation 1s;
+}
+
+#resetAll{
+  border-radius: 16px;
 }
