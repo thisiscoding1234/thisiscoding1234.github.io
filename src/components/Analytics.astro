@@ -13,6 +13,11 @@ const isDev = import.meta.env.DEV;
   ></script>
 )}
 
+{isDev && (
+    <link rel="icon" type="image/png" href="/img/icons/devcons/DevFavicon.png" />
+)}
+
+{!isDev && (
 <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png" />
@@ -21,3 +26,4 @@ const isDev = import.meta.env.DEV;
     <link rel="shortcut icon" href="/img/icons/favicon.ico" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="msapplication-config" content="/img/icons/browserconfig.xml" />
+    )}

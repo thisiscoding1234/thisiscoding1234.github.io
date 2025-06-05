@@ -1,0 +1,6 @@
+---
+const isDev = import.meta.env.DEV;
+---
+{isDev && (<img class="favi" src="../../img/icons/devcons/DevFavicon.svg" alt="an orange cube" data-toggle="tooltip" title="Go Home" data-bs-placement="bottom">)}
+
+{!isDev && (<img class="favi" src="../../img/faviconweb.svg" alt="an orange cube" data-toggle="tooltip" title="Go Home" data-bs-placement="bottom">)}
