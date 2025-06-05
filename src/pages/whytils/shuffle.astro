@@ -1,0 +1,85 @@
+---
+import Analytics from "../../components/Analytics.astro";
+---
+
+<html>
+<head>
+<title>Shuffle thing!</title>
+<!--- This is a test. How well can this shuffle? How fun this silly tool is!--->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap');
+html, body{
+font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+}
+#r{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0px 5px;
+}
+input{
+min-width:10px;
+height: 24px;
+font-family: "Chivo Mono", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+border-radius: 10px;
+text-align: center;
+}
+#lcy{
+border: gold 1px solid;
+border-radius: 10px;
+padding: 0px 10px;
+}
+button{
+	border-radius: 10px;
+	background-color: transparent;
+	padding: 5px;
+	font-size: 1rem;
+}
+</style>
+<Analytics />
+</head>
+<body>
+<h1>Shuffle thing <button id="s">Shuffle!</button></h1>
+<h3>Enter a string:</h3>
+<input id="a" onInput="this.style.width = (((this.value.length + 1) * 8) + 10) + 'px';"></input> <p> Looping <input id="b" onInput="this.style.width = (((this.value.length + 1) * 8) + 25) + 'px';" type="number"></input> times.</p>
+<h3>Results</h3>
+<div id="r"></div>
+
+<script>
+function shuffle(arr){
+        var count = arr.length, temp, index;
+        while(count > 0){
+            index = Math.floor(Math.random() * count);
+            count--;
+            temp = arr[count];
+            arr[count] = arr[index];
+            arr[index] = temp;
+        }
+}
+function a1(){
+let a =  document.getElementById("a").value
+let b = Array.from(a)
+let g = document.getElementById("b").value
+if(g<=0) {g=1};
+for (let i=0; i<g; i++){
+shuffle(b)
+}
+let r = document.getElementById("r");
+let p = document.createElement("p");
+if(b.join("") === a){
+p.id = "lcy"
+}
+r.append(p);
+p.innerHTML = b.join("");
+}
+
+document.getElementById("s").addEventListener("click", a1)
+</script>
+</body>
+</html>

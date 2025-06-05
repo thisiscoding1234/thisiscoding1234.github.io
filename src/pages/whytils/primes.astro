@@ -1,0 +1,126 @@
+---
+import Analytics from "../../components/Analytics.astro";
+---
+
+<html>
+<head>
+<title>Prime Factors thing!</title>
+<!--- This is a test. How well can this handle large loop counts? How fun this silly tool is!--->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap');
+html, body{
+font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+}
+#r{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0px 5px;
+}
+input{
+min-width:10px;
+height: 24px;
+font-family: "Chivo Mono", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+border-radius: 10px;
+text-align: center;
+}
+button{
+	border-radius: 10px;
+	background-color: transparent;
+	padding: 5px;
+	font-size: 1rem;
+}
+</style>
+<Analytics />
+</head>
+<body>
+<h1>Prime factors thing <button id="s">Go!</button></h1>
+<p> Looping <input id="b" onInput="this.style.width = (((this.value.length + 1) * 8) + 25) + 'px';" type="number"></input> times.</p>
+<h3>Results <span>(Took <span id="tim">00:00:00:00</span> (average <span id="ms">00</span>ms per iteration))</span></h3>
+<div id="r"></div>
+
+<script>
+var o = 0
+var v = 2
+var va = 2
+function primeFactors(n) {
+  const factors = [];
+
+  // Handle factor of 2
+  while (n % 2 === 0) {
+    factors.push(2);
+    n /= 2;
+  }
+
+  // Handle odd factors from 3 upwards
+  for (let i = 3; i <= Math.sqrt(n); i += 2) {
+    while (n % i === 0) {
+      factors.push(i);
+      n /= i;
+    }
+  }
+
+  // If n is a prime number greater than 2
+  if (n > 2) {
+    factors.push(n);
+  }
+
+  return factors;
+}
+function msToTime(ms) {
+    const hours = Math.floor(ms / (1000 * 60 * 60));
+    const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((ms % (1000 * 60)) / 1000);
+    const tenths = Math.floor(ms % 1000); // 0-9
+
+    // Pad with zeros if needed
+    const hh = String(hours).padStart(2, '0');
+    const mm = String(minutes).padStart(2, '0');
+    const ss = String(seconds).padStart(2, '0');
+
+    return `${hh}:${mm}:${ss}:${tenths}`;
+}
+function a1(lens){
+console.log("Doing " + v + "/" + (lens+1))
+var ru = 0
+va = v
+v = v + 1
+let p = primeFactors(va)
+for (let j = 0; j < p.length; j++){
+ru = ru + p[j]
+} 
+console.log(p.length + " Elements")
+var str = p.join(", ")
+var strf = va + ": " + str + "= " + ru + "/ "
+let r = document.getElementById("r");
+let h = document.createElement("p");
+r.append(h);
+h.innerHTML = strf;
+console.log("Finished " + va + "/" + (lens+1) + " (" + ((va / (lens+1))*1000) + "%)")
+}
+
+function b1(){
+var start = Date.now();
+let lm = document.getElementById("b");
+var abc = lm.value
+if(abc<=0) {abc=1};
+for (let i = 0; i < abc; i++){
+a1(abc)
+}
+var delta = Date.now() - start;
+var ds = msToTime(delta)
+console.log(ds)
+document.getElementById("tim").innerHTML = ds
+document.getElementById("ms").innerHTML = String(delta / abc)
+}
+
+document.getElementById("s").addEventListener("click", b1)
+</script>
+</body>
+</html>
