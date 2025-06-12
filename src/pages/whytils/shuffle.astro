@@ -30,11 +30,6 @@ font-family: "Chivo Mono", monospace;
 border-radius: 10px;
 text-align: center;
 }
-#lcy{
-border: gold 1px solid;
-border-radius: 10px;
-padding: 0px 10px;
-}
 button{
 	border-radius: 10px;
 	background-color: transparent;
@@ -73,7 +68,9 @@ shuffle(b)
 let r = document.getElementById("r");
 let p = document.createElement("p");
 if(b.join("") === a){
-p.id = "lcy"
+p.style.border = "gold 1px solid"
+p.style.borderRadius = "10px"
+p.style.padding = "0px 10px"
 }
 r.append(p);
 p.innerHTML = b.join("");
