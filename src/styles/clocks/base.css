@@ -90,6 +90,7 @@ body {
     background: #ffffff;
     overflow: hidden;
 	user-select: none;
+	cursor: none;
 }
 
 .lable-text{
