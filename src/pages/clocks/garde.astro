@@ -1,6 +1,7 @@
 ---
 import "../../styles/clocks/garde.css";
 import Analytics from "../../components/Analytics.astro";
+import Mouse from "../../components/Mouse.astro";
 ---
 
 <html lang="en">
@@ -13,16 +14,16 @@ import Analytics from "../../components/Analytics.astro";
         <div class="clock-f" id="hour"></div>
         <div class="clock-f" id="minute"></div>
         <div class="clock-f" id="second"></div>
-        <span id="hrs1" style="z-index: inherit;">
+        <span id="hrs1" style="z-index: inherit;" data-cursor-icon="Hrs">
         <span class="lable-text" id="c1">0</span>
         <span class="lable-text" id="c2">0</span>
-        </span><span id="min1" style="z-index: inherit;">
+        </span><span id="min1" style="z-index: inherit;" data-cursor-icon="Min">
         <span class="lable-text" id="c4">0</span>
         <span class="lable-text" id="c5">0</span>
-        </span><span id="secs" style="z-index: inherit;">
+        </span><span id="secs" style="z-index: inherit;" data-cursor-icon="Sec">
         <span class="lable-text" id="c7">0</span>
         <span class="lable-text" id="c8">0</span>
-        </span><span class="mill1" style="z-index: inherit;">
+        </span><span class="mill1" style="z-index: inherit;" data-cursor-icon="Ms">
         <span class="lable-text" id="c10">0</span>
         <span class="lable-text" id="c11">0</span>
         <span class="lable-text" id="c12">0</span>
@@ -127,5 +128,6 @@ import Analytics from "../../components/Analytics.astro";
         }
       }, 1);
     </script>
+    <Mouse></Mouse>
   </body>
 </html>

@@ -57,6 +57,7 @@ body {
     overflow: hidden;
 	user-select: none;
     width: 100%;
+    cursor: none;
 }
 @keyframes hueShiftA {
     0%{

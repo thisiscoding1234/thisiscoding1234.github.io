@@ -1,6 +1,7 @@
 ---
 import Analytics from "../../components/Analytics.astro";
 import "../../styles/clocks/mixed.css";
+import Mouse from "../../components/Mouse.astro";
 ---
 
 <html lang="en">
@@ -10,7 +11,7 @@ import "../../styles/clocks/mixed.css";
     <Analytics>
   </head>
   <body>
-    <div class="main-clock">
+    <div class="main-clock" data-cursor-icon="none">
         <div class="clock-f" id="hour"></div>
         <div class="clock-f" id="minute"></div>
         <div class="clock-f" id="second"></div>
@@ -122,5 +123,6 @@ import "../../styles/clocks/mixed.css";
         );
       }, 1);
     </script>
+    <Mouse></Mouse>
   </body>
 </html>

@@ -2,6 +2,7 @@
 const tickMarks = Array.from({ length: 60 }, (_, i) => i);
 import "../../styles/clocks/prd.css";
 import Analytics from "../../components/Analytics.astro";
+import Mouse from "../../components/Mouse.astro";
 ---
 
 <html lang="en">
@@ -11,7 +12,7 @@ import Analytics from "../../components/Analytics.astro";
     <Analytics></Analytics>
   </head>
   <body>
-    <div class="main-clock" id="clk">
+    <div class="main-clock" id="clk" data-cursor-icon="none">
       {
           tickMarks.map((i) => (
             <div
@@ -158,5 +159,6 @@ import Analytics from "../../components/Analytics.astro";
       
       zi(m, pb); zi(h, pm); zi(s, pt);
     </script>
+    <Mouse></Mouse>
   </body>
 </html>

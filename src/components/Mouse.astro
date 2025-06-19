@@ -1,0 +1,121 @@
+---
+---
+
+<style>
+  .mouse-follower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid black;
+    background: rgba(0,0,0,0.1);
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.2s cubic-bezier(0.68, -0.6, 0.32, 1.6), background-color 0.2s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    user-select: none;
+    z-index: 9999;
+    font-family: "Chivo Mono", "Outfit", "Raleway", sans-serif;
+  }
+
+  .mouse-follower.enlarged {
+    background-color: rgba(0, 0, 0, 0.25);
+    transform: translate(-50%, -50%) scale(2);
+  }
+</style>
+
+<div id="mouse-follower" class="mouse-follower" aria-hidden="true"></div>
+
+<script type="module">
+  const follower = document.getElementById('mouse-follower');
+  let isHovering = false;
+  let isClicking = false;
+
+  // On hover, check if element has [data-cursor-icon] attribute
+  window.addEventListener('mouseover', (e) => {
+    let target = e.target;
+    while(target && target !== document.body) {
+      if (target.hasAttribute('data-cursor-icon')) {
+        const iconName = target.getAttribute('data-cursor-icon');
+        isHovering = true;
+        if (iconName === "none") {
+          follower.innerHTML = "";
+        } else {
+          follower.innerHTML = iconName || "";
+        }
+        updateSize();
+        return;
+      }
+      target = target.parentElement;
+    }
+    // No relevant attribute found
+    isHovering = false;
+    updateSize();
+    follower.innerHTML = "";
+  });
+
+  // On mouseout, reset hover flag
+  window.addEventListener('mouseout', (e) => {
+    let related = e.relatedTarget;
+    if (!related || !related.closest('[data-cursor-icon]')) {
+      isHovering = false;
+      updateSize();
+      follower.innerHTML = "";
+    }
+  });
+
+  // On mouse down (left click)
+  window.addEventListener('mousedown', (e) => {
+    if (e.button === 0) { // left click
+      isClicking = true;
+      updateSize();
+    }
+  });
+
+  // On mouse up
+  window.addEventListener('mouseup', (e) => {
+    if (e.button === 0) {
+      isClicking = false;
+      updateSize();
+    }
+  });
+
+  function updateSize() {
+    if (isHovering || isClicking) {
+      follower.classList.add('enlarged');
+    } else {
+      follower.classList.remove('enlarged');
+    }
+  }
+
+let mouseX = 0;
+let mouseY = 0;
+let currentX = 0;
+let currentY = 0;
+const ease = 0.25; // smaller = slower easing, bigger = faster easing
+
+window.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+function animate() {
+  // Move current position a fraction towards the mouse position
+  currentX += (mouseX - currentX) * ease;
+  currentY += (mouseY - currentY) * ease;
+
+  follower.style.left = currentX + 'px';
+  follower.style.top = currentY + 'px';
+
+  requestAnimationFrame(animate);
+}
+
+// Start the animation loop
+animate();
+</script>
+
