@@ -32,7 +32,7 @@ import Mouse from "../../components/Mouse.astro";
 {
   tickMarks.map((i) => (
     <div
-      class={`tick ${i % 5 === 0 ? "hour-tick" : ""}`}
+      class={`tick tick-l ${i % 5 === 0 ? "hour-tick" : ""}`}
       style={`top: ${(i / 59) * 100}% `}
     />
   ))
@@ -40,7 +40,7 @@ import Mouse from "../../components/Mouse.astro";
 {
   tickMarks.map((i) => (
     <div
-      class={`tick-l ${i % 5 === 0 ? "hour-tick-l" : ""}`}
+      class={`tick ${i % 5 === 0 ? "hour-tick tick-rf" : "tick-r"}`}
       style={`top: ${(i / 59) * 100}% `}
     />
   ))
