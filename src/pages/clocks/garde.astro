@@ -1,4 +1,5 @@
 ---
+const tickMarks = Array.from({ length: 60 }, (_, i) => i);
 import "../../styles/clocks/garde.css";
 import Analytics from "../../components/Analytics.astro";
 import Mouse from "../../components/Mouse.astro";
@@ -28,7 +29,22 @@ import Mouse from "../../components/Mouse.astro";
         <span class="lable-text" id="c11">0</span>
         <span class="lable-text" id="c12">0</span>
 </span>
-    </div>
+{
+  tickMarks.map((i) => (
+    <div
+      class={`tick ${i % 5 === 0 ? "hour-tick" : ""}`}
+      style={`top: ${(i / 59) * 100}% `}
+    />
+  ))
+}
+{
+  tickMarks.map((i) => (
+    <div
+      class={`tick-l ${i % 5 === 0 ? "hour-tick-l" : ""}`}
+      style={`top: ${(i / 59) * 100}% `}
+    />
+  ))
+}
     <script
       src="https://cdn.jsdelivr.net/npm/accutime@latest/dist/accutime.min.js"
     ></script>

@@ -127,3 +127,36 @@ body {
     flex-direction: row;
     --weight: 100;
 }
+.tick {
+    position: absolute;
+    left: 0%;
+    width: 15px;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.75);
+    transform-origin: center;
+	z-index: 5;
+    border-radius: 10px;
+}
+.hour-tick {
+    width: 40px;
+    height: 8px;
+    display: block;
+    border-radius: 10px;
+}
+.tick-l {
+    position: absolute;
+    left: calc(100% - 15px);
+    width: 15px;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.75);
+    transform-origin: center;
+	z-index: 5;
+    border-radius: 10px;
+}
+.hour-tick-l {
+    left: calc(100% - 40px);
+    width: 40px;
+    height: 8px;
+    display: block;
+    border-radius: 10px;
+}
