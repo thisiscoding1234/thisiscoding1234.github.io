@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+  <!-- Remember to clean up and fix this clock to look like the others -->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Digital Clock</title>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="881ff059-cddf-4926-afd3-95574cc71dff"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png">
+  <link rel="manifest" href="/img/icons/site.webmanifest">
+  <link rel="mask-icon" href="/img/icons/safari-pinned-tab.svg" color="#ff6a00">
+  <link rel="shortcut icon" href="/img/icons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="/img/icons/browserconfig.xml">
+  <style>
+    @import"https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&display=swap";
+
+    :root {
+      --seconds: 1s;
+      --mins: calc(var(--seconds)*60);
+      --hrs: calc(var(--mins)*12);
+      --trans: 100%;
+      --hue: 25;
+      --mod: 15;
+      --c1: hsl(var(--hue) 100% 50%);
+      --c2: hsl(calc(var(--hue) + (1 * var(--mod))) 100% 50%);
+      --c3: hsl(calc(var(--hue) + (2 * var(--mod))) 100% 50%);
+      --c4: hsl(calc(var(--hue) + 180) 100% 50%);
+      --ease: ease-in-out;
+      --uho: 0.25;
+      --him: -1.75vw;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .main-label {
+      font-family: Chivo Mono, monospace;
+      font-size: 14vw;
+      display: flex;
+    }
+
+    html,
+    body {
+      color: black;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: white;
+      overflow: hidden;
+      user-select: none
+    }
+
+    .lable-text {
+      font-weight: 900;
+      margin-right: 0vw;
+      transition: 1s var(--ease);
+    }
+
+    .main-label:hover {
+      .lable-text {
+        margin-right: var(--him);
+        font-weight: 100;
+      }
+
+      .mill1 {
+        opacity: 1;
+      }
+
+      #c9 {
+        opacity: 1;
+      }
+
+      .mill1 {
+        transition: 1s var(--ease);
+      }
+
+    }
+
+    .hrs1 {
+      color: var(--c3);
+      display: flex;
+      flex-direction: row;
+    }
+
+    .min1 {
+      color: var(--c2);
+      display: flex;
+      flex-direction: row;
+    }
+
+    .secs {
+      color: var(--c1);
+      display: flex;
+      flex-direction: row;
+    }
+
+    #c9 {
+      opacity: var(--uho);
+    }
+
+    .mill1 {
+      display: flex;
+      flex-direction: row;
+      color: var(--c4);
+      opacity: var(--uho);
+    }
+
+    #millis {
+      background: black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main-label">
+    <span class="hrs1">
+      <span class="lable-text" id="c1">0</span>
+      <span class="lable-text" id="c2">0</span>
+    </span>
+    <span class="lable-text" id="c3">:</span>
+    <span class="min1">
+      <span class="lable-text" id="c4">0</span>
+      <span class="lable-text" id="c5">0</span>
+    </span>
+    <span class="lable-text" id="c6">:</span>
+    <span class="secs">
+      <span class="lable-text" id="c7">0</span>
+      <span class="lable-text" id="c8">0</span>
+    </span>
+    <span class="lable-text" id="c9">:</span>
+    <span class="mill1">
+      <span class="lable-text" id="c10">0</span>
+      <span class="lable-text" id="c11">0</span>
+      <span class="lable-text" id="c12">0</span>
+    </span>
+  </div>
+  <script type="module">
+    function zi(e, index) { document.getElementById(e).style.zIndex = index };
+    setInterval(() => {
+      const now = new Date();
+      const s = "second";
+      const m = "minute";
+      const h = "hour";
+      let pt = 1;
+      let pm = 2;
+      let pb = 3;
+      if (String(now.getHours()).length === 1) {
+        document.getElementById("c1").innerHTML = "0";
+        document.getElementById("c2").innerHTML = String(now.getHours());
+      } else {
+        document.getElementById("c1").innerHTML = String(
+          now.getHours(),
+        ).charAt(0);
+        document.getElementById("c2").innerHTML = String(
+          now.getHours(),
+        ).charAt(1);
+      }
+      if (String(now.getMinutes()).length === 1) {
+        document.getElementById("c4").innerHTML = "0";
+        document.getElementById("c5").innerHTML = String(now.getMinutes());
+      } else {
+        document.getElementById("c4").innerHTML = String(
+          now.getMinutes(),
+        ).charAt(0);
+        document.getElementById("c5").innerHTML = String(
+          now.getMinutes(),
+        ).charAt(1);
+      }
+      if (String(now.getSeconds()).length === 1) {
+        document.getElementById("c7").innerHTML = "0";
+        document.getElementById("c8").innerHTML = String(now.getSeconds());
+      } else {
+        document.getElementById("c7").innerHTML = String(
+          now.getSeconds(),
+        ).charAt(0);
+        document.getElementById("c8").innerHTML = String(
+          now.getSeconds(),
+        ).charAt(1);
+      }
+      if (String(now.getMilliseconds()).length === 1) {
+        document.getElementById("c10").innerHTML = "0";
+        document.getElementById("c11").innerHTML = "0";
+        document.getElementById("c12").innerHTML = String(
+          now.getMilliseconds(),
+        ).charAt(0);
+      } else {
+        if (String(now.getMilliseconds()).length === 2) {
+          document.getElementById("c10").innerHTML = "0";
+          document.getElementById("c11").innerHTML = String(
+            now.getMilliseconds(),
+          ).charAt(0);
+          document.getElementById("c12").innerHTML = String(
+            now.getMilliseconds(),
+          ).charAt(1);
+        } else {
+          document.getElementById("c10").innerHTML = String(
+            now.getMilliseconds(),
+          ).charAt(0);
+          document.getElementById("c11").innerHTML = String(
+            now.getMilliseconds(),
+          ).charAt(1);
+          document.getElementById("c12").innerHTML = String(
+            now.getMilliseconds(),
+          ).charAt(2);
+        }
+      }
+    }, 1);
+  </script>
+  <!--- https://www.npmjs.com/package/accutime --->
+  <script type="module" src="/_astro/gradient.astro_astro_type_script_index_1_lang.CEdTz-mQ.js"></script>
+</body>
+
+</html>
