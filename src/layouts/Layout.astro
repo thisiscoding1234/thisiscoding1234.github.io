@@ -40,8 +40,8 @@ import { ViewTransitions } from 'astro:transitions';
 			import Lenis from 'lenis';
 			import 'lenis/dist/lenis.css';
 
-			// Initialize Lenis smooth scrolling
-			const lenis = new Lenis({
+			// Shared Lenis configuration
+			const lenisConfig = {
 				duration: 1.2,
 				easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
 				orientation: 'vertical',
@@ -51,39 +51,44 @@ import { ViewTransitions } from 'astro:transitions';
 				smoothTouch: false,
 				touchMultiplier: 2,
 				infinite: false,
-			});
+			};
 
-			function raf(time) {
-				lenis.raf(time);
-				requestAnimationFrame(raf);
+			let lenis;
+			let rafId;
+
+			function initLenis() {
+				if (lenis) {
+					lenis.destroy();
+				}
+				if (rafId) {
+					cancelAnimationFrame(rafId);
+				}
+
+				lenis = new Lenis(lenisConfig);
+
+				function raf(time) {
+					lenis.raf(time);
+					rafId = requestAnimationFrame(raf);
+				}
+
+				rafId = requestAnimationFrame(raf);
 			}
 
-			requestAnimationFrame(raf);
+			// Initialize Lenis on page load
+			initLenis();
 
 			// Handle View Transitions
 			document.addEventListener('astro:before-swap', () => {
-				lenis.destroy();
+				if (lenis) {
+					lenis.destroy();
+				}
+				if (rafId) {
+					cancelAnimationFrame(rafId);
+				}
 			});
 
 			document.addEventListener('astro:after-swap', () => {
-				const newLenis = new Lenis({
-					duration: 1.2,
-					easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-					orientation: 'vertical',
-					gestureOrientation: 'vertical',
-					smoothWheel: true,
-					wheelMultiplier: 1,
-					smoothTouch: false,
-					touchMultiplier: 2,
-					infinite: false,
-				});
-
-				function newRaf(time) {
-					newLenis.raf(time);
-					requestAnimationFrame(newRaf);
-				}
-
-				requestAnimationFrame(newRaf);
+				initLenis();
 			});
 		</script>
 	</body>
