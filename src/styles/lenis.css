@@ -1,0 +1,64 @@
+/* Lenis Smooth Scrolling Styles */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* View Transitions Animations */
+@view-transition {
+  navigation: auto;
+}
+
+/* Fade animation for page transitions */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Smooth fade in/out */
+::view-transition-old(root) {
+  animation-name: fade-out;
+}
+
+::view-transition-new(root) {
+  animation-name: fade-in;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Prevent layout shift during transitions */
+body {
+  overflow-x: hidden;
+}

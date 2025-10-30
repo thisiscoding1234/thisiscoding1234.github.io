@@ -5,8 +5,10 @@ interface Props {
 
 const { title } = Astro.props;
 import '../styles/global.css'
+import '../styles/lenis.css'
 import Navbar from '../components/Navbar.astro';
 import Analytics from '../components/Analytics.astro';
+import { ViewTransitions } from 'astro:transitions';
 ---
 
 <!doctype html>
@@ -29,9 +31,60 @@ import Analytics from '../components/Analytics.astro';
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sixtyfour+Convergence:BLED,SCAN,XELA,YELA@0..100,-53..100,-100..100,-100..100&display=swap" rel="stylesheet">
+	<ViewTransitions />
 	</head>
 	<body>
         <Navbar></Navbar>
 		<slot />
+		<script>
+			import Lenis from 'lenis';
+			import 'lenis/dist/lenis.css';
+
+			// Initialize Lenis smooth scrolling
+			const lenis = new Lenis({
+				duration: 1.2,
+				easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+				orientation: 'vertical',
+				gestureOrientation: 'vertical',
+				smoothWheel: true,
+				wheelMultiplier: 1,
+				smoothTouch: false,
+				touchMultiplier: 2,
+				infinite: false,
+			});
+
+			function raf(time) {
+				lenis.raf(time);
+				requestAnimationFrame(raf);
+			}
+
+			requestAnimationFrame(raf);
+
+			// Handle View Transitions
+			document.addEventListener('astro:before-swap', () => {
+				lenis.destroy();
+			});
+
+			document.addEventListener('astro:after-swap', () => {
+				const newLenis = new Lenis({
+					duration: 1.2,
+					easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+					orientation: 'vertical',
+					gestureOrientation: 'vertical',
+					smoothWheel: true,
+					wheelMultiplier: 1,
+					smoothTouch: false,
+					touchMultiplier: 2,
+					infinite: false,
+				});
+
+				function newRaf(time) {
+					newLenis.raf(time);
+					requestAnimationFrame(newRaf);
+				}
+
+				requestAnimationFrame(newRaf);
+			});
+		</script>
 	</body>
 </html>
