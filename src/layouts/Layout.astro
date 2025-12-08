@@ -4,9 +4,13 @@ interface Props {
 }
 
 const { title } = Astro.props;
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../styles/global.css'
+import '../styles/lenis.css'
 import Navbar from '../components/Navbar.astro';
 import Analytics from '../components/Analytics.astro';
+import { ViewTransitions } from 'astro:transitions';
 ---
 
 <!doctype html>
@@ -17,21 +21,72 @@ import Analytics from '../components/Analytics.astro';
     <title>Thisiscoding1234: {title}</title>
     <meta name="description" content="just a simple website that does nothing and achives nothing" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <meta name="theme-color" content="#ffffff" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" defer rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-        <script src="https://use.fortawesome.com/1ce05b4b.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"
-        defer></script>
-        <Analytics></Analytics>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sixtyfour+Convergence:BLED,SCAN,XELA,YELA@0..100,-53..100,-100..100,-100..100&display=swap" rel="stylesheet">
+	<ViewTransitions />
 	</head>
 	<body>
         <Navbar></Navbar>
 		<slot />
+		<script>
+			import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+		</script>
+		<script>
+			import Lenis from 'lenis';
+			import 'lenis/dist/lenis.css';
+
+			// Shared Lenis configuration
+			const lenisConfig = {
+				duration: 1.2,
+				easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+				orientation: 'vertical',
+				gestureOrientation: 'vertical',
+				smoothWheel: true,
+				wheelMultiplier: 1,
+				smoothTouch: false,
+				touchMultiplier: 2,
+				infinite: false,
+			};
+
+			let lenis;
+			let rafId;
+
+			function initLenis() {
+				if (lenis) {
+					lenis.destroy();
+				}
+				if (rafId) {
+					cancelAnimationFrame(rafId);
+				}
+
+				lenis = new Lenis(lenisConfig);
+
+				function raf(time) {
+					lenis.raf(time);
+					rafId = requestAnimationFrame(raf);
+				}
+
+				rafId = requestAnimationFrame(raf);
+			}
+
+			// Initialize Lenis on page load
+			initLenis();
+
+			// Handle View Transitions
+			document.addEventListener('astro:before-swap', () => {
+				if (lenis) {
+					lenis.destroy();
+				}
+				if (rafId) {
+					cancelAnimationFrame(rafId);
+				}
+			});
+
+			document.addEventListener('astro:after-swap', () => {
+				initLenis();
+			});
+		</script>
 	</body>
 </html>
