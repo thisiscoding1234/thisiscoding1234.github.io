@@ -4,6 +4,8 @@ interface Props {
 }
 
 const { title } = Astro.props;
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../styles/global.css'
 import '../styles/lenis.css'
 import Navbar from '../components/Navbar.astro';
@@ -29,17 +31,7 @@ import { ViewTransitions } from 'astro:transitions';
         <Navbar></Navbar>
 		<slot />
 		<script>
-			// Mobile menu toggle
-			document.addEventListener('DOMContentLoaded', () => {
-				const toggler = document.querySelector('.navbar-toggler');
-				const collapse = document.querySelector('.navbar-collapse');
-				
-				if (toggler && collapse) {
-					toggler.addEventListener('click', () => {
-						collapse.classList.toggle('show');
-					});
-				}
-			});
+			import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 		</script>
 		<script>
 			import Lenis from 'lenis';

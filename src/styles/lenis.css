@@ -19,42 +19,79 @@ html.lenis {
   pointer-events: none;
 }
 
-/* View Transitions Animations */
+/* Enhanced View Transitions Animations */
 @view-transition {
   navigation: auto;
 }
 
-/* Fade animation for page transitions */
+/* Fun slide and zoom animation for page transitions */
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: 0.5s;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-duration: 0.6s;
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
-/* Smooth fade in/out */
+/* Old page slides out and scales down */
 ::view-transition-old(root) {
-  animation-name: fade-out;
+  animation-name: slide-out-scale;
 }
 
+/* New page slides in and scales up */
 ::view-transition-new(root) {
-  animation-name: fade-in;
+  animation-name: slide-in-scale;
 }
 
-@keyframes fade-out {
+@keyframes slide-out-scale {
   from {
     opacity: 1;
+    transform: translateX(0) scale(1);
   }
   to {
     opacity: 0;
+    transform: translateX(-30px) scale(0.95);
   }
 }
 
-@keyframes fade-in {
+@keyframes slide-in-scale {
   from {
     opacity: 0;
+    transform: translateX(30px) scale(0.95);
   }
   to {
     opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Alternative bounce animation */
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(-20px);
+  }
+  50% {
+    transform: scale(1.05) translateY(5px);
+  }
+  70% {
+    transform: scale(0.97) translateY(-2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes bounce-out {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  30% {
+    transform: scale(1.05) translateY(5px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.3) translateY(-20px);
   }
 }
 
@@ -62,3 +99,9 @@ html.lenis {
 body {
   overflow-x: hidden;
 }
+
+/* Add rotation effect on specific elements during transitions */
+::view-transition-group(root) {
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
